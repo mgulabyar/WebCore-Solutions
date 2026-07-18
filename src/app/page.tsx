@@ -9,7 +9,7 @@ export default function Home() {
             Web Development • UI/UX • Scalable Solutions
           </p>
 
-          <h1 className="max-w-3xl text-4xl font-bold tracking-tight sm:text-5xl lg:text-7xl">
+          <h1 className="max-w-3xl text-4xl font-bold  sm:text-5xl">
             We Build Modern Web Apps That Look Premium and Perform Fast.
           </h1>
 

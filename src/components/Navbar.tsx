@@ -26,7 +26,7 @@ export default function Navbar() {
           href="/"
           className="text-lg font-bold tracking-tight text-neutral-900 sm:text-xl transition-all duration-300 ease-out hover:-translate-y-0.5 hover:opacity-90 active:translate-y-0"
         >
-          <img src="/webcore.png" alt="WebCore Solutions" className="h-9 w-auto" />
+          <img src="/webcore.png" alt="WebCore Solutions" className="h-10 w-auto" />
         </Link>
 
         <nav className="hidden items-center gap-6 md:flex">

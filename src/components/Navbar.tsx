@@ -29,7 +29,6 @@ export default function Navbar() {
           <img src="/webcore.png" alt="WebCore Solutions" className="h-9 w-auto" />
         </Link>
 
-        {/* Desktop  */}
         <nav className="hidden items-center gap-6 md:flex">
           {navLinks.map((link) => {
             const isActive = pathname === link.href;

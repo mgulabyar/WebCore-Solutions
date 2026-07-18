@@ -62,7 +62,7 @@ export default function Navbar() {
           </Link>
         </div>
 
-        {/* High-End Animated Hamburger/Close Button */}
+        {/* Hamburger/Close Button */}
         <button
           onClick={() => setMenuOpen(!menuOpen)}
           className="flex h-10 w-10 flex-col items-center justify-center gap-1.5   transition-all duration-300 hover:bg-neutral-100/80 active:scale-95 md:hidden"

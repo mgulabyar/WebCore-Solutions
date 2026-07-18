@@ -85,7 +85,6 @@ export default function Navbar() {
         </button>
       </div>
 
-      {/* Mobile Menu Dropdown with Smooth Height & Fade Effect */}
       <div 
         className={`grid transition-all duration-350 ease-in-out md:hidden ${
           menuOpen 

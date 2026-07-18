@@ -53,7 +53,6 @@ export default function Navbar() {
           })}
         </nav>
 
-        {/* Desktop Button */}
         <div className="hidden items-center md:flex">
           <Link
             href="/contact"

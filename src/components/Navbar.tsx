@@ -22,7 +22,6 @@ export default function Navbar() {
   return (
     <header className="sticky top-0 z-50 border-b border-neutral-100 bg-white/80 backdrop-blur-xl">
       <div className="mx-auto flex w-full max-w-6xl items-center justify-between px-3 py-4 sm:px-4 lg:px-6">
-        {/* Logo Link */}
         <Link
           href="/"
           className="text-lg font-bold tracking-tight text-neutral-900 sm:text-xl transition-all duration-300 ease-out hover:-translate-y-0.5 hover:opacity-90 active:translate-y-0"

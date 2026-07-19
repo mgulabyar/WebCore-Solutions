@@ -80,7 +80,7 @@ export default function Home() {
           />
 
           <div
-            className="absolute left-1/2 top-16 h-[34rem] w-[34rem] -translate-x-1/2 rounded-full bg-blue-500/20 blur-3xl"
+            className="absolute left-1/2 top-16 h-13 w-13 -translate-x-1/2 rounded-full bg-blue-500/20 blur-3xl"
             style={{ animation: "drift1 18s ease-in-out infinite" }}
           />
           <div
@@ -92,7 +92,7 @@ export default function Home() {
             style={{ animation: "drift3 24s ease-in-out infinite" }}
           />
           <div
-            className="absolute bottom-[-80px] left-1/4 h-80 w-80 rounded-full bg-blue-200/25 blur-3xl"
+            className="absolute -bottom-20 left-1/4 h-80 w-80 rounded-full bg-blue-200/25 blur-3xl"
             style={{ animation: "floatY 10s ease-in-out infinite" }}
           />
           <div
@@ -102,8 +102,8 @@ export default function Home() {
         </div>
 
         <section className="relative mx-auto flex min-h-screen max-w-7xl flex-col items-center justify-center px-4 py-24 sm:px-6 lg:px-8">
-          <div className="absolute left-1/2 top-12 -z-10 h-[34rem] w-[34rem] -translate-x-1/2 rounded-full border border-blue-300/35 bg-white/20 shadow-[0_0_160px_rgba(37,99,235,0.18)] backdrop-blur-3xl" />
-          <div className="absolute left-1/2 top-24 -z-20 h-[42rem] w-[42rem] -translate-x-1/2 rounded-full bg-gradient-to-br from-blue-400/20 via-cyan-300/10 to-transparent blur-3xl" />
+          <div className="absolute left-1/2 top-12 -z-10 h-13 w-13 -translate-x-1/2 rounded-full border border-blue-300/35 bg-white/20 shadow-[0_0_160px_rgba(37,99,235,0.18)] backdrop-blur-3xl" />
+          <div className="absolute left-1/2 top-24 -z-20 h-16 w-2xl -translate-x-1/2 rounded-full bg-linear-to-br from-blue-400/20 via-cyan-300/10 to-transparent blur-3xl" />
 
           <motion.div
             initial="hidden"
@@ -129,7 +129,7 @@ export default function Home() {
               className="max-w-5xl text-4xl font-semibold tracking-tight text-slate-900 sm:text-5xl md:text-6xl lg:text-7xl"
             >
               We Design{" "}
-              <span className="bg-gradient-to-r from-blue-600 via-cyan-500 to-sky-700 bg-clip-text text-transparent">
+              <span className="bg-linear-to-r from-blue-600 via-cyan-500 to-sky-700 bg-clip-text text-transparent">
                 Modern Web Experiences
               </span>{" "}
               That Feel Premium.
@@ -172,7 +172,7 @@ export default function Home() {
             transition={{ delay: 0.3, duration: 1, ease: [0.16, 1, 0.3, 1] }}
             className="mt-20 w-full max-w-6xl"
           >
-            <div className="relative overflow-hidden rounded-[2rem] border border-white/60 bg-white/65 p-4 shadow-[0_20px_80px_rgba(15,23,42,0.08)] backdrop-blur-xl">
+            <div className="relative overflow-hidden rounded-4xl border border-white/60 bg-white/65 p-4 shadow-[0_20px_80px_rgba(15,23,42,0.08)] backdrop-blur-xl">
               <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(59,130,246,0.12),transparent_40%),radial-gradient(circle_at_bottom_right,rgba(14,165,233,0.10),transparent_35%)]" />
               <div className="relative grid gap-4 md:grid-cols-3">
                 {features.map((item, idx) => (

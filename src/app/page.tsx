@@ -86,7 +86,7 @@ export default function TechHeroSection() {
 
           {/* ================= 1. INNER ORBIT LAYER (MERN Stack - 4 Icons) ================= */}
           <motion.div
-            className="absolute h-[180px] w-45 flex items-center justify-center rounded-full"
+            className="absolute h-45 w-45 flex items-center justify-center rounded-full"
             animate={{ rotate: 360 }}
             transition={{ repeat: Infinity, duration: 28, ease: "linear" }}
           >
@@ -135,7 +135,7 @@ export default function TechHeroSection() {
 
           {/* ================= 2. OUTER ORBIT LAYER (Remaining Stack - 8 Icons perfectly divided at 45°) ================= */}
           <motion.div
-            className="absolute h-[360px] w-[360px] flex items-center justify-center rounded-full"
+            className="absolute h-90 w-90 flex items-center justify-center rounded-full"
             animate={{ rotate: -360 }}
             transition={{ repeat: Infinity, duration: 45, ease: "linear" }}
           >

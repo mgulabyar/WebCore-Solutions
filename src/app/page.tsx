@@ -76,7 +76,7 @@ export default function TechHeroSection() {
           
           {/* Static Track Lines (Fixed inline pixels calculation) */}
           <div className="absolute h-45 w-45 rounded-full border border-slate-200/80 pointer-events-none" />
-          <div className="absolute h-90 w-[360px] rounded-full border border-slate-200/80 pointer-events-none" />
+          <div className="absolute h-90 w-90 rounded-full border border-slate-200/80 pointer-events-none" />
 
           {/* Main Orbit Spinner Ring */}
           <motion.div 

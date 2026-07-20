@@ -51,7 +51,7 @@ export default function Home() {
             }}
           />
           <div
-            className="absolute left-1/2 top-20 h-112 w-[28rem] -translate-x-1/2 rounded-full bg-blue-500/10 blur-3xl"
+            className="absolute left-1/2 top-20 h-112 w-md -translate-x-1/2 rounded-full bg-blue-500/10 blur-3xl"
             style={{ animation: "bgFloat1 16s ease-in-out infinite" }}
           />
           <div

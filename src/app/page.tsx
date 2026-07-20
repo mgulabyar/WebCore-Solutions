@@ -72,7 +72,7 @@ export default function TechHeroSection() {
         </motion.div>
 
         {/* Right Side: Fixed Orbiting Showcase */}
-        <div className="flex items-center justify-center min-h-[500px] relative">
+        <div className="flex items-center justify-center min-h-125 relative">
           
           {/* Static Track Lines (Fixed inline pixels calculation) */}
           <div className="absolute h-45 w-[180px] rounded-full border border-slate-200/80 pointer-events-none" />

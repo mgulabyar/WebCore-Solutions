@@ -147,7 +147,7 @@ export default function Home() {
               transition={{ duration: 0.8, ease: "easeOut", delay: 0.1 }}
               className="relative"
             >
-              <div className="rounded-[2rem] border border-slate-200 bg-white p-6 shadow-[0_20px_80px_rgba(15,23,42,0.08)]">
+              <div className="rounded-4xl border border-slate-200 bg-white p-6 shadow-[0_20px_80px_rgba(15,23,42,0.08)]">
                 <div className="mb-6 flex items-center justify-between">
                   <div>
                     <p className="text-sm font-medium text-slate-500">

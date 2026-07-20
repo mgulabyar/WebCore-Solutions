@@ -55,7 +55,7 @@ export default function Home() {
             style={{ animation: "bgFloat1 16s ease-in-out infinite" }}
           />
           <div
-            className="absolute right-[-4rem] top-32 h-[24rem] w-[24rem] rounded-full bg-cyan-400/10 blur-3xl"
+            className="absolute -right-16 top-32 h-[24rem] w-[24rem] rounded-full bg-cyan-400/10 blur-3xl"
             style={{ animation: "bgFloat2 20s ease-in-out infinite" }}
           />
         </div>

@@ -72,7 +72,7 @@ export default function TechHeroSection() {
         </motion.div>
 
         {/* Right Side: Fixed Orbiting Showcase */}
-        <div className="flex items-center justify-center min-h-125 relative">
+        <div className="flex items-center justify-center relative">
           
           {/* Static Track Lines (Fixed inline pixels calculation) */}
           <div className="absolute h-45 w-45 rounded-full border border-slate-200/80 pointer-events-none" />
@@ -80,7 +80,7 @@ export default function TechHeroSection() {
 
           {/* Main Orbit Spinner Ring */}
           <motion.div 
-            className="absolute h-90 w-[360px] flex items-center justify-center rounded-full"
+            className="absolute h-90 w-90 flex items-center justify-center rounded-full"
             animate={{ rotate: 360 }}
             transition={{ repeat: Infinity, duration: 35, ease: "linear" }}
           >

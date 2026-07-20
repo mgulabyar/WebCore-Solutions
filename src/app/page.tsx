@@ -318,7 +318,7 @@ export default function TechHeroSection() {
           
           {/* Subtle Outer Visual Ring Lines */}
           <div className="absolute h-45 w-45 rounded-full border border-slate-200 pointer-events-none" />
-          <div className="absolute h-90 w-[360px] rounded-full border border-slate-200 pointer-events-none" />
+          <div className="absolute h-90 w-90 rounded-full border border-slate-200 pointer-events-none" />
 
           {/* Main Orbit Spinner Layer using Framer Motion instead of buggy CSS variables */}
           <motion.div 

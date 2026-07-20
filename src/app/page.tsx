@@ -43,33 +43,27 @@ export default function TechHeroSection() {
             </span>
           </h1>
 
-          {/* Clean, Concise and Punchy Single-Paragraph Solution Copy */}
           <p className="mt-5 text-sm leading-relaxed text-slate-500 sm:text-base max-w-lg">
             We engineer scalable web solutions, secure database frameworks, and
             modern cross-platform ecosystems designed to streamline your
             business workflows and accelerate digital growth.
           </p>
 
-          {/* Professional Compact Buttons with Left-to-Right React Color Fill */}
           <div className="mt-8 flex flex-wrap items-center gap-4">
-            {/* Primary Button: Reduced Height with Dynamic Fill */}
             <Link
               href="#contact"
               className="group relative px-6 py-2.5 overflow-hidden rounded-lg bg-slate-950 text-xs font-semibold text-white shadow-sm transition-all duration-300 block"
             >
-              {/* React Official Cyan (#61DAFB) fills from left to right on hover */}
               <span className="absolute inset-0 w-full h-full bg-[#61DAFB] transition-transform duration-300 ease-out transform translate-x-[-101%] group-hover:translate-x-0" />
               <span className="relative z-10 group-hover:text-slate-950 transition-colors duration-200">
                 Consult an Expert
               </span>
             </Link>
 
-            {/* Secondary Button: Premium Border Highlight with Reduced Height */}
             <Link
               href="#portfolio"
               className="group relative px-6 py-2.5 overflow-hidden rounded-lg border border-slate-200 bg-white text-xs font-semibold text-slate-600 hover:border-[#61DAFB] transition-colors duration-300 block"
             >
-              {/* Soft React Cyan overlay fills from left to right on hover */}
               <span className="absolute inset-0 w-full h-full bg-[#61DAFB]/10 transition-transform duration-300 ease-out transform translate-x-[-101%] group-hover:translate-x-0" />
               <span className="relative z-10 group-hover:text-slate-950 transition-colors duration-200">
                 Our Capabilities
@@ -78,13 +72,11 @@ export default function TechHeroSection() {
           </div>
         </motion.div>
 
-        {/* Right Column: High-Fidelity Dual Orbit Structure */}
         <div className="flex items-center justify-center min-h-130 relative select-none">
-          {/* Geometric Solar Track Outlines */}
+
           <div className="absolute h-45 w-45 rounded-full border border-slate-200/60 pointer-events-none" />
           <div className="absolute h-90 w-90 rounded-full border border-slate-200/60 pointer-events-none" />
 
-          {/* ================= 1. INNER ORBIT LAYER (MERN Stack - 4 Icons) ================= */}
           <motion.div
             className="absolute h-45 w-45 flex items-center justify-center rounded-full"
             animate={{ rotate: 360 }}
@@ -133,7 +125,6 @@ export default function TechHeroSection() {
             })}
           </motion.div>
 
-          {/* ================= 2. OUTER ORBIT LAYER (Remaining Stack - 8 Icons perfectly divided at 45°) ================= */}
           <motion.div
             className="absolute h-90 w-90 flex items-center justify-center rounded-full"
             animate={{ rotate: -360 }}
@@ -182,7 +173,6 @@ export default function TechHeroSection() {
             })}
           </motion.div>
 
-          {/* ================= 3. FIXED CENTRAL LOGO (Python Core Shield) ================= */}
           <div className="relative z-18 flex h-16 w-16 items-center justify-center rounded-full border border-slate-100 bg-white shadow-[0_12px_40px_rgba(0,0,0,0.08)] ring-4 ring-slate-50/50 transition-transform duration-300 hover:scale-105">
             <Image
               src="/web.png"

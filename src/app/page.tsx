@@ -28,9 +28,7 @@ export default function TechHeroSection() {
       <div className="absolute inset-0 opacity-[0.015] bg-[radial-gradient(#1d4ed8_1px,transparent_1px)] [background-size:32px_32px] pointer-events-none" />
       <div className="absolute top-1/3 right-1/4 w-[500px] h-[500px] bg-blue-500/5 rounded-full blur-3xl pointer-events-none" />
 
-      {/* Main Responsive Grid Layout Wrapper */}
       <div className="mx-auto w-full max-w-7xl px-6 sm:px-8 lg:px-12 grid items-center gap-16 lg:grid-cols-2 relative z-10">
-        {/* Left Column: Highly Professional Conversion Text Box */}
         <motion.div
           initial={{ opacity: 0, x: -40 }}
           animate={{ opacity: 1, x: 0 }}

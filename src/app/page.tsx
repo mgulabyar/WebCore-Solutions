@@ -1,13 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import { motion } from "framer-motion";
-
-const stats = [
-  { value: "50+", label: "Projects Delivered" },
-  { value: "98%", label: "Client Satisfaction" },
-  { value: "24/7", label: "Support & Maintenance" },
-];
+import { motion, useInView, animate, useMotionValue, useTransform } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
 
 const services = [
   "Web Applications",
@@ -15,6 +10,43 @@ const services = [
   "Dashboard Systems",
   "Brand Platforms",
 ];
+
+function AnimatedCount({
+  value,
+  suffix = "",
+  decimals = 0,
+}: {
+  value: number;
+  suffix?: string;
+  decimals?: number;
+}) {
+  const count = useMotionValue(0);
+  const rounded = useTransform(count, (latest) =>
+    decimals > 0 ? latest.toFixed(decimals) : Math.round(latest).toString()
+  );
+  const initialValue = decimals > 0 ? `0.${"0".repeat(decimals)}` : "0";
+  const [displayValue, setDisplayValue] = useState(initialValue);
+  const ref = useRef<HTMLSpanElement | null>(null);
+  const inView = useInView(ref, { once: true, amount: 0.5 });
+
+  useEffect(() => {
+    const unsubscribe = rounded.on("change", setDisplayValue);
+    return unsubscribe;
+  }, [rounded]);
+
+  useEffect(() => {
+    if (inView) {
+      animate(count, value, { duration: 1.8, ease: "easeOut" });
+    }
+  }, [count, inView, value]);
+
+  return (
+    <motion.span ref={ref}>
+      {displayValue}
+      {suffix}
+    </motion.span>
+  );
+}
 
 export default function Home() {
   return (
@@ -51,7 +83,7 @@ export default function Home() {
             }}
           />
           <div
-            className="absolute left-1/2 top-20 h-112 w-md -translate-x-1/2 rounded-full bg-blue-500/10 blur-3xl"
+            className="absolute left-1/2 top-20 h-[28rem] w-[28rem] -translate-x-1/2 rounded-full bg-blue-500/10 blur-3xl"
             style={{ animation: "bgFloat1 16s ease-in-out infinite" }}
           />
           <div
@@ -115,7 +147,7 @@ export default function Home() {
               transition={{ duration: 0.8, ease: "easeOut", delay: 0.1 }}
               className="relative"
             >
-              <div className="rounded-4xl border border-slate-200 bg-white p-6 shadow-[0_20px_80px_rgba(15,23,42,0.08)]">
+              <div className="rounded-[2rem] border border-slate-200 bg-white p-6 shadow-[0_20px_80px_rgba(15,23,42,0.08)]">
                 <div className="mb-6 flex items-center justify-between">
                   <div>
                     <p className="text-sm font-medium text-slate-500">
@@ -133,13 +165,35 @@ export default function Home() {
                 <div className="grid gap-4 sm:grid-cols-2">
                   <div className="rounded-2xl bg-slate-50 p-5">
                     <p className="text-sm text-slate-500">Active Users</p>
-                    <p className="mt-2 text-3xl font-bold text-slate-900">12.4k</p>
+                    <p className="mt-2 text-3xl font-bold text-slate-900">
+                      <AnimatedCount value={12.4} decimals={1} />k
+                    </p>
                     <p className="mt-2 text-sm text-emerald-600">+18% this month</p>
                   </div>
+
                   <div className="rounded-2xl bg-slate-50 p-5">
                     <p className="text-sm text-slate-500">Conversion Rate</p>
-                    <p className="mt-2 text-3xl font-bold text-slate-900">8.9%</p>
+                    <p className="mt-2 text-3xl font-bold text-slate-900">
+                      <AnimatedCount value={8.9} decimals={1} />%
+                    </p>
                     <p className="mt-2 text-sm text-emerald-600">+2.1% improvement</p>
+                  </div>
+
+                  <div className="rounded-2xl bg-slate-50 p-5">
+                    <p className="text-sm text-slate-500">Client Rating</p>
+                    <p className="mt-2 text-3xl font-bold text-slate-900">
+                      <AnimatedCount value={4.9} decimals={1} />
+                    </p>
+                    <p className="mt-2 text-sm text-slate-500">out of 5</p>
+                  </div>
+
+                  <div className="rounded-2xl bg-slate-50 p-5">
+                    <p className="text-sm text-slate-500">Success Score</p>
+                    <p className="mt-2 text-3xl font-bold text-slate-900">
+                      <AnimatedCount value={9} />
+                      <span className="text-lg text-slate-500">/10</span>
+                    </p>
+                    <p className="mt-2 text-sm text-slate-500">project quality index</p>
                   </div>
                 </div>
 
@@ -149,7 +203,7 @@ export default function Home() {
                     Clean design, faster systems, better business results.
                   </p>
                   <div className="mt-4 h-2 w-full rounded-full bg-white/10">
-                    <div className="h-2 w-3/4 rounded-full bg-linear-to-r from-blue-500 to-cyan-400" />
+                    <div className="h-2 w-3/4 rounded-full bg-gradient-to-r from-blue-500 to-cyan-400" />
                   </div>
                 </div>
               </div>
@@ -158,13 +212,22 @@ export default function Home() {
         </section>
 
         <section className="border-t border-slate-200/70 bg-white/60 backdrop-blur-sm">
-          <div className="mx-auto grid max-w-7xl gap-4 px-4 py-8 sm:px-6 md:grid-cols-3 lg:px-8">
-            {stats.map((stat) => (
+          <div className="mx-auto grid max-w-7xl gap-4 px-4 py-8 sm:px-6 md:grid-cols-4 lg:px-8">
+            {[
+              { value: 50, suffix: "+", label: "Projects Delivered" },
+              { value: 4.9, suffix: "", label: "Client Rating", decimals: 1 },
+              { value: 9, suffix: "/10", label: "Success Score" },
+              { value: 24, suffix: "/7", label: "Support & Maintenance" },
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
+            ].map((stat: any) => (
               <div
                 key={stat.label}
                 className="rounded-2xl border border-slate-200 bg-white px-5 py-6 text-center shadow-sm"
               >
-                <p className="text-3xl font-bold text-slate-900">{stat.value}</p>
+                <p className="text-3xl font-bold text-slate-900">
+                  <AnimatedCount value={stat.value} decimals={stat.decimals ?? 0} />
+                  {stat.suffix}
+                </p>
                 <p className="mt-1 text-sm text-slate-500">{stat.label}</p>
               </div>
             ))}

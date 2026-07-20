@@ -52,7 +52,7 @@ export default function TechHeroSection() {
           <div className="mt-8 flex flex-wrap items-center gap-4">
             <Link
               href="#contact"
-              className="group relative px-6 py-2.5 overflow-hidden rounded-lg bg-slate-950 text-xs font-semibold text-white shadow-sm transition-all duration-300 block"
+              className="group relative px-7 py-3 overflow-hidden rounded-lg bg-slate-950 text-xs font-semibold text-white shadow-sm transition-all duration-300 block"
             >
               <span className="absolute inset-0 w-full h-full bg-[#61DAFB] transition-transform duration-300 ease-out transform translate-x-[-101%] group-hover:translate-x-0" />
               <span className="relative z-10 group-hover:text-slate-950 transition-colors duration-200">

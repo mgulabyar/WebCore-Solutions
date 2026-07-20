@@ -11,7 +11,6 @@ const services = [
   "Brand Platforms",
 ];
 
-// 6 tech items jo proper symbols aur fallbacks ke sath circles mein ghoomein ge
 const orbitItems = [
   { label: "⚛", title: "React", angle: 0 },
   { label: "F", title: "Figma", angle: 60 },

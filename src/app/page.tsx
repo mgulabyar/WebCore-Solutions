@@ -1,12 +1,9 @@
-
-
 "use client";
 
 import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
 
-// Inner Orbit (MERN Stack - 4 Icons distributed at 90°)
 const innerOrbitItems = [
   { src: "/mongo-db.png", title: "MongoDB", angle: 0 },
   { src: "/expressjs.png", title: "Express.js", angle: 90 },
@@ -14,7 +11,6 @@ const innerOrbitItems = [
   { src: "/nodejs.png", title: "Node.js", angle: 270 },
 ];
 
-// Outer Orbit (Remaining Tech Stack - 8 Items distributed perfectly at 45°)
 const outerOrbitItems = [
   { src: "/nextjs.png", title: "Next.js", angle: 0 },
   { src: "/angular.png", title: "Angular", angle: 45 },
@@ -30,78 +26,76 @@ export default function TechHeroSection() {
   return (
     // w-full aur bg-white ensure karta hai ke screen ke dono taraf aane wali black bars jadd se khatam ho jayein
     <section className="w-full min-h-[85vh] flex items-center bg-white text-slate-900 overflow-hidden relative py-12 lg:py-20">
-      
       {/* Background Subtle Tech Ambiance Layer */}
       <div className="absolute inset-0 opacity-[0.015] bg-[radial-gradient(#1d4ed8_1px,transparent_1px)] [background-size:32px_32px] pointer-events-none" />
       <div className="absolute top-1/3 right-1/4 w-[500px] h-[500px] bg-blue-500/5 rounded-full blur-3xl pointer-events-none" />
 
       {/* Main Responsive Grid Layout Wrapper */}
       <div className="mx-auto w-full max-w-7xl px-6 sm:px-8 lg:px-12 grid items-center gap-16 lg:grid-cols-2 relative z-10">
-        
         {/* Left Column: Highly Professional Conversion Text Box */}
-       <motion.div
-  initial={{ opacity: 0, x: -40 }}
-  animate={{ opacity: 1, x: 0 }}
-  transition={{ duration: 0.7, ease: "easeOut" }}
-  className="flex flex-col justify-center"
->
-  {/* Professional & Weight-Optimized Typography (Sleek Semibold style) */}
-  <h1 className="text-3xl font-semibold tracking-tight text-slate-900 sm:text-4xl lg:text-[44px] leading-[1.2]">
-    Building High-Performance <br />
-    <span className="text-[#2563eb] font-bold">Digital Infrastructure</span>
-  </h1>
+        <motion.div
+          initial={{ opacity: 0, x: -40 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.7, ease: "easeOut" }}
+          className="flex flex-col justify-center"
+        >
+          {/* Professional & Weight-Optimized Typography (Sleek Semibold style) */}
+          <h1 className="text-3xl font-semibold tracking-tight text-slate-900 sm:text-4xl lg:text-[44px] leading-[1.2]">
+            Building High-Performance <br />
+            <span className="text-[#2563eb] font-bold">
+              Digital Infrastructure
+            </span>
+          </h1>
 
-  {/* Clean, Concise and Punchy Single-Paragraph Solution Copy */}
-  <p className="mt-5 text-sm leading-relaxed text-slate-500 sm:text-base max-w-lg">
-    We engineer scalable web solutions, secure database frameworks, and modern cross-platform ecosystems designed to streamline your business workflows and accelerate digital growth.
-  </p>
+          {/* Clean, Concise and Punchy Single-Paragraph Solution Copy */}
+          <p className="mt-5 text-sm leading-relaxed text-slate-500 sm:text-base max-w-lg">
+            We engineer scalable web solutions, secure database frameworks, and
+            modern cross-platform ecosystems designed to streamline your
+            business workflows and accelerate digital growth.
+          </p>
 
-  {/* Professional Compact Buttons with Left-to-Right React Color Fill */}
-  <div className="mt-8 flex flex-wrap items-center gap-4">
-    
-    {/* Primary Button: Reduced Height with Dynamic Fill */}
-    <Link 
-      href="#contact" 
-      className="group relative px-6 py-2.5 overflow-hidden rounded-lg bg-slate-950 text-xs font-semibold text-white shadow-sm transition-all duration-300 block"
-    >
-      {/* React Official Cyan (#61DAFB) fills from left to right on hover */}
-      <span className="absolute inset-0 w-full h-full bg-[#61DAFB] transition-transform duration-300 ease-out transform translate-x-[-101%] group-hover:translate-x-0" />
-      <span className="relative z-10 group-hover:text-slate-950 transition-colors duration-200">
-        Consult an Expert
-      </span>
-    </Link>
+          {/* Professional Compact Buttons with Left-to-Right React Color Fill */}
+          <div className="mt-8 flex flex-wrap items-center gap-4">
+            {/* Primary Button: Reduced Height with Dynamic Fill */}
+            <Link
+              href="#contact"
+              className="group relative px-6 py-2.5 overflow-hidden rounded-lg bg-slate-950 text-xs font-semibold text-white shadow-sm transition-all duration-300 block"
+            >
+              {/* React Official Cyan (#61DAFB) fills from left to right on hover */}
+              <span className="absolute inset-0 w-full h-full bg-[#61DAFB] transition-transform duration-300 ease-out transform translate-x-[-101%] group-hover:translate-x-0" />
+              <span className="relative z-10 group-hover:text-slate-950 transition-colors duration-200">
+                Consult an Expert
+              </span>
+            </Link>
 
-    {/* Secondary Button: Premium Border Highlight with Reduced Height */}
-    <Link 
-      href="#portfolio" 
-      className="group relative px-6 py-2.5 overflow-hidden rounded-lg border border-slate-200 bg-white text-xs font-semibold text-slate-600 hover:border-[#61DAFB] transition-colors duration-300 block"
-    >
-      {/* Soft React Cyan overlay fills from left to right on hover */}
-      <span className="absolute inset-0 w-full h-full bg-[#61DAFB]/10 transition-transform duration-300 ease-out transform translate-x-[-101%] group-hover:translate-x-0" />
-      <span className="relative z-10 group-hover:text-slate-950 transition-colors duration-200">
-        Our Capabilities
-      </span>
-    </Link>
-
-  </div>
-</motion.div>
-
+            {/* Secondary Button: Premium Border Highlight with Reduced Height */}
+            <Link
+              href="#portfolio"
+              className="group relative px-6 py-2.5 overflow-hidden rounded-lg border border-slate-200 bg-white text-xs font-semibold text-slate-600 hover:border-[#61DAFB] transition-colors duration-300 block"
+            >
+              {/* Soft React Cyan overlay fills from left to right on hover */}
+              <span className="absolute inset-0 w-full h-full bg-[#61DAFB]/10 transition-transform duration-300 ease-out transform translate-x-[-101%] group-hover:translate-x-0" />
+              <span className="relative z-10 group-hover:text-slate-950 transition-colors duration-200">
+                Our Capabilities
+              </span>
+            </Link>
+          </div>
+        </motion.div>
 
         {/* Right Column: High-Fidelity Dual Orbit Structure */}
         <div className="flex items-center justify-center min-h-[520px] relative select-none">
-          
           {/* Geometric Solar Track Outlines */}
           <div className="absolute h-[180px] w-[180px] rounded-full border border-slate-200/60 pointer-events-none" />
           <div className="absolute h-[360px] w-[360px] rounded-full border border-slate-200/60 pointer-events-none" />
 
           {/* ================= 1. INNER ORBIT LAYER (MERN Stack - 4 Icons) ================= */}
-          <motion.div 
+          <motion.div
             className="absolute h-[180px] w-[180px] flex items-center justify-center rounded-full"
             animate={{ rotate: 360 }}
             transition={{ repeat: Infinity, duration: 28, ease: "linear" }}
           >
             {innerOrbitItems.map((item, index) => {
-              const radius = 90; 
+              const radius = 90;
               const radian = (item.angle * Math.PI) / 180;
               const x = radius * Math.cos(radian);
               const y = radius * Math.sin(radian);
@@ -115,10 +109,14 @@ export default function TechHeroSection() {
                     top: `calc(50% + ${y}px - 24px)`,
                   }}
                 >
-                  <motion.div 
+                  <motion.div
                     className="flex h-12 w-12 items-center justify-center rounded-full border border-slate-100 bg-white shadow-[0_4px_12px_rgba(0,0,0,0.04)] cursor-pointer hover:scale-110 transition-transform p-2"
                     animate={{ rotate: -360 }}
-                    transition={{ repeat: Infinity, duration: 28, ease: "linear" }}
+                    transition={{
+                      repeat: Infinity,
+                      duration: 28,
+                      ease: "linear",
+                    }}
                   >
                     <Image
                       src={item.src}
@@ -127,9 +125,10 @@ export default function TechHeroSection() {
                       height={24}
                       className="h-6 w-6 object-contain pointer-events-none"
                       onError={(e) => {
-                        e.currentTarget.style.display = 'none';
+                        e.currentTarget.style.display = "none";
                         const parent = e.currentTarget.parentElement;
-                        if (parent) parent.innerHTML = `<span class="text-slate-800 font-bold text-xs">${item.title.charAt(0)}</span>`;
+                        if (parent)
+                          parent.innerHTML = `<span class="text-slate-800 font-bold text-xs">${item.title.charAt(0)}</span>`;
                       }}
                     />
                   </motion.div>
@@ -139,13 +138,13 @@ export default function TechHeroSection() {
           </motion.div>
 
           {/* ================= 2. OUTER ORBIT LAYER (Remaining Stack - 8 Icons perfectly divided at 45°) ================= */}
-          <motion.div 
+          <motion.div
             className="absolute h-[360px] w-[360px] flex items-center justify-center rounded-full"
-            animate={{ rotate: -360 }} 
+            animate={{ rotate: -360 }}
             transition={{ repeat: Infinity, duration: 45, ease: "linear" }}
           >
             {outerOrbitItems.map((item, index) => {
-              const radius = 180; 
+              const radius = 180;
               const radian = (item.angle * Math.PI) / 180;
               const x = radius * Math.cos(radian);
               const y = radius * Math.sin(radian);
@@ -159,10 +158,14 @@ export default function TechHeroSection() {
                     top: `calc(50% + ${y}px - 28px)`,
                   }}
                 >
-                  <motion.div 
+                  <motion.div
                     className="flex h-14 w-14 items-center justify-center rounded-full border border-slate-100 bg-white shadow-[0_6px_18px_rgba(0,0,0,0.05)] cursor-pointer hover:scale-110 transition-transform p-2.5"
                     animate={{ rotate: 360 }}
-                    transition={{ repeat: Infinity, duration: 45, ease: "linear" }}
+                    transition={{
+                      repeat: Infinity,
+                      duration: 45,
+                      ease: "linear",
+                    }}
                   >
                     <Image
                       src={item.src}
@@ -171,9 +174,10 @@ export default function TechHeroSection() {
                       height={28}
                       className="h-7 w-7 object-contain pointer-events-none"
                       onError={(e) => {
-                        e.currentTarget.style.display = 'none';
+                        e.currentTarget.style.display = "none";
                         const parent = e.currentTarget.parentElement;
-                        if (parent) parent.innerHTML = `<span class="text-slate-800 font-bold text-xs">${item.title.substring(0,2)}</span>`;
+                        if (parent)
+                          parent.innerHTML = `<span class="text-slate-800 font-bold text-xs">${item.title.substring(0, 2)}</span>`;
                       }}
                     />
                   </motion.div>
@@ -185,21 +189,21 @@ export default function TechHeroSection() {
           {/* ================= 3. FIXED CENTRAL LOGO (Python Core Shield) ================= */}
           <div className="relative z-20 flex h-24 w-24 items-center justify-center rounded-full border border-slate-100 bg-white shadow-[0_12px_40px_rgba(0,0,0,0.08)] ring-4 ring-slate-50/50 transition-transform duration-300 hover:scale-105">
             <Image
-              src="/python.png" 
+              src="/python.png"
               alt="Python Main System"
               width={46}
               height={46}
               className="h-11 w-11 object-contain filter drop-shadow-sm"
               onError={(e) => {
-                e.currentTarget.style.display = 'none';
+                e.currentTarget.style.display = "none";
                 const parent = e.currentTarget.parentElement;
-                if (parent) parent.innerHTML = '<span class="text-slate-800 font-extrabold text-xl">Py</span>';
+                if (parent)
+                  parent.innerHTML =
+                    '<span class="text-slate-800 font-extrabold text-xl">Py</span>';
               }}
             />
           </div>
-
         </div>
-
       </div>
     </section>
   );

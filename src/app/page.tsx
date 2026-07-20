@@ -317,7 +317,7 @@ export default function TechHeroSection() {
         <div className="flex items-center justify-center min-h-125 relative">
           
           {/* Subtle Outer Visual Ring Lines */}
-          <div className="absolute h-45 w-[180px] rounded-full border border-slate-200 pointer-events-none" />
+          <div className="absolute h-45 w-45 rounded-full border border-slate-200 pointer-events-none" />
           <div className="absolute h-[360px] w-[360px] rounded-full border border-slate-200 pointer-events-none" />
 
           {/* Main Orbit Spinner Layer using Framer Motion instead of buggy CSS variables */}

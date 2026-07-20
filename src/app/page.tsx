@@ -80,7 +80,7 @@ export default function TechHeroSection() {
 
           {/* Main Orbit Spinner Ring */}
           <motion.div 
-            className="absolute h-[360px] w-[360px] flex items-center justify-center rounded-full"
+            className="absolute h-90 w-[360px] flex items-center justify-center rounded-full"
             animate={{ rotate: 360 }}
             transition={{ repeat: Infinity, duration: 35, ease: "linear" }}
           >

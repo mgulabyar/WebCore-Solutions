@@ -767,12 +767,10 @@ export default function PerformanceCTASection() {
       {/* FULL CONTENT BLOCK (Drops flawlessly from Top to Bottom) */}
       <div className={`premium-drop-node ${hasTriggered ? "drop-active" : ""} relative z-10 mx-auto flex max-w-3xl flex-col items-center text-center px-4`}>
         
-        {/* Original Heading Text Block */}
         <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
           Ready to build something exceptional?
         </h2>
 
-        {/* Original Paragraph Block */}
         <p className="mt-4 max-w-xl text-sm text-blue-100 font-normal opacity-90">
           Schedule a consultation with our team to discuss your project and explore how we can help you achieve your goals.
         </p>

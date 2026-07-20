@@ -322,7 +322,7 @@ export default function TechHeroSection() {
 
           {/* Main Orbit Spinner Layer using Framer Motion instead of buggy CSS variables */}
           <motion.div 
-            className="absolute h-90 w-[360px] flex items-center justify-center rounded-full"
+            className="absolute h-90 w-90 flex items-center justify-center rounded-full"
             animate={{ rotate: 360 }}
             transition={{ repeat: Infinity, duration: 35, ease: "linear" }}
           >

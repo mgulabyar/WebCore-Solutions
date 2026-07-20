@@ -729,7 +729,7 @@ export default function PerformanceCTASection() {
         }
       },
       { 
-        rootMargin: "0px 0px -150px 0px", // Pre-loads calculation before section displays completely
+        rootMargin: "0px 0px -150px 0px", // Pre-loads compilation frames before entry
         threshold: 0.01 
       }
     );
@@ -746,27 +746,69 @@ export default function PerformanceCTASection() {
       ref={containerRef}
       className="relative w-full overflow-hidden bg-gradient-to-r from-blue-600 to-blue-700 py-24 flex justify-center items-center select-none"
     >
-      {/* 🚀 Ultra-Premium Elastic Gravitational Drop Engine */}
+      {/* 🚀 Ultra-Premium Unified Gravity & Center-Out Ripple Engine */}
       <style jsx>{`
-        .premium-gravity-node {
+        .unified-gravity-block {
           opacity: 0;
           will-change: transform, opacity;
-          /* Top-Trend Elastic Cubic Curve: Fast drop + satisfying smooth mechanical micro-bounce */
-          transition: transform 1.4s cubic-bezier(0.175, 0.885, 0.32, 1.12), opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1);
-          transform: translateY(-100vh); /* Absolute top screen boundary clearance */
+          /* Advanced single-frame cubic path tracking that completely eliminates mid-scroll friction */
+          transition: transform 1.5s cubic-bezier(0.16, 1, 0.3, 1), opacity 1.1s cubic-bezier(0.16, 1, 0.3, 1);
+          transform: translateY(-100vh); /* Absolute screen ceiling clearance across all sizes */
         }
         
-        .premium-gravity-node.gravity-active {
+        .unified-gravity-block.gravity-active {
           opacity: 1;
-          transform: translateY(0); /* Drops flawlessly and locks natively on final layout position */
+          transform: translateY(0); /* Drops instantly fast and locks natively on viewport coordinate zero */
+        }
+
+        /* Center-Out Radial Shimmer Expansion Masks */
+        .center-ripple-btn {
+          position: relative;
+          overflow: hidden;
+          z-index: 1;
+        }
+        .center-ripple-btn::before {
+          content: '';
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          width: 0;
+          height: 0;
+          border-radius: 50%;
+          transform: translate(-50%, -50%);
+          transition: width 0.5s cubic-bezier(0.25, 1, 0.4, 1), height 0.5s cubic-bezier(0.25, 1, 0.4, 1);
+          z-index: -1;
+          will-change: width, height;
+        }
+        
+        /* Button 1 Ripple Configuration (Halka / Light Powder Blue Expansion) */
+        .btn-light-ripple::before {
+          background-color: #f1f5f9;
+        }
+        .btn-light-ripple:hover::before {
+          width: 320px;
+          height: 320px;
+        }
+
+        /* Button 2 Ripple Configuration (Full Solid White Expansion bursting out) */
+        .btn-full-ripple::before {
+          background-color: #ffffff;
+        }
+        .btn-full-ripple:hover::before {
+          width: 320px;
+          height: 320px;
+        }
+        .btn-full-ripple:hover {
+          color: #2563eb !important; /* Converts text dynamically to match your blue-600 palette */
+          border-color: #ffffff !important;
         }
       `}</style>
 
       {/* YOUR EXACT ORIGINAL GRID PATTERN MESH OVERLAY */}
       <div className="pointer-events-none absolute inset-0 opacity-10 z-0 bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:24px_24px]" />
 
-      {/* FULL CONTENT BLOCK (Drops flawlessly from absolute screen top boundary) */}
-      <div className={`premium-gravity-node ${hasTriggered ? "gravity-active" : ""} relative z-10 mx-auto flex max-w-3xl flex-col items-center text-center px-4`}>
+      {/* UNIFIED CONTENT BLOCK (Drops completely synced from absolute monitor top boundary) */}
+      <div className={`unified-gravity-block ${hasTriggered ? "gravity-active" : ""} relative z-10 mx-auto flex max-w-3xl flex-col items-center text-center px-4`}>
         
         {/* Original Heading Text Block */}
         <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
@@ -778,21 +820,21 @@ export default function PerformanceCTASection() {
           Schedule a consultation with our team to discuss your project and explore how we can help you achieve your goals.
         </p>
 
-        {/* ACTION BUTTON ROUTING ROW */}
-        <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
+        {/* ACTION BUTTON ROUTING ROW WITH INTEGRATED CENTER EXPANSION INTERACTION */}
+        <div className="mt-8 flex flex-wrap items-center justify-center gap-3 w-full">
           
-          {/* Button 1: Book Consultation (Your exact original styles + premium mechanical physics) */}
+          {/* Button 1: Book Consultation (Your exact original styles + Light Center-Out Expansion) */}
           <Link
             href="#contact"
-            className="rounded-full bg-white px-6 py-3 text-sm font-semibold text-blue-700 shadow-sm transition-all duration-300 hover:brightness-105 active:scale-95 block"
+            className="center-ripple-btn btn-light-ripple rounded-full bg-white px-6 py-3 text-sm font-semibold text-blue-700 shadow-sm transition-all duration-300 active:scale-95 block"
           >
             Book a Consultation
           </Link>
 
-          {/* Button 2: View Our Work (Your exact original styles + premium mechanical physics) */}
+          {/* Button 2: View Our Work (Your exact original border styles + Full Solid White Burst) */}
           <Link
             href="#portfolio"
-            className="rounded-full border border-white/40 bg-white/10 px-6 py-3 text-sm font-semibold text-white shadow-sm transition-all duration-300 hover:bg-white/20 active:scale-95 block"
+            className="center-ripple-btn btn-full-ripple rounded-full border border-white/40 bg-white/10 px-6 py-3 text-sm font-semibold text-white shadow-sm transition-all duration-500 active:scale-95 block"
           >
             View Our Work
           </Link>

@@ -711,6 +711,7 @@
 // }
 
 
+
 "use client";
 
 import { useEffect, useRef, useState } from "react";
@@ -728,7 +729,7 @@ export default function PerformanceCTASection() {
         }
       },
       { 
-        rootMargin: "0px 0px -120px 0px", // Pre-loads calculation before section displays completely
+        rootMargin: "0px 0px -150px 0px", // Pre-loads calculation before section displays completely
         threshold: 0.01 
       }
     );
@@ -745,46 +746,50 @@ export default function PerformanceCTASection() {
       ref={containerRef}
       className="relative w-full overflow-hidden bg-gradient-to-r from-blue-600 to-blue-700 py-24 flex justify-center items-center select-none"
     >
-      {/* 🚀 Ultra-Premium Native Vertical Drop Engine */}
+      {/* 🚀 Ultra-Premium Elastic Gravitational Drop Engine */}
       <style jsx>{`
-        .premium-drop-node {
+        .premium-gravity-node {
           opacity: 0;
           will-change: transform, opacity;
-          /* Smooth exponential easing curve that removes mid-scroll stutter completely */
-          transition: transform 1.6s cubic-bezier(0.16, 1, 0.3, 1), opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1);
-          transform: translateY(-120px); /* Pure top vertical boundary clearance */
+          /* Top-Trend Elastic Cubic Curve: Fast drop + satisfying smooth mechanical micro-bounce */
+          transition: transform 1.4s cubic-bezier(0.175, 0.885, 0.32, 1.12), opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+          transform: translateY(-100vh); /* Absolute top screen boundary clearance */
         }
         
-        .premium-drop-node.drop-active {
+        .premium-gravity-node.gravity-active {
           opacity: 1;
-          transform: translateY(0); /* Drops smoothly and locks natively on final layout position */
+          transform: translateY(0); /* Drops flawlessly and locks natively on final layout position */
         }
       `}</style>
 
       {/* YOUR EXACT ORIGINAL GRID PATTERN MESH OVERLAY */}
       <div className="pointer-events-none absolute inset-0 opacity-10 z-0 bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:24px_24px]" />
 
-      {/* FULL CONTENT BLOCK (Drops flawlessly from Top to Bottom) */}
-      <div className={`premium-drop-node ${hasTriggered ? "drop-active" : ""} relative z-10 mx-auto flex max-w-3xl flex-col items-center text-center px-4`}>
+      {/* FULL CONTENT BLOCK (Drops flawlessly from absolute screen top boundary) */}
+      <div className={`premium-gravity-node ${hasTriggered ? "gravity-active" : ""} relative z-10 mx-auto flex max-w-3xl flex-col items-center text-center px-4`}>
         
+        {/* Original Heading Text Block */}
         <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
           Ready to build something exceptional?
         </h2>
 
+        {/* Original Paragraph Block */}
         <p className="mt-4 max-w-xl text-sm text-blue-100 font-normal opacity-90">
           Schedule a consultation with our team to discuss your project and explore how we can help you achieve your goals.
         </p>
 
+        {/* ACTION BUTTON ROUTING ROW */}
         <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
           
+          {/* Button 1: Book Consultation (Your exact original styles + premium mechanical physics) */}
           <Link
             href="#contact"
-            className="rounded-full bg-white px-6 py-3 text-sm font-semibold text-blue-700 shadow-md transition-all duration-300 hover:brightness-105 active:scale-95 block"
+            className="rounded-full bg-white px-6 py-3 text-sm font-semibold text-blue-700 shadow-sm transition-all duration-300 hover:brightness-105 active:scale-95 block"
           >
             Book a Consultation
           </Link>
 
-          {/* Button 2: View Our Work (Your exact original styles + premium physics) */}
+          {/* Button 2: View Our Work (Your exact original styles + premium mechanical physics) */}
           <Link
             href="#portfolio"
             className="rounded-full border border-white/40 bg-white/10 px-6 py-3 text-sm font-semibold text-white shadow-sm transition-all duration-300 hover:bg-white/20 active:scale-95 block"

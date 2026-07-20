@@ -779,7 +779,6 @@ export default function PerformanceCTASection() {
 
         <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
           
-          {/* Button 1: Book Consultation (Your exact original styles + premium physics) */}
           <Link
             href="#contact"
             className="rounded-full bg-white px-6 py-3 text-sm font-semibold text-blue-700 shadow-md transition-all duration-300 hover:brightness-105 active:scale-95 block"

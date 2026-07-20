@@ -777,7 +777,6 @@ export default function PerformanceCTASection() {
           Schedule a consultation with our team to discuss your project and explore how we can help you achieve your goals.
         </p>
 
-        {/* ACTION BUTTON ROUTING ROW */}
         <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
           
           {/* Button 1: Book Consultation (Your exact original styles + premium physics) */}

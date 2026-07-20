@@ -203,7 +203,7 @@ export default function Home() {
                     Clean design, faster systems, better business results.
                   </p>
                   <div className="mt-4 h-2 w-full rounded-full bg-white/10">
-                    <div className="h-2 w-3/4 rounded-full bg-gradient-to-r from-blue-500 to-cyan-400" />
+                    <div className="h-2 w-3/4 rounded-full bg-linear-to-r from-blue-500 to-cyan-400" />
                   </div>
                 </div>
               </div>

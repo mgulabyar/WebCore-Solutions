@@ -20,11 +20,12 @@ const outerOrbitItems = [
   { src: "/c++.png", title: "C++", angle: 225 },
   { src: "/js.png", title: "JavaScript", angle: 270 },
   { src: "/ts.png", title: "TypeScript", angle: 315 },
+  { src: "/python.png", title: "Python", angle: 360 },
 ];
 
 export default function TechHeroSection() {
   return (
-    <section className="w-full min-h-[85vh] flex items-center bg-white text-slate-900 overflow-hidden relative py-12 lg:py-20">
+    <section className="w-full min-h-[85vh] flex items-center bg-white text-slate-900 overflow-hidden relative py-12">
       <div className="absolute inset-0 opacity-[0.015] bg-[radial-gradient(#1d4ed8_1px,transparent_1px)] [background-size:32px_32px] pointer-events-none" />
       <div className="absolute top-1/3 right-1/4 w-[500px] h-[500px] bg-blue-500/5 rounded-full blur-3xl pointer-events-none" />
 
@@ -35,7 +36,6 @@ export default function TechHeroSection() {
           transition={{ duration: 0.7, ease: "easeOut" }}
           className="flex flex-col justify-center"
         >
-          {/* Professional & Weight-Optimized Typography (Sleek Semibold style) */}
           <h1 className="text-3xl font-semibold tracking-tight text-slate-900 sm:text-4xl lg:text-[44px] leading-[1.2]">
             Building High-Performance <br />
             <span className="text-[#2563eb] font-bold">
@@ -183,10 +183,10 @@ export default function TechHeroSection() {
           </motion.div>
 
           {/* ================= 3. FIXED CENTRAL LOGO (Python Core Shield) ================= */}
-          <div className="relative z-20 flex h-24 w-24 items-center justify-center rounded-full border border-slate-100 bg-white shadow-[0_12px_40px_rgba(0,0,0,0.08)] ring-4 ring-slate-50/50 transition-transform duration-300 hover:scale-105">
+          <div className="relative z-18 flex h-16 w-16 items-center justify-center rounded-full border border-slate-100 bg-white shadow-[0_12px_40px_rgba(0,0,0,0.08)] ring-4 ring-slate-50/50 transition-transform duration-300 hover:scale-105">
             <Image
-              src="/python.png"
-              alt="Python Main System"
+              src="/web.png"
+              alt="Web Main System"
               width={46}
               height={46}
               className="h-11 w-11 object-contain filter drop-shadow-sm"
@@ -195,7 +195,7 @@ export default function TechHeroSection() {
                 const parent = e.currentTarget.parentElement;
                 if (parent)
                   parent.innerHTML =
-                    '<span class="text-slate-800 font-extrabold text-xl">Py</span>';
+                    '<span class="text-slate-800 font-extrabold text-xl">Web</span>';
               }}
             />
           </div>

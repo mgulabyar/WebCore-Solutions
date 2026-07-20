@@ -24,9 +24,7 @@ const outerOrbitItems = [
 
 export default function TechHeroSection() {
   return (
-    // w-full aur bg-white ensure karta hai ke screen ke dono taraf aane wali black bars jadd se khatam ho jayein
     <section className="w-full min-h-[85vh] flex items-center bg-white text-slate-900 overflow-hidden relative py-12 lg:py-20">
-      {/* Background Subtle Tech Ambiance Layer */}
       <div className="absolute inset-0 opacity-[0.015] bg-[radial-gradient(#1d4ed8_1px,transparent_1px)] [background-size:32px_32px] pointer-events-none" />
       <div className="absolute top-1/3 right-1/4 w-[500px] h-[500px] bg-blue-500/5 rounded-full blur-3xl pointer-events-none" />
 

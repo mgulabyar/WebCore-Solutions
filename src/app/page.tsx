@@ -26,8 +26,8 @@ const outerOrbitItems = [
 export default function TechHeroSection() {
   return (
     <section className="w-full min-h-[85vh] flex items-center bg-white text-slate-900 overflow-hidden relative py-12">
-      <div className="absolute inset-0 opacity-[0.015] bg-[radial-gradient(#1d4ed8_1px,transparent_1px)] [background-size:32px_32px] pointer-events-none" />
-      <div className="absolute top-1/3 right-1/4 w-[500px] h-[500px] bg-blue-500/5 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute inset-0 opacity-[0.015] bg-[radial-gradient(#1d4ed8_1px,transparent_1px)] bg-size-[32px_32px] pointer-events-none" />
+      <div className="absolute top-1/3 right-1/4 w-125 h-125 bg-blue-500/5 rounded-full blur-3xl pointer-events-none" />
 
       <div className="mx-auto w-full max-w-7xl px-6 sm:px-8 lg:px-12 grid items-center gap-16 lg:grid-cols-2 relative z-10">
         <motion.div
@@ -79,14 +79,14 @@ export default function TechHeroSection() {
         </motion.div>
 
         {/* Right Column: High-Fidelity Dual Orbit Structure */}
-        <div className="flex items-center justify-center min-h-[520px] relative select-none">
+        <div className="flex items-center justify-center min-h-130 relative select-none">
           {/* Geometric Solar Track Outlines */}
-          <div className="absolute h-[180px] w-[180px] rounded-full border border-slate-200/60 pointer-events-none" />
-          <div className="absolute h-[360px] w-[360px] rounded-full border border-slate-200/60 pointer-events-none" />
+          <div className="absolute h-45 w-45 rounded-full border border-slate-200/60 pointer-events-none" />
+          <div className="absolute h-90 w-90 rounded-full border border-slate-200/60 pointer-events-none" />
 
           {/* ================= 1. INNER ORBIT LAYER (MERN Stack - 4 Icons) ================= */}
           <motion.div
-            className="absolute h-[180px] w-[180px] flex items-center justify-center rounded-full"
+            className="absolute h-[180px] w-45 flex items-center justify-center rounded-full"
             animate={{ rotate: 360 }}
             transition={{ repeat: Infinity, duration: 28, ease: "linear" }}
           >

@@ -8,7 +8,6 @@ import { useInView, useMotionValue, useTransform, animate } from "framer-motion"
 import { FaStar } from "react-icons/fa";
 import { FiExternalLink, FiGithub } from "react-icons/fi";
 
-// ---------- HERO ORBIT SECTION ----------
 
 const innerOrbitItems = [
   { src: "/mongo-db.png", title: "MongoDB", angle: 0 },
@@ -92,7 +91,6 @@ function OrbitGroup({
   );
 }
 
-// ---------- PERFORMANCE METRICS SECTION ----------
 
 const metricsDataset = [
   {
@@ -383,7 +381,6 @@ function PerformanceMetricsSection() {
   );
 }
 
-// ---------- TESTIMONIALS SECTION ----------
 
 const testimonials = [
   {
@@ -459,8 +456,6 @@ function TestimonialsSection() {
     </section>
   );
 }
-
-// ---------- RECENT PROJECTS SECTION ----------
 
 const recentProjects = [
   {
@@ -540,7 +535,6 @@ function RecentProjectsSection() {
   );
 }
 
-// ---------- HERO SECTION ----------
 
 function HeroSection() {
   return (
@@ -605,7 +599,7 @@ function HeroSection() {
         </motion.div>
 
         <div className="relative flex h-[310px] w-full items-center justify-center overflow-visible sm:h-[480px] lg:h-[510px] max-sm:pt-14 mt-4 lg:mt-0">
-          {/* Tight gap: outer 230/280/320, inner 120/140/160 */}
+
           <div className="absolute h-[230px] w-[230px] sm:h-[280px] sm:w-[280px] lg:h-[320px] lg:w-[320px] rounded-full border border-slate-200/80 pointer-events-none" />
           <div className="absolute h-[120px] w-[120px] sm:h-[140px] sm:w-[140px] lg:h-[160px] lg:w-[160px] rounded-full border border-slate-200/60 pointer-events-none" />
 
@@ -694,7 +688,6 @@ function HeroSection() {
   );
 }
 
-// ---------- CTA SECTION ----------
 
 function PerformanceCTASection() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -835,19 +828,14 @@ function PerformanceCTASection() {
 export default function TechHeroSection() {
   return (
     <div>
-      {/* HERO SECTION */}
       <HeroSection />
 
-      {/* PERFORMANCE METRICS SECTION */}
       <PerformanceMetricsSection />
 
-      {/* TESTIMONIALS SECTION */}
       <TestimonialsSection />
 
-      {/* RECENT PROJECTS SECTION */}
       <RecentProjectsSection />
 
-      {/* CTA SECTION */}
       <PerformanceCTASection />
     </div>
   );

@@ -372,7 +372,7 @@ function PerformanceMetricsSection() {
             <h3 className="text-sm font-semibold text-slate-700 tracking-tight mt-1.5">
               {card.title}
             </h3>
-            <p className="text-xs leading-relaxed text-slate-400 mt-1 max-w-[210px]">
+            <p className="text-xs leading-relaxed text-slate-400 mt-1 max-w-52.5">
               {card.desc}
             </p>
           </div>

@@ -517,7 +517,7 @@ export default function Footer() {
               className={`wc-tilt-reveal ${isVisible ? "wc-reveal-active" : ""} space-y-4`}
             >
               <div className="flex items-center gap-4">
-                <div className="flex h-12 w-12 sm:h-14 sm:w-14 items-center justify-center rounded-full bg-gradient-to-br from-[#0062D6] to-[#0B3C95] shadow-lg ring-1 ring-[#0062D6]/20">
+                <div className="flex h-12 w-12 sm:h-14 sm:w-14 items-center justify-center rounded-full bg-linear-to-br from-[#0062D6] to-[#0B3C95] shadow-lg ring-1 ring-[#0062D6]/20">
                   <span className="text-2xl font-semibold text-white">W</span>
                 </div>
                 <div>

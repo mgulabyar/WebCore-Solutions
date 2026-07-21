@@ -414,20 +414,57 @@ export default function Footer() {
   return (
     <footer ref={sectionRef} className="relative w-full overflow-hidden">
       <style>{`
-        .wc-tilt-reveal {
+        /* MAIN CONTAINER - LEFT COLUMN (Enters from RIGHT screen edge) */
+        .wc-float-left {
           opacity: 0;
-          transform: perspective(900px) rotateX(10deg) translateY(34px);
-          clip-path: inset(0 0 14% 0);
-          will-change: transform, opacity, clip-path;
-          transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1),
-            transform 1s cubic-bezier(0.16, 1, 0.3, 1),
-            clip-path 1s cubic-bezier(0.16, 1, 0.3, 1);
+          transform: translateX(120vw) translateY(0);
+          will-change: transform, opacity;
+          transition: opacity 1s ease-out,
+            transform 2.2s cubic-bezier(0.16, 1, 0.3, 1);
         }
-        .wc-tilt-reveal.wc-reveal-active {
+        .wc-float-left.wc-reveal-active {
           opacity: 1;
-          transform: perspective(900px) rotateX(0deg) translateY(0);
-          clip-path: inset(0 0 0% 0);
+          transform: translateX(0) translateY(0);
         }
+
+        /* MAIN CONTAINER - RIGHT COLUMN (Enters from LEFT screen edge) */
+        .wc-float-right {
+          opacity: 0;
+          transform: translateX(-120vw) translateY(0);
+          will-change: transform, opacity;
+          transition: opacity 1s ease-out,
+            transform 2.2s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .wc-float-right.wc-reveal-active {
+          opacity: 1;
+          transform: translateX(0) translateY(0);
+        }
+
+        /* BOTTOM SECTIONS - Enter from sides */
+        .wc-float-bottom-left {
+          opacity: 0;
+          transform: translateX(150vw) translateY(30px);
+          will-change: transform, opacity;
+          transition: opacity 0.9s ease-out,
+            transform 2s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .wc-float-bottom-left.wc-reveal-active {
+          opacity: 1;
+          transform: translateX(0) translateY(0);
+        }
+
+        .wc-float-bottom-right {
+          opacity: 0;
+          transform: translateX(-150vw) translateY(30px);
+          will-change: transform, opacity;
+          transition: opacity 0.9s ease-out,
+            transform 2s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .wc-float-bottom-right.wc-reveal-active {
+          opacity: 1;
+          transform: translateX(0) translateY(0);
+        }
+
         .wc-signature-line {
           position: relative;
         }
@@ -444,6 +481,7 @@ export default function Footer() {
         .wc-signature-line.wc-reveal-active::after {
           width: 100%;
         }
+
         .wc-subscribe-btn {
           position: relative;
           overflow: hidden;
@@ -462,11 +500,14 @@ export default function Footer() {
         .wc-subscribe-btn:hover::before {
           left: 130%;
         }
+
         @media (prefers-reduced-motion: reduce) {
-          .wc-tilt-reveal {
+          .wc-float-left,
+          .wc-float-right,
+          .wc-float-bottom-left,
+          .wc-float-bottom-right {
             transition: none;
             transform: none;
-            clip-path: none;
             opacity: 1;
           }
           .wc-signature-line::after {
@@ -500,24 +541,26 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="relative bg-linear-to-b from-neutral-950 via-neutral-900 to-neutral-950 text-white pt-16 sm:pt-20 pb-14 sm:pb-16">
-        <div className="absolute inset-0 bg-linear-to-r from-blue-900/10 via-transparent to-blue-900/10 opacity-50" />
-        <div className="absolute inset-0 opacity-[0.015] bg-[radial-gradient(#ffffff_1px,transparent_1px)] bg-size-[32px_32px]" />
+      <div className="relative bg-gradient-to-b from-neutral-950 via-neutral-900 to-neutral-950 text-white pt-16 sm:pt-20 pb-14 sm:pb-16">
+        <div className="absolute inset-0 bg-gradient-to-r from-blue-900/10 via-transparent to-blue-900/10 opacity-50" />
+        <div className="absolute inset-0 opacity-[0.015] bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:32px_32px]" />
         <div className="absolute top-20 left-10 h-64 w-64 rounded-full bg-[#0076FF]/5 blur-3xl" />
         <div className="absolute bottom-20 right-10 h-64 w-64 rounded-full bg-blue-600/5 blur-3xl" />
 
         <div className="relative z-10 mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+          {/* Top Section - LEFT & RIGHT columns */}
           <div
             className={`wc-signature-line grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 pb-14 lg:pb-16 border-b border-neutral-800 ${
               isVisible ? "wc-reveal-active" : ""
             }`}
           >
+            {/* LEFT COLUMN - Enters from RIGHT screen edge */}
             <div
               style={{ transitionDelay: "0ms" }}
-              className={`wc-tilt-reveal ${isVisible ? "wc-reveal-active" : ""} space-y-4`}
+              className={`wc-float-left ${isVisible ? "wc-reveal-active" : ""} space-y-4`}
             >
               <div className="flex items-center gap-4">
-                <div className="flex h-12 w-12 sm:h-14 sm:w-14 items-center justify-center rounded-full bg-linear-to-br from-[#0062D6] to-[#0B3C95] shadow-lg ring-1 ring-[#0062D6]/20">
+                <div className="flex h-12 w-12 sm:h-14 sm:w-14 items-center justify-center rounded-full bg-gradient-to-br from-[#0062D6] to-[#0B3C95] shadow-lg ring-1 ring-[#0062D6]/20">
                   <span className="text-2xl font-semibold text-white">W</span>
                 </div>
                 <div>
@@ -541,7 +584,7 @@ export default function Footer() {
                     href={social.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group flex h-11 w-11 items-center justify-center rounded-full border border-neutral-700 bg-neutral-800/50 text-neutral-400 text-sm transition-all duration-300 hover:border-[#0076FF] hover:bg-linear-to-br hover:from-[#0076FF] hover:to-[#0B3C95] hover:text-white hover:shadow-lg hover:shadow-[#0076FF]/20 hover:-translate-y-0.5"
+                    className="group flex h-11 w-11 items-center justify-center rounded-full border border-neutral-700 bg-neutral-800/50 text-neutral-400 text-sm transition-all duration-300 hover:border-[#0076FF] hover:bg-gradient-to-br hover:from-[#0076FF] hover:to-[#0B3C95] hover:text-white hover:shadow-lg hover:shadow-[#0076FF]/20 hover:-translate-y-0.5"
                     aria-label={social.label}
                   >
                     <social.icon className="h-5 w-5" />
@@ -550,9 +593,10 @@ export default function Footer() {
               </div>
             </div>
 
+            {/* RIGHT COLUMN - Enters from LEFT screen edge */}
             <div
-              style={{ transitionDelay: "140ms" }}
-              className={`wc-tilt-reveal ${isVisible ? "wc-reveal-active" : ""} lg:pl-12`}
+              style={{ transitionDelay: "200ms" }}
+              className={`wc-float-right ${isVisible ? "wc-reveal-active" : ""} lg:pl-12`}
             >
               <div className="flex items-center gap-2.5 mb-5">
                 <FiSend className="h-5 w-5 text-[#0076FF]" />
@@ -579,7 +623,7 @@ export default function Footer() {
                 </div>
                 <button
                   type="submit"
-                  className="wc-subscribe-btn group inline-flex items-center justify-center gap-2.5 rounded-full bg-linear-to-r from-[#0076FF] to-[#0B3C95] px-6 py-3.5 text-sm font-semibold text-white transition-all duration-300 hover:from-[#0B3C95] hover:to-[#0076FF] hover:shadow-none active:scale-95"
+                  className="wc-subscribe-btn group inline-flex items-center justify-center gap-2.5 rounded-full bg-gradient-to-r from-[#0076FF] to-[#0B3C95] px-6 py-3.5 text-sm font-semibold text-white transition-all duration-300 hover:from-[#0B3C95] hover:to-[#0076FF] hover:shadow-none active:scale-95"
                 >
                   Subscribe
                   <FiArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1.5" />
@@ -594,37 +638,91 @@ export default function Footer() {
             </div>
           </div>
 
+          {/* Bottom Sections - 2 left (from right), 2 right (from left) */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 sm:gap-10 pt-12">
-            {footerSections.map((section, idx) => (
-              <div
-                key={section.title}
-                style={{ transitionDelay: `${idx * 130}ms` }}
-                className={`wc-tilt-reveal ${isVisible ? "wc-reveal-active" : ""}`}
-              >
-                <h4 className="text-sm font-semibold text-white uppercase tracking-wider mb-5">
-                  {section.title}
-                </h4>
-                <ul className="space-y-3.5">
-                  {section.links.map((link) => (
-                    <li key={link.label}>
+            {/* Services - Left side, enters from RIGHT */}
+            <div
+              style={{ transitionDelay: "500ms" }}
+              className={`wc-float-bottom-left ${isVisible ? "wc-reveal-active" : ""}`}
+            >
+              <h4 className="text-sm font-semibold text-white uppercase tracking-wider mb-5">
+                Services
+              </h4>
+              <ul className="space-y-3.5">
+                {["Web Development", "Mobile Apps", "Cloud Solutions", "UI/UX Design", "API Integration"].map(
+                  (label) => (
+                    <li key={label}>
                       <Link
-                        href={link.href}
+                        href="/services"
                         className="text-sm text-neutral-400 hover:text-[#0076FF] transition-colors duration-300 relative group"
                       >
                         <span className="relative inline-block">
-                          {link.label}
+                          {label}
                           <span className="absolute bottom-0 left-1/2 h-0.5 -translate-x-1/2 bg-[#0076FF] transition-all duration-350 ease-out origin-center w-0 group-hover:w-full" />
                         </span>
                       </Link>
                     </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
+                  )
+                )}
+              </ul>
+            </div>
 
+            {/* Company - Left side, enters from RIGHT */}
             <div
-              style={{ transitionDelay: `${footerSections.length * 130}ms` }}
-              className={`wc-tilt-reveal ${isVisible ? "wc-reveal-active" : ""}`}
+              style={{ transitionDelay: "650ms" }}
+              className={`wc-float-bottom-left ${isVisible ? "wc-reveal-active" : ""}`}
+            >
+              <h4 className="text-sm font-semibold text-white uppercase tracking-wider mb-5">
+                Company
+              </h4>
+              <ul className="space-y-3.5">
+                {["About Us", "Our Work", "Careers", "Blog", "Contact"].map((label) => (
+                  <li key={label}>
+                    <Link
+                      href="/about"
+                      className="text-sm text-neutral-400 hover:text-[#0076FF] transition-colors duration-300 relative group"
+                    >
+                      <span className="relative inline-block">
+                        {label}
+                        <span className="absolute bottom-0 left-1/2 h-0.5 -translate-x-1/2 bg-[#0076FF] transition-all duration-350 ease-out origin-center w-0 group-hover:w-full" />
+                      </span>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Resources - Right side, enters from LEFT */}
+            <div
+              style={{ transitionDelay: "800ms" }}
+              className={`wc-float-bottom-right ${isVisible ? "wc-reveal-active" : ""}`}
+            >
+              <h4 className="text-sm font-semibold text-white uppercase tracking-wider mb-5">
+                Resources
+              </h4>
+              <ul className="space-y-3.5">
+                {["Documentation", "Case Studies", "Support", "Privacy Policy", "Terms of Service"].map(
+                  (label) => (
+                    <li key={label}>
+                      <Link
+                        href="/blog"
+                        className="text-sm text-neutral-400 hover:text-[#0076FF] transition-colors duration-300 relative group"
+                      >
+                        <span className="relative inline-block">
+                          {label}
+                          <span className="absolute bottom-0 left-1/2 h-0.5 -translate-x-1/2 bg-[#0076FF] transition-all duration-350 ease-out origin-center w-0 group-hover:w-full" />
+                        </span>
+                      </Link>
+                    </li>
+                  )
+                )}
+              </ul>
+            </div>
+
+            {/* Contact - Right side, enters from LEFT */}
+            <div
+              style={{ transitionDelay: "950ms" }}
+              className={`wc-float-bottom-right ${isVisible ? "wc-reveal-active" : ""}`}
             >
               <h4 className="text-sm font-semibold text-white uppercase tracking-wider mb-5">
                 Get In Touch

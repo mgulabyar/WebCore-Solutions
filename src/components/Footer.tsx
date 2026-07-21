@@ -631,7 +631,7 @@ export default function Footer() {
               </h4>
               <div className="space-y-4">
                 <div className="flex items-start gap-3">
-                  <div className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-lg bg-neutral-800/50 border border-neutral-700 hover:border-[#0076FF]/50 transition-colors duration-300">
+                  <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-neutral-800/50 border border-neutral-700 hover:border-[#0076FF]/50 transition-colors duration-300">
                     <FiMapPin className="h-4 w-4 text-neutral-500 hover:text-[#0076FF] transition-colors duration-300" />
                   </div>
                   <p className="text-sm text-neutral-400 leading-relaxed">
@@ -639,7 +639,7 @@ export default function Footer() {
                   </p>
                 </div>
                 <div className="flex items-center gap-3">
-                  <div className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-lg bg-neutral-800/50 border border-neutral-700 hover:border-[#0076FF]/50 transition-colors duration-300">
+                  <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-neutral-800/50 border border-neutral-700 hover:border-[#0076FF]/50 transition-colors duration-300">
                     <FiPhone className="h-4 w-4 text-neutral-500 hover:text-[#0076FF] transition-colors duration-300" />
                   </div>
                   <a

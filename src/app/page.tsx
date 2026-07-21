@@ -274,7 +274,7 @@ function PerformanceMetricsSection() {
   return (
     <section
       ref={containerRef}
-      className="w-full bg-[#fbfcfe] pb-28 pt-12 px-6 flex flex-col justify-center items-center overflow-hidden font-sans select-none relative"
+      className=" w-full bg-[#fbfcfe] pb-20 pt-10 px-6 md:px-16 flex flex-col justify-center items-center overflow-hidden font-sans select-none relative"
     >
       <style jsx>{`
         .hardware-slide-card {
@@ -307,7 +307,7 @@ function PerformanceMetricsSection() {
       `}</style>
 
       <div className="text-center mb-16 max-w-xl relative z-10">
-        <span className="text-xs font-bold uppercase tracking-[0.2em] text-slate-400 block">
+        <span className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-400 block">
           Proven Performance
         </span>
         <h2 className="text-3xl font-semibold text-slate-900 tracking-tight mt-2 sm:text-4xl">
@@ -701,7 +701,7 @@ function HeroSection() {
             WEBCORE SOLUTIONS
           </div>
 
-          <h1 className="text-3xl font-semibold tracking-tight text-[#0062D6] sm:text-4xl lg:text-[48px] lg:leading-[1.15]">
+          <h1 className="text-3xl font-semibold tracking-tight text-slate-700 sm:text-4xl lg:text-[48px] lg:leading-[1.15]">
             Building high-performance digital infrastructure for modern
             businesses.
           </h1>

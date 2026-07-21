@@ -667,7 +667,7 @@ export default function Footer() {
                   </a>
                 </div>
                 <div className="flex items-center gap-3">
-                  <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-neutral-800/50 border border-neutral-700 hover:border-[#10B981]/50 transition-colors duration-300">
+                  <div className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-lg bg-neutral-800/50 border border-neutral-700 hover:border-[#10B981]/50 transition-colors duration-300">
                     <FiMessageCircle className="h-4 w-4 text-neutral-500 hover:text-[#10B981] transition-colors duration-300" />
                   </div>
                   <a

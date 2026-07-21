@@ -325,7 +325,7 @@ function PerformanceMetricsSection() {
               hasTriggered ? "slide-active" : ""
             } flex flex-col items-start rounded-2xl bg-white p-6 shadow-[0_4px_12px_rgba(0,0,0,0.015)] relative overflow-hidden transition-shadow duration-300 hover:shadow-[0_25px_50px_rgba(15,23,42,0.04)] group cursor-pointer w-full`}
           >
-            <span className="absolute left-0 top-0 bottom-0 w-0.75 bg-blue-500 rounded-l-2xl opacity-100 group-hover:opacity-0 transition-opacity duration-300 z-30" />
+            <span className="absolute left-0 top-0 bottom-0 w-[3px] bg-blue-500 rounded-l-2xl opacity-100 group-hover:opacity-0 transition-opacity duration-300 z-30" />
 
             <svg
               className="absolute inset-0 w-full h-full pointer-events-none z-20"

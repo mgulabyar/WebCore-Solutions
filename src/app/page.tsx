@@ -7,6 +7,7 @@ import { useEffect, useRef, useState } from "react";
 import { useInView, useMotionValue, useTransform, animate } from "framer-motion";
 import { FaStar } from "react-icons/fa";
 import { FiExternalLink, FiGithub } from "react-icons/fi";
+import Footer from "@/components/Footer";
 
 
 const innerOrbitItems = [
@@ -560,21 +561,21 @@ function HeroSection() {
         }}
       />
 
-      <div className="pointer-events-none absolute inset-0 opacity-[0.025] bg-[radial-gradient(#2563eb_1px,transparent_1px)] [background-size:32px_32px]" />
+      <div className="pointer-events-none absolute inset-0 opacity-[0.025] bg-[radial-gradient(#2563eb_1px,transparent_1px)] [background-size:40px_40px]" />
       <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_bottom,rgba(255,255,255,0.95),rgba(248,250,252,0.95))]" />
 
-      <div className="relative z-10 mx-auto grid w-full max-w-7xl items-center gap-4 px-5 mt-0 pt-0 lg:grid-cols-2 lg:gap-12 lg:px-8">
+      <div className="relative z-10 mx-auto grid w-full max-w-7xl jus items-center gap-4 px-5 mt-0 pt-0 lg:grid-cols-2 lg:gap-12 lg:px-8">
         <motion.div
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
           className="max-w-xl mt-0 pt-8 text-center lg:text-left"
         >
-          <div className="mb-4 inline-flex rounded-full border border-slate-400/80 bg-white/90 px-4 py-2 text-[11px] font-bold tracking-[0.15em] text-slate-400 uppercase shadow-sm">
+          <div className="mb-4 inline-flex rounded-full border border-[#0062D6] bg-white/90 px-4 py-2 text-[11px] font-bold tracking-[0.15em] text-slate-400 uppercase shadow-sm">
             WEBCORE SOLUTIONS
           </div>
 
-          <h1 className="text-3xl font-semibold tracking-tight text-slate-900 sm:text-4xl lg:text-[48px] lg:leading-[1.15]">
+          <h1 className="text-3xl font-semibold tracking-tight text-[#0062D6] sm:text-4xl lg:text-[48px] lg:leading-[1.15]">
             Building high-performance digital infrastructure for modern businesses.
           </h1>
 
@@ -585,13 +586,13 @@ function HeroSection() {
           <div className="mt-6 flex flex-wrap items-center justify-center lg:justify-start gap-3">
             <Link
               href="#contact"
-              className="rounded-full bg-slate-950 px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:bg-slate-800"
+              className="rounded-full bg-[#056fe9] px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:bg-blue-600 duration-300"
             >
               Start a Project
             </Link>
             <Link
               href="#portfolio"
-              className="rounded-full border border-slate-200 bg-white px-5 py-2.5 text-sm font-semibold text-slate-600 shadow-sm transition duration-300 hover:text-white hover:bg-slate-950"
+              className="rounded-full border border-[#0062D6] bg-white px-5 py-2.5 text-sm font-semibold text-[#0062D6] shadow-sm transition duration-300 hover:text-white hover:bg-[#0062D6]"
             >
               View Capabilities
             </Link>
@@ -600,8 +601,8 @@ function HeroSection() {
 
         <div className="relative flex h-[310px] w-full items-center justify-center overflow-visible sm:h-[480px] lg:h-[510px] max-sm:pt-14 mt-4 lg:mt-0">
 
-          <div className="absolute h-[230px] w-[230px] sm:h-[280px] sm:w-[280px] lg:h-[320px] lg:w-[320px] rounded-full border border-slate-200/80 pointer-events-none" />
-          <div className="absolute h-[120px] w-[120px] sm:h-[140px] sm:w-[140px] lg:h-[160px] lg:w-[160px] rounded-full border border-slate-200/60 pointer-events-none" />
+          <div className="absolute h-[230px] w-[230px] sm:h-[280px] sm:w-[280px] lg:h-[320px] lg:w-[320px] rounded-full border border-[#0062D6] pointer-events-none" />
+          <div className="absolute h-[120px] w-[120px] sm:h-[140px] sm:w-[140px] lg:h-[160px] lg:w-[160px] rounded-full border border-[#0062D6] pointer-events-none" />
 
           <div className="absolute h-[230px] w-[230px] sm:h-[280px] lg:h-[320px] flex items-center justify-center">
             <div className="block sm:hidden w-full h-full relative">
@@ -670,7 +671,7 @@ function HeroSection() {
           </div>
 
           <motion.div
-            className="relative z-20 flex h-16 w-16 sm:h-20 sm:w-20 items-center justify-center rounded-full border border-slate-200/80 bg-white shadow-[0_8px_30px_rgba(15,23,42,0.06)] ring-4 ring-slate-50"
+            className="relative z-20 flex h-16 w-16 sm:h-20 sm:w-20 items-center justify-center rounded-full border border-[#0062D6] bg-white shadow-[0_8px_30px_rgba(15,23,42,0.06)] ring-4 ring-slate-50"
             animate={{ y: [0, -4, 0] }}
             transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
           >
@@ -837,6 +838,7 @@ export default function TechHeroSection() {
       <RecentProjectsSection />
 
       <PerformanceCTASection />
+      <Footer />
     </div>
   );
 }

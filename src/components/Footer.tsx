@@ -501,8 +501,8 @@ export default function Footer() {
       </div>
 
       <div className="relative bg-gradient-to-b from-neutral-950 via-neutral-900 to-neutral-950 text-white pt-16 sm:pt-20 pb-14 sm:pb-16">
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-900/10 via-transparent to-blue-900/10 opacity-50" />
-        <div className="absolute inset-0 opacity-[0.015] bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:32px_32px]" />
+        <div className="absolute inset-0 bg-linear-to-r from-blue-900/10 via-transparent to-blue-900/10 opacity-50" />
+        <div className="absolute inset-0 opacity-[0.015] bg-[radial-gradient(#ffffff_1px,transparent_1px)] bg-size-[32px_32px]" />
         <div className="absolute top-20 left-10 h-64 w-64 rounded-full bg-[#0076FF]/5 blur-3xl" />
         <div className="absolute bottom-20 right-10 h-64 w-64 rounded-full bg-blue-600/5 blur-3xl" />
 

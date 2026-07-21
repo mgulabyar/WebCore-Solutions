@@ -304,7 +304,6 @@ export default function Footer() {
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-5 gap-5 sm:gap-6 pt-8">
-            {/* Column 1 - Services */}
             <div
               style={{ transitionDelay: "500ms" }}
               className={`wc-float-bottom-left ${isVisible ? "wc-reveal-active" : ""}`}
@@ -329,7 +328,6 @@ export default function Footer() {
               </ul>
             </div>
 
-            {/* Column 2 - Company */}
             <div
               style={{ transitionDelay: "650ms" }}
               className={`wc-float-bottom-left ${isVisible ? "wc-reveal-active" : ""}`}
@@ -354,7 +352,6 @@ export default function Footer() {
               </ul>
             </div>
 
-            {/* Column 3 - Resources */}
             <div
               style={{ transitionDelay: "800ms" }}
               className={`wc-float-bottom-right ${isVisible ? "wc-reveal-active" : ""}`}
@@ -379,7 +376,6 @@ export default function Footer() {
               </ul>
             </div>
 
-            {/* Column 4 - Contact Links */}
             <div
               style={{ transitionDelay: "950ms" }}
               className={`wc-float-bottom-right ${isVisible ? "wc-reveal-active" : ""}`}
@@ -404,7 +400,6 @@ export default function Footer() {
               </ul>
             </div>
 
-            {/* Column 5 - Direct Contact Info */}
             <div
               style={{ transitionDelay: "1100ms" }}
               className={`wc-float-bottom-right ${isVisible ? "wc-reveal-active" : ""}`}

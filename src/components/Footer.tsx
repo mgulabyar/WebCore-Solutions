@@ -500,7 +500,7 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="relative bg-gradient-to-b from-neutral-950 via-neutral-900 to-neutral-950 text-white pt-16 sm:pt-20 pb-14 sm:pb-16">
+      <div className="relative bg-linear-to-b from-neutral-950 via-neutral-900 to-neutral-950 text-white pt-16 sm:pt-20 pb-14 sm:pb-16">
         <div className="absolute inset-0 bg-linear-to-r from-blue-900/10 via-transparent to-blue-900/10 opacity-50" />
         <div className="absolute inset-0 opacity-[0.015] bg-[radial-gradient(#ffffff_1px,transparent_1px)] bg-size-[32px_32px]" />
         <div className="absolute top-20 left-10 h-64 w-64 rounded-full bg-[#0076FF]/5 blur-3xl" />
@@ -541,7 +541,7 @@ export default function Footer() {
                     href={social.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group flex h-11 w-11 items-center justify-center rounded-full border border-neutral-700 bg-neutral-800/50 text-neutral-400 text-sm transition-all duration-300 hover:border-[#0076FF] hover:bg-gradient-to-br hover:from-[#0076FF] hover:to-[#0B3C95] hover:text-white hover:shadow-lg hover:shadow-[#0076FF]/20 hover:-translate-y-0.5"
+                    className="group flex h-11 w-11 items-center justify-center rounded-full border border-neutral-700 bg-neutral-800/50 text-neutral-400 text-sm transition-all duration-300 hover:border-[#0076FF] hover:bg-linear-to-br hover:from-[#0076FF] hover:to-[#0B3C95] hover:text-white hover:shadow-lg hover:shadow-[#0076FF]/20 hover:-translate-y-0.5"
                     aria-label={social.label}
                   >
                     <social.icon className="h-5 w-5" />
@@ -579,7 +579,7 @@ export default function Footer() {
                 </div>
                 <button
                   type="submit"
-                  className="wc-subscribe-btn group inline-flex items-center justify-center gap-2.5 rounded-full bg-gradient-to-r from-[#0076FF] to-[#0B3C95] px-6 py-3.5 text-sm font-semibold text-white transition-all duration-300 hover:from-[#0B3C95] hover:to-[#0076FF] hover:shadow-none active:scale-95"
+                  className="wc-subscribe-btn group inline-flex items-center justify-center gap-2.5 rounded-full bg-linear-to-r from-[#0076FF] to-[#0B3C95] px-6 py-3.5 text-sm font-semibold text-white transition-all duration-300 hover:from-[#0B3C95] hover:to-[#0076FF] hover:shadow-none active:scale-95"
                 >
                   Subscribe
                   <FiArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1.5" />

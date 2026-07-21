@@ -599,7 +599,7 @@ function HeroSection() {
           </div>
         </motion.div>
 
-        <div className="relative flex h-77.5 w-full items-center justify-center overflow-visible sm:h-[480px] lg:h-[510px] max-sm:pt-14 mt-4 lg:mt-0">
+        <div className="relative flex h-[310px] w-full items-center justify-center overflow-visible sm:h-[480px] lg:h-[510px] max-sm:pt-14 mt-4 lg:mt-0">
 
           <div className="absolute h-[230px] w-[230px] sm:h-[280px] sm:w-[280px] lg:h-[320px] lg:w-[320px] rounded-full border border-[#0062D6] pointer-events-none" />
           <div className="absolute h-[120px] w-[120px] sm:h-[140px] sm:w-[140px] lg:h-[160px] lg:w-[160px] rounded-full border border-[#0062D6] pointer-events-none" />

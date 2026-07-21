@@ -717,7 +717,7 @@ function PerformanceCTASection() {
   return (
     <section
       ref={containerRef}
-      className="relative w-full overflow-hidden bg-gradient-to-r from-blue-600 to-blue-700 py-24 flex justify-center items-center select-none"
+      className="relative w-full overflow-hidden bg-linear-to-r from-blue-600 to-blue-700 py-24 flex justify-center items-center select-none"
     >
       <style
         dangerouslySetInnerHTML={{
@@ -790,7 +790,7 @@ function PerformanceCTASection() {
         }}
       />
 
-      <div className="pointer-events-none absolute inset-0 opacity-10 z-0 bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:24px_24px]" />
+      <div className="pointer-events-none absolute inset-0 opacity-10 z-0 bg-[radial-gradient(#ffffff_1px,transparent_1px)] bg-size-[24px_24px]" />
 
       <div
         className={`unified-gravity-block ${

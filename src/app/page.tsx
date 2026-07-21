@@ -636,7 +636,7 @@ function HeroSection() {
             </div>
           </div>
 
-          <div className="absolute h-[120px] w-[120px] sm:h-[140px] lg:h-[160px] flex items-center justify-center">
+          <div className="absolute h-30 w-[120px] sm:h-[140px] lg:h-[160px] flex items-center justify-center">
             <div className="block sm:hidden w-full h-full relative">
               <motion.div
                 className="w-full h-full absolute"

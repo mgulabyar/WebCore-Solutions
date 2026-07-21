@@ -528,13 +528,13 @@ function TestimonialsSection() {
   const centerTrackPos = trackIndex + Math.floor(cardsPerView / 2);
 
   return (
-    <section className="relative w-full overflow-hidden bg-[#f8fafc] py-20">
+    <section className="relative w-full overflow-hidden bg-[#f8fafc] py-5">
       <div className="relative z-10 mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-8">
         <div className="mb-12 text-center">
-          <span className="text-xs font-bold uppercase tracking-widest text-slate-400">
+          <span className="text-xs font-semibold uppercase tracking-widest text-slate-400">
             Client Testimonials
           </span>
-          <h2 className="mt-2 text-3xl font-bold text-slate-900 tracking-tight">
+          <h2 className="mt-2 text-3xl md:text-4xl font-semibold text-slate-900 tracking-tight">
             Trusted by Industry Leaders
           </h2>
         </div>
@@ -665,7 +665,7 @@ function TestimonialsSection() {
 
 function HeroSection() {
   return (
-    <section className="relative w-full min-h-[90vh] flex items-center justify-center overflow-hidden bg-[#fbfcfe] mt-0 pt-0 pb-16 text-slate-900 lg:min-h-[95vh]">
+    <section className="relative w-full min-h-[90vh] flex items-center justify-center overflow-hidden bg-[#fbfcfe] mt-0 pt-0 pb-12 text-slate-900 lg:min-h-[86vh]">
       <style
         dangerouslySetInnerHTML={{
           __html: `

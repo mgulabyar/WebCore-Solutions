@@ -240,7 +240,7 @@ export function ServicesHero() {
           Engineering fast user interfaces, highly-resilient distributed architectures, and optimized data workflows. We take complete ownership of your technology pipeline so you scale flawlessly.
         </motion.p>
 
-        {/* Interactive  Tags with Functional Icons */}
+        {/*  Tags  Functional Icons */}
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           animate={isVisible ? { opacity: 1, y: 0 } : {}}

@@ -700,7 +700,6 @@ export function DatabaseSection() {
                   style={{ backgroundColor: skill.color }}
                 />
 
-                {/* Main Card Description Copy */}
                 <p className="mt-4 text-xs font-medium leading-relaxed text-neutral-500">
                   {skill.desc}
                 </p>

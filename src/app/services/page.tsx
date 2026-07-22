@@ -17,7 +17,6 @@ import {
 } from "react-icons/si";
 import Footer from "@/components/Footer";
 
-/* ---------------- DATA ---------------- */
 
 const frontendSkills = [
   {
@@ -510,7 +509,6 @@ function BackendSection() {
     </section>
   );
 }
-
 
 function DatabaseSection() {
   const containerRef = useRef<HTMLDivElement>(null);

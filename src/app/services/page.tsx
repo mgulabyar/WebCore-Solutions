@@ -631,7 +631,7 @@ function ProcessSection() {
             A proven methodology that ensures quality and timely delivery.
           </p>
         </motion.div>
-{/*  */}
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {processSteps.map((step, idx) => (
             <motion.div

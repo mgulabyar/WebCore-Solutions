@@ -364,7 +364,7 @@ function PerformanceMetricsSection() {
               <PremiumMetricIcon type={card.iconType} />
             </div>
 
-            <span className="text-3xl font-medium tracking-tight text-slate-800 mt-5 group-hover:text-blue-600 transition-colors duration-200">
+            <span className="text-3xl font-medium tracking-tight text-slate-800 mt-5 group-hover:text-blue-700 transition-colors duration-200">
               <AnimatedCount
                 value={card.targetValue}
                 suffix={card.suffix}

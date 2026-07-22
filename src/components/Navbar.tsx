@@ -303,10 +303,10 @@ export default function Navbar() {
             className="h-9 w-auto sm:h-10"
           />
           <div className="flex flex-col justify-center leading-tight">
-            <span className="text-base font-bold tracking-tight text-slate-800 sm:text-lg">
+            <span className="text-base font-semibold tracking-tight text-slate-700 sm:text-lg">
               WebCore Solutions
             </span>
-            <span className="text-[11px] font-medium text-neutral-400 tracking-wide">
+            <span className="text-[11px] font-semibold text-neutral-400 tracking-wide">
               Building Digital Excellence
             </span>
           </div>

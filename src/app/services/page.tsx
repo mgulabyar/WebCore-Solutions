@@ -95,7 +95,7 @@ const databaseSkills = [
   {
     name: "MERN Stack",
     icon: SiExpress,
-    color: "#E2E8F0",
+    color: "#116adf",
     desc: "Full-stack MongoDB, Express, React & Node - end-to-end ownership.",
   },
   {

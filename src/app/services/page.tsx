@@ -195,7 +195,6 @@ export function ServicesHero() {
 
       <div className="relative z-10 mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
         
-        {/* Upper Micro Badge Sub-headline */}
         <motion.span
           initial={{ opacity: 0, y: 12 }}
           animate={isVisible ? { opacity: 1, y: 0 } : {}}
@@ -205,7 +204,6 @@ export function ServicesHero() {
           Our Technical Expertise
         </motion.span>
 
-        {/* High-Impact Main Heading */}
         <h1 className="mt-6 flex flex-wrap justify-center gap-x-3 text-4xl font-semibold tracking-tight text-white sm:text-5xl">
           {headline.map((word, i) => (
             <motion.span
@@ -230,7 +228,6 @@ export function ServicesHero() {
           ))}
         </h1>
 
-        {/* Corporate Level Pitch Paragraph Description */}
         <motion.p
           initial={{ opacity: 0, y: 16 }}
           animate={isVisible ? { opacity: 1, y: 0 } : {}}
@@ -240,7 +237,6 @@ export function ServicesHero() {
           Engineering fast user interfaces, highly-resilient distributed architectures, and optimized data workflows. We take complete ownership of your technology pipeline so you scale flawlessly.
         </motion.p>
 
-        {/*  Tags  Functional Icons */}
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           animate={isVisible ? { opacity: 1, y: 0 } : {}}

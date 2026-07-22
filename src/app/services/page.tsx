@@ -5,7 +5,7 @@
 import { motion } from "framer-motion";
 import { FaSearch, FaMap, FaCode, FaRocket } from "react-icons/fa";
 import React, { useRef, useState, useEffect } from 'react';
-
+import { LayoutGrid, Cpu, Database, Server } from 'lucide-react'
 import {
   SiNodedotjs,
   SiDotnet,
@@ -139,7 +139,108 @@ const processSteps = [
   },
 ];
 
-function ServicesHero() {
+// function ServicesHero() {
+//   const containerRef = useRef<HTMLDivElement>(null);
+//   const [isVisible, setIsVisible] = useState(false);
+
+//   useEffect(() => {
+//     const observer = new IntersectionObserver(
+//       ([entry]) => setIsVisible(entry.isIntersecting),
+//       { rootMargin: "0px 0px -100px 0px", threshold: 0.01 },
+//     );
+//     if (containerRef.current) observer.observe(containerRef.current);
+//     return () => observer.disconnect();
+//   }, []);
+
+//   const headline = "One Team. Every Layer of Your Stack.".split(" ");
+
+//   return (
+//     <section
+//       ref={containerRef}
+//       className="relative w-full overflow-hidden bg-gradient-to-b from-neutral-950 via-neutral-900 to-neutral-950 py-24"
+//     >
+//       <style>{`
+//         @keyframes wc-blob-move {
+//           0%, 100% { transform: translate(0, 0) scale(1); }
+//           33% { transform: translate(40px, -30px) scale(1.1); }
+//           66% { transform: translate(-30px, 20px) scale(0.95); }
+//         }
+//         .wc-blob-1 { animation: wc-blob-move 14s ease-in-out infinite; }
+//         .wc-blob-2 { animation: wc-blob-move 18s ease-in-out infinite reverse; }
+//       `}</style>
+//       <div className="absolute inset-0 opacity-[0.03] bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:32px_32px]" />
+//       <div className="wc-blob-1 absolute top-0 left-1/4 h-80 w-80 rounded-full bg-[#0076FF]/10 blur-3xl" />
+//       <div className="wc-blob-2 absolute bottom-0 right-1/4 h-80 w-80 rounded-full bg-blue-600/10 blur-3xl" />
+
+//       <div className="relative z-10 mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
+//         <motion.span
+//           initial={{ opacity: 0, y: 12 }}
+//           animate={isVisible ? { opacity: 1, y: 0 } : {}}
+//           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+//           className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-xs font-semibold tracking-widest text-blue-300"
+//         >
+//           Our Technical Expertise
+//         </motion.span>
+
+//         <h1 className="mt-6 flex flex-wrap justify-center gap-x-3 text-4xl font-semibold tracking-tight text-white sm:text-5xl">
+//           {headline.map((word, i) => (
+//             <motion.span
+//               key={i}
+//               initial={{ opacity: 0, y: 24, filter: "blur(6px)" }}
+//               animate={
+//                 isVisible ? { opacity: 1, y: 0, filter: "blur(0px)" } : {}
+//               }
+//               transition={{
+//                 duration: 0.6,
+//                 delay: 0.15 + i * 0.07,
+//                 ease: [0.16, 1, 0.3, 1],
+//               }}
+//               className={
+//                 word === "Stack."
+//                   ? "bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent"
+//                   : ""
+//               }
+//             >
+//               {word}
+//             </motion.span>
+//           ))}
+//         </h1>
+
+//         <motion.p
+//           initial={{ opacity: 0, y: 16 }}
+//           animate={isVisible ? { opacity: 1, y: 0 } : {}}
+//           transition={{ duration: 0.6, delay: 0.6, ease: [0.16, 1, 0.3, 1] }}
+//           className="mt-5 max-w-2xl mx-auto text-base text-neutral-400 leading-relaxed"
+//         >
+//           From pixel-perfect interfaces to resilient backend systems and
+//           well-structured databases - we own the full stack, so you deal with
+//           one team instead of three.
+//         </motion.p>
+
+//         <motion.div
+//           initial={{ opacity: 0, y: 16 }}
+//           animate={isVisible ? { opacity: 1, y: 0 } : {}}
+//           transition={{ duration: 0.6, delay: 0.75, ease: [0.16, 1, 0.3, 1] }}
+//           className="mt-10 flex flex-wrap justify-center gap-3"
+//         >
+//           {["Frontend", "Backend", "Databases", "DevOps"].map((tag) => (
+//             <span
+//               key={tag}
+//               className="rounded-full border border-white/10 bg-white/[0.04] px-4 py-1.5 text-xs font-medium text-neutral-300"
+//             >
+//               {tag}
+//             </span>
+//           ))}
+//         </motion.div>
+//       </div>
+//     </section>
+//   );
+// }
+
+// Lucide icons ka use kiya hai jo clean aur professional lagte hain
+
+
+export function ServicesHero() {
   const containerRef = useRef<HTMLDivElement>(null);
   const [isVisible, setIsVisible] = useState(false);
 
@@ -152,7 +253,15 @@ function ServicesHero() {
     return () => observer.disconnect();
   }, []);
 
-  const headline = "One Team. Every Layer of Your Stack.".split(" ");
+  // Premium corporate text line split kiya hai animate karne ke liye
+  const headline = "Architecting Scalable Systems. Every Single Layer.".split(" ");
+
+  const capabilities = [
+    { name: "Frontend", icon: LayoutGrid, color: "text-blue-400 border-blue-500/20 bg-blue-500/5" },
+    { name: "Backend", icon: Cpu, color: "text-cyan-400 border-cyan-500/20 bg-cyan-500/5" },
+    { name: "Databases", icon: Database, color: "text-indigo-400 border-indigo-500/20 bg-indigo-500/5" },
+    { name: "DevOps", icon: Server, color: "text-emerald-400 border-emerald-500/20 bg-emerald-500/5" },
+  ];
 
   return (
     <section
@@ -167,21 +276,36 @@ function ServicesHero() {
         }
         .wc-blob-1 { animation: wc-blob-move 14s ease-in-out infinite; }
         .wc-blob-2 { animation: wc-blob-move 18s ease-in-out infinite reverse; }
+        
+        /* Subtle transition effect for tags container */
+        .premium-tag-transition {
+          transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+        }
+        .premium-tag-transition:hover {
+          transform: translateY(-2px);
+          background-color: rgba(255, 255, 255, 0.08);
+          border-color: rgba(255, 255, 255, 0.2);
+        }
       `}</style>
+      
+      {/* Structural Dot Grid Accent Layer */}
       <div className="absolute inset-0 opacity-[0.03] bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:32px_32px]" />
       <div className="wc-blob-1 absolute top-0 left-1/4 h-80 w-80 rounded-full bg-[#0076FF]/10 blur-3xl" />
       <div className="wc-blob-2 absolute bottom-0 right-1/4 h-80 w-80 rounded-full bg-blue-600/10 blur-3xl" />
 
       <div className="relative z-10 mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
+        
+        {/* Upper Micro Badge Sub-headline */}
         <motion.span
           initial={{ opacity: 0, y: 12 }}
           animate={isVisible ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-          className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-xs font-semibold tracking-widest text-blue-300"
+          className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-xs font-semibold tracking-widest text-blue-300 uppercase"
         >
           Our Technical Expertise
         </motion.span>
 
+        {/* High-Impact Main Heading */}
         <h1 className="mt-6 flex flex-wrap justify-center gap-x-3 text-4xl font-semibold tracking-tight text-white sm:text-5xl">
           {headline.map((word, i) => (
             <motion.span
@@ -196,8 +320,8 @@ function ServicesHero() {
                 ease: [0.16, 1, 0.3, 1],
               }}
               className={
-                word === "Stack."
-                  ? "bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent"
+                word === "Layer." || word === "Systems."
+                  ? "bg-gradient-to-r from-blue-400 via-cyan-300 to-indigo-400 bg-clip-text text-transparent font-medium"
                   : ""
               }
             >
@@ -206,32 +330,34 @@ function ServicesHero() {
           ))}
         </h1>
 
+        {/* Corporate Level Pitch Paragraph Description */}
         <motion.p
           initial={{ opacity: 0, y: 16 }}
           animate={isVisible ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.6, ease: [0.16, 1, 0.3, 1] }}
-          className="mt-5 max-w-2xl mx-auto text-base text-neutral-400 leading-relaxed"
+          className="mt-5 max-w-2xl mx-auto text-base text-neutral-400 leading-relaxed font-normal"
         >
-          From pixel-perfect interfaces to resilient backend systems and
-          well-structured databases - we own the full stack, so you deal with
-          one team instead of three.
+          Engineering fast user interfaces, highly-resilient distributed architectures, and optimized data workflows. We take complete ownership of your technology pipeline so you scale flawlessly.
         </motion.p>
 
+        {/* Interactive Capability Inline Tags with Functional Icons */}
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           animate={isVisible ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.75, ease: [0.16, 1, 0.3, 1] }}
           className="mt-10 flex flex-wrap justify-center gap-3"
         >
-          {["Frontend", "Backend", "Databases", "DevOps"].map((tag) => (
+          {capabilities.map((item) => (
             <span
-              key={tag}
-              className="rounded-full border border-white/10 bg-white/[0.04] px-4 py-1.5 text-xs font-medium text-neutral-300"
+              key={item.name}
+              className={`premium-tag-transition inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-4 py-1.5 text-xs font-medium text-neutral-300 cursor-default`}
             >
-              {tag}
+              <item.icon className={`h-3.5 w-3.5 ${item.color.split(' ')[0]}`} />
+              <span>{item.name}</span>
             </span>
           ))}
         </motion.div>
+        
       </div>
     </section>
   );

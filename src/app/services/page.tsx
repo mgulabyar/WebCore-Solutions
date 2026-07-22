@@ -704,7 +704,6 @@ export function DatabaseSection() {
                   {skill.desc}
                 </p>
 
-                {/* Footer Micro Details Bar */}
                 <div className="mt-7 pt-4 border-t border-neutral-100 flex items-center justify-between">
                   <span className="text-[11px] font-bold uppercase tracking-wider text-neutral-400">
                     Premium stack

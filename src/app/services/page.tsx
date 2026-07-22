@@ -2,9 +2,10 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
-import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { FaSearch, FaMap, FaCode, FaRocket } from "react-icons/fa";
+import React, { useRef, useState, useEffect } from 'react';
+
 import {
   SiNodedotjs,
   SiDotnet,
@@ -506,96 +507,10 @@ function BackendSection() {
   );
 }
 
-// function DatabaseSection() {
-//   const containerRef = useRef<HTMLDivElement>(null);
-//   const [isVisible, setIsVisible] = useState(false);
 
-//   useEffect(() => {
-//     const observer = new IntersectionObserver(
-//       ([entry]) => setIsVisible(entry.isIntersecting),
-//       { rootMargin: "0px 0px -120px 0px", threshold: 0.15 },
-//     );
-//     if (containerRef.current) observer.observe(containerRef.current);
-//     return () => observer.disconnect();
-//   }, []);
 
-//   return (
-//     <section
-//       ref={containerRef}
-//       className="relative w-full overflow-hidden bg-white py-24"
-//     >
-//       <style>{`
-//         .db-card {
-//           opacity: 0;
-//           will-change: transform, opacity;
-//           transition: opacity 0.9s cubic-bezier(0.16,1,0.3,1), transform 1s cubic-bezier(0.16,1,0.3,1);
-//         }
-//         .db-from-left { transform: translateX(-110px) translateY(20px) rotate(-5deg); }
-//         .db-from-right { transform: translateX(110px) translateY(20px) rotate(5deg); }
-//         .db-card.db-active { opacity: 1; transform: translateX(0) translateY(0) rotate(0deg); }
 
-//         @keyframes db-pulse-ring {
-//           0% { box-shadow: 0 0 0 0 var(--pulse-color); }
-//           100% { box-shadow: 0 0 0 12px transparent; }
-//         }
-//         .db-card:hover .db-pulse { animation: db-pulse-ring 1.2s ease-out infinite; }
-//       `}</style>
-
-//       <div className="relative flex flex-col items-center text-center justify-center z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-//         <div className="mb-14 flex flex-col items-center text-center justify-center max-w-2xl">
-//           <span className="text-sm font-bold uppercase tracking-widest text-blue-600 block mb-2">
-//             Database & Other Skills
-//           </span>
-//           <h2 className="text-3xl font-semibold text-slate-800 tracking-tight sm:text-4xl">
-//             Data, Handled the Right Way
-//           </h2>
-//           <p className="mt-3 text-sm text-slate-600 leading-relaxed">
-//           From flexible NoSQL databases to structured relational systems and modern development workflows engineered to solve complex data challenges.
-//           </p>
-//         </div>
-
-//         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-//           {databaseSkills.map((skill, idx) => {
-//             const fromLeft = idx % 2 === 0;
-//             return (
-//               <div
-//                 key={skill.name}
-//                 style={{
-//                   transitionDelay: isVisible ? `${idx * 130}ms` : "0ms",
-//                 }}
-//                 className={`db-card ${fromLeft ? "db-from-left" : "db-from-right"} ${
-//                   isVisible ? "db-active" : ""
-//                 } group rounded-xl border border-slate-200 bg-white p-6 shadow-sm hover:-translate-y-2 hover:shadow-2xl transition-[transform,box-shadow] duration-500`}
-//               >
-//                 <div
-//                   className="db-pulse flex h-14 w-14 items-center justify-center rounded-2xl mb-5"
-//                   style={{
-//                     backgroundColor: `${skill.color}14`,
-//                     border: `1px solid ${skill.color}35`,
-//                     ["--pulse-color" as any]: `${skill.color}55`,
-//                   }}
-//                 >
-//                   <skill.icon
-//                     className="h-6 w-6"
-//                     style={{ color: skill.color }}
-//                   />
-//                 </div>
-//                 <h3 className="text-base font-semibold text-slate-900">
-//                   {skill.name}
-//                 </h3>
-//                 <p className="mt-2.5 text-sm text-slate-600 leading-relaxed">
-//                   {skill.desc}
-//                 </p>
-//               </div>
-//             );
-//           })}
-//         </div>
-//       </div>
-//     </section>
-//   );
-// }
-
-function DatabaseSection() {
+export function DatabaseSection() {
   const containerRef = useRef<HTMLDivElement>(null);
   const [isVisible, setIsVisible] = useState(false);
 
@@ -611,162 +526,200 @@ function DatabaseSection() {
   return (
     <section
       ref={containerRef}
-      className="relative w-full overflow-hidden bg-[#07111f] py-24"
+      className="relative w-full overflow-hidden bg-[#fafafa] py-24"
     >
       <style>{`
+        /* Minimalist dots pattern for premium tech layouts */
         .db-grid {
           background-image:
-            radial-gradient(circle at 1px 1px, rgba(255,255,255,0.08) 1px, transparent 0);
-          background-size: 30px 30px;
+            radial-gradient(circle at 1px 1px, rgba(0, 0, 0, 0.05) 1px, transparent 0);
+          background-size: 24px 24px;
         }
 
+        /* Initial premium entrance transition properties */
         .db-card {
           opacity: 0;
-          transform: translateY(40px) scale(0.96);
-          filter: blur(5px);
+          transform: translateY(35px) scale(0.97);
+          filter: blur(8px);
           transition:
-            opacity 0.85s cubic-bezier(0.16,1,0.3,1),
-            transform 0.95s cubic-bezier(0.16,1,0.3,1),
-            filter 0.85s cubic-bezier(0.16,1,0.3,1);
+            opacity 0.9s cubic-bezier(0.2, 0.8, 0.2, 1),
+            transform 0.95s cubic-bezier(0.2, 0.8, 0.2, 1),
+            filter 0.9s cubic-bezier(0.2, 0.8, 0.2, 1);
         }
 
+        /* Entrance triggered when active */
         .db-card.db-active {
           opacity: 1;
           transform: translateY(0) scale(1);
           filter: blur(0px);
         }
 
+        /* Clean luxury card lift interaction */
         .db-card:hover {
-          transform: translateY(-8px) scale(1.01);
+          transform: translateY(-6px);
+          border-color: rgba(0, 0, 0, 0.12);
         }
 
-        .db-glow {
+        /* Standard static icon container transition */
+        .db-static-icon-box {
+          transition: opacity 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+        }
+
+        /* Hover karne par static icon box scale down aur fade out hoga */
+        .db-card:hover .db-static-icon-box {
           opacity: 0;
-          transition: opacity 0.45s ease;
+          transform: scale(0.7);
+          pointer-events: none;
         }
 
-        .db-card:hover .db-glow {
+        /* Professional Clockwise Spin Keyframes from 0 to 360 */
+        @keyframes clock-spin {
+          from { transform: translate(-50%, -50%) rotate(0deg); }
+          to { transform: translate(-50%, -50%) rotate(360deg); }
+        }
+
+        /* Center Spinning Icon Layout */
+        .db-center-spinner {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          width: 56px;
+          height: 56px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border-radius: 50%;
+          opacity: 0;
+          transform: translate(-50%, -50%) scale(0.6);
+          transition: opacity 0.45s cubic-bezier(0.2, 0.8, 0.2, 1), transform 0.45s cubic-bezier(0.2, 0.8, 0.2, 1);
+          pointer-events: none;
+          z-index: 20;
+        }
+
+        /* Hover karne par center spinner full scale aur active clockwise rotation shuru karega */
+        .db-card:hover .db-center-spinner {
           opacity: 1;
+          transform: translate(-50%, -50%) scale(1);
+          animation: clock-spin 4s linear infinite;
         }
 
-        .db-icon {
-          transition: transform 0.45s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.4s ease;
-        }
-
-        .db-card:hover .db-icon {
-          transform: translateY(-4px) scale(1.08) rotate(-4deg);
-        }
-
+        /* Symmetric micro bottom-line logic scaling */
         .db-line {
-          transform: scaleX(0);
+          transform: scaleX(0.4);
           transform-origin: left;
-          transition: transform 0.5s ease;
+          transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
         }
 
         .db-card:hover .db-line {
           transform: scaleX(1);
         }
-
-        .db-tag {
-          opacity: 0.9;
-          transition: opacity 0.3s ease, transform 0.3s ease;
-        }
-
-        .db-card:hover .db-tag {
-          opacity: 1;
-          transform: translateY(-1px);
-        }
       `}</style>
 
-      <div className="absolute inset-0 db-grid opacity-[0.12]" />
-      <div className="absolute -top-20 left-1/4 h-72 w-72 rounded-full bg-cyan-500/10 blur-3xl" />
-      <div className="absolute bottom-0 right-0 h-80 w-80 rounded-full bg-blue-500/10 blur-3xl" />
+      <div className="absolute inset-0 db-grid opacity-100" />
+      <div className="absolute -top-40 left-1/4 h-[500px] w-[500px] rounded-full bg-cyan-300/10 blur-3xl" />
+      <div className="absolute bottom-[-100px] right-10 h-[450px] w-[450px] rounded-full bg-blue-300/15 blur-3xl" />
 
       <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="mb-14 flex flex-col items-center justify-center text-center max-w-2xl mx-auto">
-          <span className="text-xs font-bold uppercase tracking-[0.25em] text-cyan-300 block mb-3">
+        {/* Section Header Text - Semibold Font applied */}
+        <div className="mb-16 flex flex-col items-center justify-center text-center max-w-2xl mx-auto">
+          <span className="text-xs font-bold uppercase tracking-[0.3em] text-neutral-500 block mb-3">
             Database & Other Skills
           </span>
-          <h2 className="text-3xl font-semibold tracking-tight text-white sm:text-4xl">
+          <h2 className="text-3xl font-semibold tracking-tight text-neutral-900 sm:text-4xl bg-gradient-to-r from-neutral-900 via-neutral-800 to-neutral-700 bg-clip-text text-transparent">
             Data, Handled the Right Way
           </h2>
-          <p className="mt-4 text-sm leading-relaxed text-neutral-400">
+          <p className="mt-4 text-sm leading-relaxed text-neutral-500 font-medium">
             From flexible NoSQL databases to structured relational systems and modern development workflows engineered to solve complex data challenges.
           </p>
         </div>
 
+        {/* Grid Container Layout */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {databaseSkills.map((skill, idx) => {
-            const fromLeft = idx % 2 === 0;
-
             return (
               <div
                 key={skill.name}
                 style={{
-                  transitionDelay: isVisible ? `${idx * 130}ms` : "0ms",
-                }}
-                className={`db-card ${fromLeft ? "translate-x-[-70px]" : "translate-x-[70px]"} ${
-                  isVisible ? "db-active" : ""
-                } group relative overflow-hidden rounded-3xl border border-white/10 bg-white/[0.04] p-6 shadow-[0_18px_60px_rgba(0,0,0,0.28)] backdrop-blur-xl transition-[transform,box-shadow] duration-500`}
+                  transitionDelay: isVisible ? `${idx * 100}ms` : "0ms",
+                  '--skill-color': skill.color,
+                } as React.CSSProperties}
+                className={`db-card ${isVisible ? "db-active" : ""} group relative overflow-hidden rounded-[24px] border border-neutral-200/80 bg-white/70 p-6 shadow-[0_8px_30px_rgb(0,0,0,0.012)] hover:shadow-[0_22px_50px_rgba(0,0,0,0.04)] backdrop-blur-md transition-all duration-500`}
               >
-                <div
-                  className="db-glow absolute inset-0 pointer-events-none"
+                {/* Brand Color Soft Ambient Shadow Layer */}
+                <div 
+                  className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none rounded-[24px]"
                   style={{
-                    background:
-                      "radial-gradient(circle at top left, rgba(255,255,255,0.08), transparent 34%), radial-gradient(circle at bottom right, rgba(59,130,246,0.12), transparent 40%)",
+                    background: `radial-gradient(circle at 30% 50%, ${skill.color}05, transparent 70%)`
                   }}
                 />
 
-                <div
-                  className="db-icon relative flex h-16 w-16 items-center justify-center rounded-2xl border shadow-lg mb-5"
+                {/* 1. Dynamic Center Rotating Icon Shield (Reveals on Hover) */}
+                <div 
+                  className="db-center-spinner border"
                   style={{
-                    backgroundColor: `${skill.color}18`,
-                    borderColor: `${skill.color}55`,
-                    boxShadow: `0 18px 40px -18px ${skill.color}99`,
+                    backgroundColor: `${skill.color}0e`,
+                    borderColor: `${skill.color}25`,
+                    boxShadow: `0 0 20px ${skill.color}10`,
                   }}
                 >
                   <skill.icon
-                    className="h-7 w-7"
+                    className="h-6 w-6"
                     style={{ color: skill.color }}
                   />
                 </div>
 
+                {/* 2. Top Static Icon Shield (Disappears on Hover) */}
+                <div
+                  className="db-static-icon-box flex h-14 w-14 items-center justify-center rounded-2xl border shadow-sm mb-6"
+                  style={{
+                    backgroundColor: `${skill.color}0a`,
+                    borderColor: `${skill.color}25`,
+                  }}
+                >
+                  <skill.icon
+                    className="h-6 w-6"
+                    style={{ color: skill.color }}
+                  />
+                </div>
+
+                {/* Skill Header Fields */}
                 <div className="flex items-center justify-between gap-3">
-                  <h3 className="text-base font-semibold text-white">
+                  <h3 className="text-base font-semibold text-neutral-800 tracking-tight">
                     {skill.name}
                   </h3>
                   <span
-                    className="db-tag inline-flex items-center rounded-full px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wider ring-1 ring-inset"
+                    className="inline-flex items-center rounded-full px-2.5 py-0.5 text-[9px] font-bold uppercase tracking-wider border"
                     style={{
                       color: skill.color,
-                      backgroundColor: `${skill.color}12`,
-                      borderColor: `${skill.color}28`,
+                      backgroundColor: `${skill.color}0a`,
+                      borderColor: `${skill.color}20`,
                     }}
                   >
                     Skill
                   </span>
                 </div>
 
+                {/* Symmetric Border Underline Micro Accent */}
                 <div
-                  className="db-line mt-3 h-0.5 w-14 rounded-full"
+                  className="db-line mt-3.5 h-[1.5px] w-12 rounded-full"
                   style={{ backgroundColor: skill.color }}
                 />
 
-                <p className="mt-4 text-sm leading-relaxed text-neutral-300">
+                {/* Main Card Description Copy */}
+                <p className="mt-4 text-xs font-medium leading-relaxed text-neutral-500">
                   {skill.desc}
                 </p>
 
-                <div className="mt-6 flex items-center justify-between">
-                  <span
-                    className="text-xs font-medium text-neutral-400"
-                  >
+                {/* Footer Micro Details Bar */}
+                <div className="mt-7 pt-4 border-t border-neutral-100 flex items-center justify-between">
+                  <span className="text-[11px] font-bold uppercase tracking-wider text-neutral-400">
                     Premium stack
                   </span>
                   <span
-                    className="h-2.5 w-2.5 rounded-full"
+                    className="h-2 w-2 rounded-full"
                     style={{
                       backgroundColor: skill.color,
-                      boxShadow: `0 0 0 6px ${skill.color}18`,
+                      boxShadow: `0 0 0 5px ${skill.color}15`,
                     }}
                   />
                 </div>
@@ -778,6 +731,7 @@ function DatabaseSection() {
     </section>
   );
 }
+
 
 function ProcessSection() {
   const containerRef = useRef<HTMLDivElement>(null);

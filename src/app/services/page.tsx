@@ -695,7 +695,6 @@ export function DatabaseSection() {
                   </span>
                 </div>
 
-                {/* Symmetric Border Underline Micro Accent */}
                 <div
                   className="db-line mt-3.5 h-[1.5px] w-12 rounded-full"
                   style={{ backgroundColor: skill.color }}

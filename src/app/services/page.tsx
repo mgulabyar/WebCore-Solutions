@@ -668,7 +668,6 @@ function ProcessSection() {
   );
 }
 
-/* ---------------- PAGE ---------------- */
 
 export default function ServicesPage() {
   return (

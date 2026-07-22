@@ -18,36 +18,37 @@ import {
 import Footer from "@/components/Footer";
 
 
+
 const frontendSkills = [
   {
     name: "React.js",
     src: "/react.png",
     color: "#61DAFB",
-    desc: "Component-driven interfaces built for speed and long-term maintainability.",
+    desc: "Optimizes complex app state logic for scalable web applications.",
   },
   {
     name: "Next.js",
     src: "/nextjs.png",
     color: "#3B82F6",
-    desc: "Server-rendered, SEO-optimized applications with blazing-fast page loads.",
+    desc: "Overcomes web vital bottlenecks for peak search engine rankings.",
   },
   {
     name: "Angular",
     src: "/angular.png",
     color: "#DD0031",
-    desc: "Enterprise-grade single page applications with structured architecture.",
+    desc: "Engineers robust enterprise architecture for heavy data systems.",
   },
   {
     name: "TypeScript",
     src: "/ts.png",
     color: "#3178C6",
-    desc: "Type-safe codebases that catch errors early and scale confidently.",
+    desc: "Eliminates unexpected production bugs via strict type-safe code.",
   },
   {
     name: "Tailwind CSS",
     src: "/tailwind.png",
     color: "#06B6D4",
-    desc: "Pixel-perfect, responsive designs with a utility-first workflow.",
+    desc: "Fixes complex responsive interface layouts with utility styling.",
   },
 ];
 
@@ -95,7 +96,7 @@ const databaseSkills = [
     name: "MERN Stack",
     icon: SiExpress,
     color: "#E2E8F0",
-    desc: "Full-stack MongoDB, Express, React & Node — end-to-end ownership.",
+    desc: "Full-stack MongoDB, Express, React & Node - end-to-end ownership.",
   },
   {
     name: "Git & Docker",
@@ -105,26 +106,27 @@ const databaseSkills = [
   },
 ];
 
+
 const processSteps = [
   {
     step: 1,
     title: "Discovery",
     description:
-      "We analyze your requirements and business goals to create a tailored solution.",
+      "Uncovers business bottlenecks to formulate targeted roadmap plans.",
     icon: FaSearch,
   },
   {
     step: 2,
     title: "Planning",
     description:
-      "Detailed roadmap and architecture design with milestone definitions.",
+      "Structures high-level system design with strict milestone targets.",
     icon: FaMap,
   },
   {
     step: 3,
     title: "Development",
     description:
-      "Agile development with regular updates and feedback integration.",
+      "Executes rapid agile development sprint cycles for absolute speed.",
     icon: FaCode,
   },
   {
@@ -135,8 +137,6 @@ const processSteps = [
     icon: FaRocket,
   },
 ];
-
-/* ---------------- HERO ---------------- */
 
 function ServicesHero() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -156,7 +156,7 @@ function ServicesHero() {
   return (
     <section
       ref={containerRef}
-      className="relative w-full overflow-hidden bg-gradient-to-b from-neutral-950 via-neutral-900 to-neutral-950 py-28"
+      className="relative w-full overflow-hidden bg-gradient-to-b from-neutral-950 via-neutral-900 to-neutral-950 py-24"
     >
       <style>{`
         @keyframes wc-blob-move {
@@ -212,7 +212,7 @@ function ServicesHero() {
           className="mt-5 max-w-2xl mx-auto text-base text-neutral-400 leading-relaxed"
         >
           From pixel-perfect interfaces to resilient backend systems and
-          well-structured databases — we own the full stack, so you deal with
+          well-structured databases - we own the full stack, so you deal with
           one team instead of three.
         </motion.p>
 
@@ -236,7 +236,6 @@ function ServicesHero() {
   );
 }
 
-/* ---------------- FRONTEND: Premium offset grid, PNG icons, rich motion ---------------- */
 
 function FrontendSection() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -254,7 +253,7 @@ function FrontendSection() {
   return (
     <section
       ref={containerRef}
-      className="relative w-full overflow-hidden bg-gradient-to-b from-slate-50 to-white py-28"
+      className="relative w-full overflow-hidden bg-gradient-to-b from-slate-50 to-white py-24"
     >
       <style>{`
         .fe-card {
@@ -336,21 +335,20 @@ function FrontendSection() {
         }
       `}</style>
 
-      <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div className="relative flex flex-col items-center justify-center text-center z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mb-16 max-w-2xl">
-          <span className="text-xs font-bold uppercase tracking-widest text-blue-600 block mb-2">
+          <span className="text-sm font-bold uppercase tracking-widest text-blue-500 block mb-2">
             Frontend Development
           </span>
-          <h2 className="text-3xl font-bold text-slate-900 tracking-tight sm:text-4xl">
+          <h2 className="text-3xl font-semibold text-slate-800 tracking-tight sm:text-4xl">
             Interfaces People Love to Use
           </h2>
           <p className="mt-3 text-sm text-slate-600 leading-relaxed">
-            We build fast, responsive, and accessible user interfaces using the
-            most in-demand frontend technologies of today.
+            We build fast, responsive, and accessible user interfaces using the most in-demand frontend technologies of today to ensure future-proof digital scale.
           </p>
         </div>
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-5 lg:gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-5 lg:gap-6">
           {frontendSkills.map((skill, idx) => {
             const fromLeft = idx % 2 === 0;
             const offsetClass = idx % 2 === 1 ? "lg:mt-8" : "";
@@ -411,7 +409,6 @@ function FrontendSection() {
   );
 }
 
-/* ---------------- BACKEND: Alternating full-width rows on dark bg ---------------- */
 
 function BackendSection() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -450,15 +447,14 @@ function BackendSection() {
 
       <div className="relative z-10 mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
         <div className="mb-16 max-w-2xl mx-auto text-center">
-          <span className="text-xs font-bold uppercase tracking-widest text-blue-400 block mb-2">
+          <span className="text-sm font-bold uppercase tracking-widest text-blue-400 block mb-2">
             Backend Development
           </span>
-          <h2 className="text-3xl font-bold text-white tracking-tight sm:text-4xl">
+          <h2 className="text-3xl font-semibold text-white tracking-tight sm:text-4xl">
             Systems That Never Let You Down
           </h2>
           <p className="mt-3 text-sm text-neutral-400 leading-relaxed">
-            Robust, secure, and scalable backend architecture powering
-            everything behind the scenes.
+            Robust, secure, and scalable backend architecture powering everything behind the scenes to solve complex logic and performance challenges.
           </p>
         </div>
 
@@ -473,7 +469,7 @@ function BackendSection() {
                 }}
                 className={`be-row ${fromLeft ? "be-from-left" : "be-from-right"} ${
                   isVisible ? "be-active" : ""
-                } group relative flex items-center gap-5 rounded-2xl bg-white/[0.04] border border-white/10 p-6 overflow-hidden`}
+                } group relative flex items-center gap-5 rounded-xl bg-white/[0.04] border border-white/10 p-6 overflow-hidden`}
               >
                 <div
                   className="be-glow absolute inset-0 pointer-events-none"
@@ -494,7 +490,7 @@ function BackendSection() {
                   />
                 </div>
                 <div className="relative">
-                  <h3 className="text-base font-semibold text-white">
+                  <h3 className="text-base  text-white">
                     {skill.name}
                   </h3>
                   <p className="mt-1.5 text-sm text-neutral-400 leading-relaxed">
@@ -545,17 +541,16 @@ function DatabaseSection() {
         .db-card:hover .db-pulse { animation: db-pulse-ring 1.2s ease-out infinite; }
       `}</style>
 
-      <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="mb-14 max-w-2xl">
-          <span className="text-xs font-bold uppercase tracking-widest text-blue-600 block mb-2">
+      <div className="relative flex flex-col items-center text-center justify-center z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="mb-14 flex flex-col items-center text-center justify-center max-w-2xl">
+          <span className="text-sm font-bold uppercase tracking-widest text-blue-600 block mb-2">
             Database & Other Skills
           </span>
-          <h2 className="text-3xl font-bold text-slate-900 tracking-tight sm:text-4xl">
+          <h2 className="text-3xl font-semibold text-slate-800 tracking-tight sm:text-4xl">
             Data, Handled the Right Way
           </h2>
           <p className="mt-3 text-sm text-slate-600 leading-relaxed">
-            From flexible NoSQL databases to structured relational systems and
-            modern development workflows.
+          From flexible NoSQL databases to structured relational systems and modern development workflows engineered to solve complex data challenges.
           </p>
         </div>
 
@@ -570,7 +565,7 @@ function DatabaseSection() {
                 }}
                 className={`db-card ${fromLeft ? "db-from-left" : "db-from-right"} ${
                   isVisible ? "db-active" : ""
-                } group rounded-2xl border border-slate-200 bg-white p-6 shadow-sm hover:-translate-y-2 hover:shadow-2xl transition-[transform,box-shadow] duration-500`}
+                } group rounded-xl border border-slate-200 bg-white p-6 shadow-sm hover:-translate-y-2 hover:shadow-2xl transition-[transform,box-shadow] duration-500`}
               >
                 <div
                   className="db-pulse flex h-14 w-14 items-center justify-center rounded-2xl mb-5"
@@ -600,7 +595,6 @@ function DatabaseSection() {
   );
 }
 
-/* ---------------- PROCESS ---------------- */
 
 function ProcessSection() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -630,7 +624,7 @@ function ProcessSection() {
           <span className="text-xs font-bold uppercase tracking-widest text-slate-400 block mb-2">
             How We Work
           </span>
-          <h2 className="text-3xl font-bold text-slate-900 tracking-tight sm:text-4xl">
+          <h2 className="text-3xl font-semibold text-slate-800 tracking-tight sm:text-4xl">
             Our Process
           </h2>
           <p className="mt-4 max-w-2xl text-sm text-slate-600 mx-auto">

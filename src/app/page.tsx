@@ -924,7 +924,7 @@ function PerformanceCTASection() {
           hasTriggered ? "gravity-active" : ""
         } relative z-10 mx-auto flex max-w-3xl flex-col items-center text-center px-4`}
       >
-        <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
+        <h2 className="text-3xl font-semibold tracking-tight text-white sm:text-4xl">
           Ready to build something exceptional?
         </h2>
 

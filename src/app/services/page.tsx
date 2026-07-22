@@ -652,7 +652,6 @@ export function DatabaseSection() {
                   }}
                 />
 
-                {/* 1. Dynamic Center Rotating Icon Shield (Reveals on Hover) */}
                 <div 
                   className="db-center-spinner border"
                   style={{

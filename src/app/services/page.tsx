@@ -645,7 +645,6 @@ export function DatabaseSection() {
                 } as React.CSSProperties}
                 className={`db-card ${isVisible ? "db-active" : ""} group relative overflow-hidden rounded-[24px] border border-neutral-200/80 bg-white/70 p-6 shadow-[0_8px_30px_rgb(0,0,0,0.012)] hover:shadow-[0_22px_50px_rgba(0,0,0,0.04)] backdrop-blur-md transition-all duration-500`}
               >
-                {/* Brand Color Soft Ambient Shadow Layer */}
                 <div 
                   className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none rounded-[24px]"
                   style={{

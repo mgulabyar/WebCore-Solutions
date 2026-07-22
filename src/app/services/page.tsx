@@ -666,7 +666,6 @@ export function DatabaseSection() {
                   />
                 </div>
 
-                {/* 2. Top Static Icon Shield (Disappears on Hover) */}
                 <div
                   className="db-static-icon-box flex h-14 w-14 items-center justify-center rounded-2xl border shadow-sm mb-6"
                   style={{
@@ -680,7 +679,6 @@ export function DatabaseSection() {
                   />
                 </div>
 
-                {/* Skill Header Fields */}
                 <div className="flex items-center justify-between gap-3">
                   <h3 className="text-base font-semibold text-neutral-800 tracking-tight">
                     {skill.name}

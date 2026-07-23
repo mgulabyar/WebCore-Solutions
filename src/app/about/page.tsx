@@ -38,7 +38,7 @@ const teamMembers = [
   {
     name: "Asfand Yar",
     role: "Lead UI/UX Designer",
-    bio: "Creative design strategist transforming complex backend workflows into intuitive, beautiful, and highly engaging user experiences. Expert in user research, wireframing, high fidelity interactive prototyping, and building scalable component libraries that establish consistent visual branding across all digital enterprise ecosystem products.",
+    bio: "Creative design strategist transforming complex workflows into intuitive, beautiful, and highly engaging user experiences. Expert in user research, wireframing, interactive prototyping, and building scalable component libraries that establish consistent visual branding across all digital enterprise products.",
     image: "/team/Gulab.png", // Image path fixed for Asfand
     linkedin: "#",
     github: "#",
@@ -51,7 +51,7 @@ const teamMembers = [
 function TeamCard({ member }: { member: (typeof teamMembers)[0] }) {
   return (
     <div className="group overflow-hidden rounded-xl shadow-[0_8px_30px_rgba(15,23,42,0.08)] transition-shadow duration-500 hover:shadow-[0_30px_60px_rgba(0,98,214,0.15)]">
-      <div className="team-card-photo relative h-80 w-full sm:h-96">
+      <div className="team-card-photo  relative h-80 w-full sm:h-96">
         <img
           src={member.image}
           alt={member.name}
@@ -101,7 +101,7 @@ function TeamCard({ member }: { member: (typeof teamMembers)[0] }) {
         <p className="mt-1 text-xs font-semibold uppercase tracking-[0.15em] text-[#4C9AFF]">
           {member.role}
         </p>
-        <p className="mt-3 text-sm italic leading-relaxed text-slate-400">
+        <p className="mt-3  text-sm italic leading-relaxed text-slate-400">
           {member.bio}
         </p>
       </div>

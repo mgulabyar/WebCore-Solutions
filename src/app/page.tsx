@@ -730,7 +730,7 @@ function HeroSection() {
 
         <div className="relative flex h-77.5 w-full items-center justify-center overflow-visible sm:h-120 lg:h-127.5 max-sm:pt-14 mt-4 lg:mt-0">
           <div className="absolute h-57.5 w-57.5 sm:h-70 sm:w-70 lg:h-80 lg:w-[320px] rounded-full border border-[#0062D6] pointer-events-none" />
-          <div className="absolute h-30 w-30 sm:h-35 sm:w-35 lg:h-[160px] lg:w-[160px] rounded-full border border-[#0062D6] pointer-events-none" />
+          <div className="absolute h-30 w-30 sm:h-35 sm:w-35 lg:h-40 lg:w-[160px] rounded-full border border-[#0062D6] pointer-events-none" />
 
           <div className="absolute h-[230px] w-[230px] sm:h-[280px] lg:h-[320px] flex items-center justify-center">
             <div className="block sm:hidden w-full h-full relative">

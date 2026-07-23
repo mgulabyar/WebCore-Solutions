@@ -242,7 +242,7 @@ function StepCard({
         className="relative flex items-start gap-6 lg:gap-8"
       >
         <motion.div
-          className={`relative z-10 flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br ${step.color} shadow-[0_18px_40px_rgba(0,98,214,0.16)] lg:h-20 lg:w-20`}
+          className={`relative z-10 flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl bg-linear-to-br ${step.color} shadow-[0_18px_40px_rgba(0,98,214,0.16)] lg:h-20 lg:w-20`}
           whileHover={{ scale: 1.06, rotate: 3 }}
           whileTap={{ scale: 0.98 }}
           transition={{ duration: 0.3 }}

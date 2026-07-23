@@ -400,7 +400,7 @@ function CTASection() {
 
   return (
     <section className="relative overflow-hidden bg-linear-to-r from-[#0062D6] to-[#0B3C95] py-20 lg:py-28">
-      <div className="absolute inset-0 bg-[radial-gradient(#ffffff_1px,transparent_1px)] bg-[size:24px_24px] opacity-10" />
+      <div className="absolute inset-0 bg-[radial-gradient(#ffffff_1px,transparent_1px)] bg-size-[24px_24px] opacity-10" />
       <motion.div
         ref={ref}
         initial={{ opacity: 0, y: 60 }}

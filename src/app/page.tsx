@@ -572,7 +572,7 @@ function TestimonialsSection() {
                     >
                       <div className="flex items-center gap-3">
                         <div
-                          className={`flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full text-xs font-bold ${
+                          className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-full text-xs font-bold ${
                             isCenter
                               ? "bg-white/20 text-white ring-1 ring-white/30"
                               : "bg-slate-100 text-slate-500"

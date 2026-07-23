@@ -37,7 +37,7 @@ export default function ProjectDetailPage() {
       </div>
     );
   }
-// 
+
   const nextImage = () =>
     setCarouselIndex((prev) =>
       prev === project.images.length - 1 ? 0 : prev + 1

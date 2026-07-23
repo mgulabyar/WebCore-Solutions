@@ -419,10 +419,10 @@ function CTASection() {
         <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
           <Link
             href="/contact"
-            className="inline-flex items-center gap-2 rounded-full bg-white px-7 py-3.5 text-sm font-semibold text-[#0062D6] shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-white/20 active:scale-95"
+            className="group inline-flex items-center gap-2 rounded-full bg-white px-7 py-3.5 text-sm font-semibold text-[#0062D6] shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-white/20 active:scale-95"
           >
             Get a Free Quote
-            <ArrowRight className="h-4 w-4" />
+            <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
           </Link>
 
           <Link
@@ -436,7 +436,6 @@ function CTASection() {
     </section>
   );
 }
-
 export default function ProcessPage() {
   const heroRef = useRef<HTMLDivElement>(null);
   const isInView = useInView(heroRef, { once: true, amount: 0.28 });

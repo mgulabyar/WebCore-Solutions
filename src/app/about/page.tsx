@@ -206,7 +206,6 @@ function TeamSection() {
           </p>
         </div>
 
-        {/* Small screens: horizontal carousel */}
         <div className="team-carousel md:hidden">
           {teamMembers.map((member) => (
             <div key={member.name} className="team-carousel-item">

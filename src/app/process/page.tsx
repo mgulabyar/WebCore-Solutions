@@ -278,7 +278,7 @@ function StepCard({
                 key={idx}
                 className="flex items-center gap-2.5 text-sm text-slate-600"
               >
-                <div className="h-2 w-2 flex-shrink-0 rounded-full bg-[#0062D6]" />
+                <div className="h-2 w-2 shrink-0 rounded-full bg-[#0062D6]" />
                 <span>{item}</span>
               </div>
             ))}

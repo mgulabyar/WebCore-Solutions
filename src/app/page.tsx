@@ -12,7 +12,7 @@ import {
 } from "framer-motion";
 import { FaStar, FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import Footer from "@/components/Footer";
-
+import { ArrowRight} from "lucide-react";
 const innerOrbitItems = [
   { src: "/mongo-db.png", title: "MongoDB", angle: 0 },
   { src: "/expressjs.png", title: "Express.js", angle: 90 },
@@ -817,141 +817,49 @@ function HeroSection() {
   );
 }
 
-function PerformanceCTASection() {
-  const containerRef = useRef<HTMLDivElement>(null);
-  const [hasTriggered, setHasTriggered] = useState(false);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setHasTriggered(true);
-        }
-      },
-      {
-        rootMargin: "0px 0px -150px 0px",
-        threshold: 0.01,
-      },
-    );
-
-    if (containerRef.current) {
-      observer.observe(containerRef.current);
-    }
-
-    return () => observer.disconnect();
-  }, []);
+function CTASection() {
+  const ref = useRef<HTMLDivElement>(null);
+  const isInView = useInView(ref, { once: true, amount: 0.25 });
 
   return (
-    <section
-      ref={containerRef}
-      className="relative w-full overflow-hidden bg-linear-to-r from-blue-600 to-blue-700 py-24 flex justify-center items-center select-none"
-    >
-      <style
-        dangerouslySetInnerHTML={{
-          __html: `
-            .unified-gravity-block {
-              opacity: 0;
-              will-change: transform, opacity;
-              transition: transform 1.6s cubic-bezier(0.16, 1, 0.3, 1),
-                opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1);
-              transform: translateY(-100vh);
-            }
-
-            .unified-gravity-block.gravity-active {
-              opacity: 1;
-              transform: translateY(0);
-            }
-
-            .shimmer-wave-btn {
-              position: relative;
-              overflow: hidden;
-              z-index: 1;
-            }
-            .shimmer-wave-btn::before {
-              content: "";
-              position: absolute;
-              top: 0;
-              left: -100%;
-              width: 50%;
-              height: 100%;
-              background: linear-gradient(
-                90deg,
-                transparent,
-                rgba(37, 99, 235, 0.15),
-                transparent
-              );
-              transform: skewX(-25deg);
-              z-index: -1;
-            }
-            .shimmer-wave-btn:hover::before {
-              left: 200%;
-              transition: left 0.8s cubic-bezier(0.25, 1, 0.5, 1);
-            }
-
-            .split-expand-btn {
-              position: relative;
-              overflow: hidden;
-              z-index: 1;
-            }
-            .split-expand-btn::before {
-              content: "";
-              position: absolute;
-              top: 0;
-              left: 50%;
-              width: 0;
-              height: 100%;
-              background-color: #2563eb;
-              transform: translateX(-50%);
-              transition: width 0.55s cubic-bezier(0.25, 1, 0.4, 1);
-              z-index: -1;
-              will-change: width;
-            }
-            .split-expand-btn:hover::before {
-              width: 100%;
-            }
-            .split-expand-btn:hover {
-              border-color: #2563eb !important;
-              box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-            }
-          `,
-        }}
-      />
-
-      <div className="pointer-events-none absolute inset-0 opacity-10 z-0 bg-[radial-gradient(#ffffff_1px,transparent_1px)] bg-size-[24px_24px]" />
-
-      <div
-        className={`unified-gravity-block ${
-          hasTriggered ? "gravity-active" : ""
-        } relative z-10 mx-auto flex max-w-3xl flex-col items-center text-center px-4`}
+    <section className="relative overflow-hidden bg-linear-to-r from-[#0062D6] to-[#0B3C95] py-20 lg:py-28">
+      <div className="absolute inset-0 bg-[radial-gradient(#ffffff_1px,transparent_1px)] bg-size-[24px_24px] opacity-10" />
+      <motion.div
+        ref={ref}
+        initial={{ opacity: 0, y: 60 }}
+        animate={isInView ? { opacity: 1, y: 0 } : {}}
+        transition={{ duration: 1.05, ease: [0.16, 1, 0.3, 1] }}
+        className="relative z-10 mx-auto max-w-4xl px-6 text-center md:px-12"
       >
-        <h2 className="text-3xl font-semibold tracking-tight text-white sm:text-4xl">
-          Ready to build something exceptional?
+        <h2 className="mb-6 text-2xl font-semibold tracking-tight text-white lg:text-4xl">
+          Ready to Start Your Project?
         </h2>
-
-        <p className="mt-4 max-w-xl text-sm text-blue-100 font-normal opacity-90">
-          Schedule a consultation with our team to discuss your project and
-          explore how we can help you achieve your goals.
+        <p className="mx-auto mb-10 max-w-2xl text-sm leading-relaxed text-blue-100 lg:text-base">
+          Let&apos;s turn your idea into a polished digital experience with a clear
+          plan, premium execution, and long-term support.
         </p>
 
-        <div className="mt-8 flex flex-wrap items-center justify-center gap-3 w-full">
+        <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
           <Link
-            href="#contact"
-            className="shimmer-wave-btn rounded-full bg-white px-6 py-3 text-sm font-semibold text-blue-700 shadow-sm transition-all duration-300 active:scale-95 block"
+            href="/contact"
+            className="inline-flex items-center gap-2 rounded-full bg-white px-7 py-3.5 text-sm font-semibold text-[#0062D6] shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-white/20 active:scale-95"
           >
-            Book a Consultation
+            Get a Free Quote
+            <ArrowRight className="h-4 w-4" />
           </Link>
 
           <Link
-            href="#portfolio"
-            className="split-expand-btn rounded-full border border-white/40 bg-white/10 px-6 py-3 text-sm font-semibold text-white shadow-sm transition-all duration-300 active:scale-95 block"
+            href="/portfolio"
+            className="inline-flex items-center gap-2 rounded-full border-2 border-white/35 bg-white/10 px-7 py-3.5 text-sm font-semibold text-white backdrop-blur-sm transition-all duration-300 hover:scale-105 hover:bg-white/20 active:scale-95"
           >
             View Our Work
           </Link>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 }
+
 
 export default function TechHeroSection() {
   return (
@@ -959,7 +867,7 @@ export default function TechHeroSection() {
       <HeroSection />
       <PerformanceMetricsSection />
       <TestimonialsSection />
-      <PerformanceCTASection />
+      <CTASection/>
       <Footer />
     </div>
   );

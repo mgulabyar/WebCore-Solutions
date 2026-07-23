@@ -137,7 +137,6 @@ function TeamSection() {
   return (
     <section className="relative overflow-hidden bg-[#fbfcfe] py-16 lg:py-24">
       <style>{`
-        /* No zoom on image hover — only a subtle blue tint overlay */
         .team-card-overlay {
           background: rgba(0, 98, 214, 0);
           transition: background-color 0.4s ease;

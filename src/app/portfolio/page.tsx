@@ -1,13 +1,15 @@
 /* eslint-disable @next/next/no-img-element */
-/* eslint-disable react-hooks/set-state-in-effect */
 "use client";
 
 import { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, ChevronLeft, ChevronRight, Eye, ArrowUpRight } from "lucide-react";
 import { projects, type Project } from "@/data/projectsData";
+import Link from "next/link";
+import Footer from "@/components/Footer";
 
 export default function PortfolioPage() {
+  const [selectedFilter, setSelectedFilter] = useState<string>("All Portfolio");
   const [activeProject, setActiveProject] = useState<Project | null>(null);
   const [carouselIndex, setCarouselIndex] = useState<number>(0);
   const [isHeaderVisible, setIsHeaderVisible] = useState(false);
@@ -18,14 +20,36 @@ export default function PortfolioPage() {
 
   const easeOutExpo = [0.16, 1, 0.3, 1] as const;
 
+  const filterItems = [
+    "All Portfolio",
+    "Office Add-ins",
+    "Google Add-ons",
+    "Web Development",
+    "Word Add-ins",
+    "Excel Add-ins",
+    "PowerPoint Add-ins",
+    "Outlook Add-ins",
+    "Gmail Add-ons",
+    "Google Sheet Add-ons",
+    "Google Docs Add-ons",
+    "Google Form Add-ons",
+  ];
+
+  const filteredProjects =
+    selectedFilter === "All Portfolio"
+      ? projects
+      : projects.filter(
+          (p) => p.category === selectedFilter || p.subType === selectedFilter
+        );
+
   useEffect(() => {
     const headerObserver = new IntersectionObserver(
       ([entry]) => setIsHeaderVisible(entry.isIntersecting),
-      { threshold: 0.2 },
+      { threshold: 0.2 }
     );
     const gridObserver = new IntersectionObserver(
       ([entry]) => setIsGridVisible(entry.isIntersecting),
-      { threshold: 0.05, rootMargin: "0px 0px -80px 0px" },
+      { threshold: 0.05, rootMargin: "0px 0px -80px 0px" }
     );
     if (headerRef.current) headerObserver.observe(headerRef.current);
     if (gridRef.current) gridObserver.observe(gridRef.current);
@@ -37,6 +61,7 @@ export default function PortfolioPage() {
 
   useEffect(() => {
     if (!activeProject) return;
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setCarouselIndex(0);
   }, [activeProject]);
 
@@ -44,7 +69,7 @@ export default function PortfolioPage() {
     if (!activeProject) return;
     const id = window.setInterval(() => {
       setCarouselIndex((prev) =>
-        prev === activeProject.images.length - 1 ? 0 : prev + 1,
+        prev === activeProject.images.length - 1 ? 0 : prev + 1
       );
     }, 4500);
     return () => window.clearInterval(id);
@@ -53,13 +78,13 @@ export default function PortfolioPage() {
   const nextImage = () =>
     activeProject &&
     setCarouselIndex((prev) =>
-      prev === activeProject.images.length - 1 ? 0 : prev + 1,
+      prev === activeProject.images.length - 1 ? 0 : prev + 1
     );
 
   const prevImage = () =>
     activeProject &&
     setCarouselIndex((prev) =>
-      prev === 0 ? activeProject.images.length - 1 : prev - 1,
+      prev === 0 ? activeProject.images.length - 1 : prev - 1
     );
 
   const openPreview = (project: Project) => {
@@ -68,7 +93,8 @@ export default function PortfolioPage() {
   };
 
   return (
-    <section className="relative min-h-screen overflow-hidden bg-white pt-28 pb-24">
+    <>
+    <section className="relative min-h-screen overflow-hidden bg-[#fbfcfe] pt-12 pb-12">
       <style>{`
         .pf-blob {
           position: absolute;
@@ -83,7 +109,6 @@ export default function PortfolioPage() {
         .pf-blob-1 { animation: pf-blob-move 16s ease-in-out infinite; }
         .pf-blob-2 { animation: pf-blob-move 20s ease-in-out infinite reverse; }
 
-        /* Entrance */
         .pf-card {
           opacity: 0;
           transform: translateY(70px) scale(0.94);
@@ -99,7 +124,6 @@ export default function PortfolioPage() {
           filter: blur(0px);
         }
 
-        /* Card lift + glow border */
         .pf-card-inner {
           position: relative;
           transition: transform 0.5s cubic-bezier(0.16,1,0.3,1), box-shadow 0.5s cubic-bezier(0.16,1,0.3,1);
@@ -132,7 +156,6 @@ export default function PortfolioPage() {
           100% { background-position: 200% 50%; }
         }
 
-        /* Image zoom + shine sweep */
         .pf-img {
           transition: transform 0.9s cubic-bezier(0.16,1,0.3,1);
         }
@@ -154,7 +177,6 @@ export default function PortfolioPage() {
           left: 130%;
         }
 
-        /* Overlay + buttons */
         .pf-overlay {
           opacity: 0;
           transition: opacity 0.45s ease;
@@ -174,7 +196,6 @@ export default function PortfolioPage() {
         .pf-card-inner:hover .pf-btn-1 { transition-delay: 0.08s; }
         .pf-card-inner:hover .pf-btn-2 { transition-delay: 0.16s; }
 
-        /* Title bar accent line */
         .pf-title-accent {
           transform: scaleX(0);
           transform-origin: left;
@@ -183,15 +204,21 @@ export default function PortfolioPage() {
         .pf-card-inner:hover .pf-title-accent {
           transform: scaleX(1);
         }
+
+        .pf-filter-btn {
+          transition: transform 0.3s cubic-bezier(0.34,1.56,0.64,1), background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+        }
+        .pf-filter-btn:hover {
+          transform: translateY(-2px);
+        }
       `}</style>
 
-      <div className="pf-blob pf-blob-1 top-0 left-1/4 h-96 w-96" />
-      <div className="pf-blob pf-blob-2 bottom-0 right-1/4 h-96 w-96" />
 
-      <div className="relative z-10 mx-auto max-w-7xl px-6 md:px-12">
+
+      <div className="relative z-10 mx-auto max-w-7xl px-6 md:px-8">
         <div
           ref={headerRef}
-          className="mx-auto mb-20 flex max-w-3xl flex-col items-center gap-5 text-center"
+          className="mx-auto mb-12 flex max-w-3xl flex-col items-center gap-5 text-center"
         >
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
@@ -206,19 +233,41 @@ export default function PortfolioPage() {
             initial={{ opacity: 0, y: 16 }}
             animate={isHeaderVisible ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.2, ease: easeOutExpo }}
-            className="max-w-2xl text-sm  text-slate-500 md:text-base"
+            className="max-w-2xl text-sm text-slate-600 md:text-base"
           >
-            Selected projects across Google Add-ons, Office Add-ins, and web
-            development - crafted with premium UI, automation, and
-            high-performance engineering.
+            From custom Office add-ins and Google add-ons to high-performance
+            web ecosystems built with Python, Next.js, and the MERN stack.
+            Explore how I transform complex ideas into scalable, automated
+            digital solutions.
           </motion.p>
         </div>
 
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={isHeaderVisible ? { opacity: 1 } : {}}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          className="mx-auto mb-12 flex max-w-5xl flex-wrap items-center justify-center gap-2.5 py-6"
+        >
+          {filterItems.map((filter) => (
+            <button
+              key={filter}
+              onClick={() => setSelectedFilter(filter)}
+              className={`pf-filter-btn rounded-full border px-5 py-2 text-[12px] font-black uppercase tracking-wide transition-colors duration-300 cursor-pointer ${
+                selectedFilter === filter
+                  ? "bg-[#0062D6] border-[#0062D6] text-white shadow-[0_0_15px_rgba(0,98,214,0.35)]"
+                  : "bg-transparent border-slate-200 text-slate-500 hover:border-[#0062D6]/40 hover:text-[#0062D6]"
+              }`}
+            >
+              {filter}
+            </button>
+          ))}
+        </motion.div>
+
         <div
           ref={gridRef}
-          className="grid grid-cols-1 gap-8 md:grid-cols-2 xl:grid-cols-3"
+          className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3"
         >
-          {projects.map((project, idx) => (
+          {filteredProjects.map((project, idx) => (
             <div
               key={project._id}
               style={{
@@ -246,21 +295,21 @@ export default function PortfolioPage() {
                       Preview
                     </button>
 
-                    <a
-                      href={project.liveUrl || "#"}
+                    <Link
+                      href={`/projects-detail/${project._id}`}
                       target="_blank"
                       rel="noreferrer"
                       className="pf-btn pf-btn-2 inline-flex items-center gap-2 rounded-full bg-[#0062D6] px-5 py-2.5 text-xs font-semibold uppercase tracking-widest text-white hover:bg-[#0B3C95] transition-colors duration-300"
                     >
                       Open Tab
                       <ArrowUpRight className="h-4 w-4" />
-                    </a>
+                    </Link>
                   </div>
                 </div>
 
-                <div className="relative bg-slate-700 flex flex-col items-center text-center justify-center  px-5 py-4">
+                <div className="relative bg-[#0B1220] flex flex-col items-center justify-center px-5 py-4">
                   <div className="pf-title-accent absolute left-0 top-0 h-0.5 w-full bg-linear-to-r from-[#0062D6] to-cyan-400" />
-                  <h3 className="text-base font-bold text-white md:text-lg">
+                  <h3 className="text-base font-semibold text-white md:text-lg">
                     {project.title}
                   </h3>
                   <p className="mt-0.5 text-xs font-medium text-slate-400 md:text-sm">
@@ -275,16 +324,16 @@ export default function PortfolioPage() {
 
       <AnimatePresence>
         {activeProject && (
-          <div className="fixed inset-0 z-200 flex items-center justify-center bg-slate-900/60 p-4 backdrop-blur-md">
+          <div className="fixed inset-0 z-200 flex items-center justify-center bg-slate-900/50 p-4 backdrop-blur-md">
             <motion.div
               initial={{ opacity: 0, scale: 0.96, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.96, y: 20 }}
               transition={{ duration: 0.55, ease: easeOutExpo }}
-              className="flex w-full max-w-7xl flex-col overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-2xl"
+              className="flex w-full max-w-7xl flex-col overflow-hidden rounded-lg border border-slate-200 bg-white shadow-2xl"
             >
               <div className="flex items-center justify-between border-b border-slate-100 px-6 py-5">
-                <h3 className="text-2xl font-bold text-slate-900 md:text-3xl">
+                <h3 className="text-2xl font-semibold text-slate-800 md:text-3xl">
                   {activeProject.title}
                 </h3>
                 <button
@@ -298,9 +347,28 @@ export default function PortfolioPage() {
 
               <div className="grid flex-1 overflow-y-auto lg:grid-cols-[0.95fr_1.05fr]">
                 <div className="order-2 border-t border-slate-100 p-6 lg:order-1 lg:border-t-0 lg:border-r">
-                  <p className="max-h-[60vh] overflow-y-auto text-sm leading-relaxed text-slate-600">
+                  <h4 className="text-xl font-semibold text-slate-900 mb-6">
+                    {activeProject.tagline}
+                  </h4>
+                  <p className="text-slate-600 leading-relaxed text-xs md:text-base font-light mb-8">
                     {activeProject.description}
                   </p>
+
+                  <div className="pt-6 border-t border-slate-100">
+                    <p className="text-[10px] font-black uppercase text-slate-400 tracking-[0.2em] mb-4">
+                      Skills and deliverables
+                    </p>
+                    <div className="flex flex-wrap gap-2">
+                      {activeProject.technologies.map((tech, idx) => (
+                        <span
+                          key={idx}
+                          className="text-[11px] font-bold text-slate-700 bg-slate-50 border border-slate-200 px-4 py-2 rounded-full transition-colors duration-300 hover:border-[#0062D6]/40"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
                 </div>
 
                 <div className="relative order-1 flex min-h-105 items-center justify-center overflow-hidden bg-slate-50 p-4 lg:order-2">
@@ -353,5 +421,7 @@ export default function PortfolioPage() {
         )}
       </AnimatePresence>
     </section>
+    <Footer/>
+    </>
   );
 }

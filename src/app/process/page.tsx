@@ -399,7 +399,7 @@ function CTASection() {
   const isInView = useInView(ref, { once: true, amount: 0.25 });
 
   return (
-    <section className="relative overflow-hidden bg-gradient-to-r from-[#0062D6] to-[#0B3C95] py-20 lg:py-28">
+    <section className="relative overflow-hidden bg-linear-to-r from-[#0062D6] to-[#0B3C95] py-20 lg:py-28">
       <div className="absolute inset-0 bg-[radial-gradient(#ffffff_1px,transparent_1px)] bg-[size:24px_24px] opacity-10" />
       <motion.div
         ref={ref}

@@ -295,7 +295,7 @@ function WhyChooseUsSection() {
 
   return (
     <section className="relative overflow-hidden bg-linear-to-br from-blue-50 via-white to-slate-50 py-16 lg:py-24">
-      <div className="absolute inset-0 bg-[radial-gradient(#2563eb_1px,transparent_1px)] bg-[size:32px_32px] opacity-[0.025]" />
+      <div className="absolute inset-0 bg-[radial-gradient(#2563eb_1px,transparent_1px)] bg-size-[32px_32px] opacity-[0.025]" />
       <div className="relative z-10 mx-auto max-w-7xl px-6 md:px-12">
         <motion.div
           ref={ref}

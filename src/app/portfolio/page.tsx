@@ -255,7 +255,7 @@ export default function PortfolioPage() {
               className={`pf-filter-btn rounded-full border px-5 py-2 text-[12px] font-bold uppercase tracking-wide transition-colors duration-300 cursor-pointer ${
                 selectedFilter === filter
                   ? "bg-[#0062D6] border-[#0062D6] text-white"
-                  : "bg-transparent border-slate-200 text-slate-500 hover:border-[#0062D6]/40 hover:text-[#0062D6]"
+                  : "bg-transparent border-slate-200 text-slate-700 hover:border-[#0062D6]/40 hover:text-[#0062D6]"
               }`}
             >
               {filter}
@@ -275,7 +275,7 @@ export default function PortfolioPage() {
               }}
               className={`pf-card ${isGridVisible ? "pf-active" : ""}`}
             >
-              <article className="pf-card-inner overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-[0_8px_30px_rgba(15,23,42,0.06)]">
+              <article className="pf-card-inner overflow-hidden rounded-lg border border-slate-200 bg-white shadow-[0_8px_30px_rgba(15,23,42,0.06)]">
                 <div className="pf-glow-border" />
 
                 <div className="relative aspect-20/9 overflow-hidden">
@@ -302,7 +302,7 @@ export default function PortfolioPage() {
                       className="pf-btn pf-btn-2 inline-flex items-center gap-2 rounded-full bg-[#0062D6] px-5 py-2.5 text-xs font-semibold uppercase tracking-widest text-white hover:bg-[#0B3C95] transition-colors duration-300"
                     >
                       Open Tab
-                      <ArrowUpRight className="h-4 w-4" />
+                      <ArrowUpRight className="h-5 w-5" />
                     </Link>
                   </div>
                 </div>

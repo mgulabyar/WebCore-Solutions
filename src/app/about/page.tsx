@@ -5,49 +5,52 @@ import { useRef, useEffect } from "react";
 import { FaGithub, FaLinkedin, FaGlobe } from "react-icons/fa";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+import Footer from "@/components/Footer";
 
 const teamMembers = [
   {
     name: "Gulab Yar",
-    role: "Founder & Lead Developer",
-    bio: "Full-stack expert with 8+ years of experience building scalable web apps and Office add-ins.",
-    image: "/team/M_Gulab_Yar.png",
+    role: "SEO Specialist & Founder",
+    bio: "Visionary leader managing search engine optimization and scalable web architectures. Expert in advanced Office add ins, driving organic traffic growth, and delivering robust digital solutions that guarantee long term market dominance and exceptional client satisfaction across global modern business platforms.",
+    image: "/team/Asfand.png", // Image path fixed for Gulab
     linkedin: "https://www.linkedin.com/in/gulab-yar-fullstack-developer/",
     github: "https://github.com/mgulabyar",
-    website: "https://x.com/home",
+    website: "https://stackoverflow.com",
   },
   {
     name: "Zuryab Gill",
-    role: "Frontend Developer",
-    bio: "React & Next.js specialist focused on pixel-perfect UI and smooth animations.",
+    role: "Senior Frontend Developer",
+    bio: "Frontend engineering specialist dedicated to creating pixel perfect, highly responsive, and interactive user interfaces. Expert in React, Next js, and modern CSS frameworks, focusing on seamless user journeys, smooth fluid animations, and optimized website speed across all modern devices.",
     image: "/team/zuryab.png",
     linkedin: "#",
     github: "#",
     website: "#",
   },
   {
-    name: "Team Member 3",
-    role: "Backend Developer",
-    bio: "Node.js, Python, and database architect ensuring scalable, secure systems.",
-    image: "/team/M_Gulab_Yar.png",
+    name: "Shabana",
+    role: "Full-Stack Developer",
+    bio: "Versatile systems engineer handling both complex server side application logic and modern client side integrations. Expert in secure API development, relational databases, and cloud infrastructures, ensuring optimal end to end performance, flawless application flow, and rock solid architectural security frameworks.",
+    image: "/team/Shabana.jpeg",
     linkedin: "#",
     github: "#",
     website: "#",
   },
   {
-    name: "Team Member 4",
-    role: "UI/UX Designer",
-    bio: "Crafting intuitive, beautiful interfaces with a focus on user experience.",
-    image: "/team/zuryab.png",
+    name: "Asfand Yar",
+    role: "Lead UI/UX Designer",
+    bio: "Creative design strategist transforming complex backend workflows into intuitive, beautiful, and highly engaging user experiences. Expert in user research, wireframing, high fidelity interactive prototyping, and building scalable component libraries that establish consistent visual branding across all digital enterprise ecosystem products.",
+    image: "/team/Gulab.png", // Image path fixed for Asfand
     linkedin: "#",
     github: "#",
     website: "#",
   },
 ];
 
+
+
 function TeamCard({ member }: { member: (typeof teamMembers)[0] }) {
   return (
-    <div className="group overflow-hidden rounded-2xl shadow-[0_8px_30px_rgba(15,23,42,0.08)] transition-shadow duration-500 hover:shadow-[0_30px_60px_rgba(0,98,214,0.15)]">
+    <div className="group overflow-hidden rounded-xl shadow-[0_8px_30px_rgba(15,23,42,0.08)] transition-shadow duration-500 hover:shadow-[0_30px_60px_rgba(0,98,214,0.15)]">
       <div className="team-card-photo relative h-80 w-full sm:h-96">
         <img
           src={member.image}
@@ -135,7 +138,7 @@ function TeamSection() {
   }, []);
 
   return (
-    <section className="relative overflow-hidden bg-[#fbfcfe] py-16 lg:py-24">
+    <section className="relative overflow-hidden bg-[#fbfcfe] py-14 lg:py-20">
       <style>{`
         .team-card-overlay {
           background: rgba(0, 98, 214, 0);
@@ -187,12 +190,13 @@ function TeamSection() {
       <div className="absolute left-1/4 top-0 h-72 w-72 rounded-full bg-blue-100/40 blur-3xl" />
       <div className="absolute bottom-0 right-1/4 h-72 w-72 rounded-full bg-cyan-100/30 blur-3xl" />
 
-      <div className="relative z-10 mx-auto max-w-7xl px-6 md:px-12">
+      <div className="relative z-10 mx-auto  px-6 md:px-12">
         <div
           ref={ref}
           className="about-float-right mx-auto mb-14 max-w-2xl text-center"
         >
-          <h2 className="text-2xl font-bold tracking-tight text-slate-900 lg:text-4xl">
+    
+          <h2 className="text-2xl font-semibold tracking-tight text-slate-800 lg:text-4xl">
             Our Team
           </h2>
           <p className="mt-4 text-sm leading-relaxed text-slate-600 lg:text-base">
@@ -204,13 +208,7 @@ function TeamSection() {
           </p>
         </div>
 
-        <div className="team-carousel md:hidden">
-          {teamMembers.map((member) => (
-            <div key={member.name} className="team-carousel-item">
-              <TeamCard member={member} />
-            </div>
-          ))}
-        </div>
+     
 
         <div className="hidden md:grid md:grid-cols-2 md:gap-6 lg:grid-cols-4">
           {teamMembers.map((member) => (
@@ -255,7 +253,7 @@ function HeroSection() {
       <div className="absolute left-1/4 top-0 h-80 w-80 rounded-full bg-blue-100/50 blur-3xl" />
       <div className="absolute right-1/4 bottom-0 h-80 w-80 rounded-full bg-cyan-100/40 blur-3xl" />
 
-      <div className="relative z-10 mx-auto grid max-w-7xl grid-cols-1 items-center gap-10 px-6 md:px-12 lg:grid-cols-2 lg:gap-16">
+      <div className="relative z-10 mx-auto grid max-w-7xl grid-cols-1 items-center gap-12 px-6 md:px-12 lg:grid-cols-2 lg:gap-16">
         <div
           ref={textRef}
           className="about-float-left text-center lg:text-left"
@@ -291,7 +289,6 @@ function HeroSection() {
           ref={mediaRef}
           className="about-float-right relative flex items-center justify-center"
         >
-          <div className="absolute" />
           <img
             src="/team.png"
             alt="Our team at work"
@@ -303,4 +300,56 @@ function HeroSection() {
   );
 }
 
-export { TeamSection, HeroSection };
+export default function AboutPage() {
+  return (
+    <div className="flex min-h-screen flex-col bg-[#fbfcfe]">
+      <style>{`
+        .about-float-left {
+          opacity: 0;
+          transform: translateX(80px);
+          will-change: transform, opacity;
+          transition: opacity 0.9s ease-out,
+            transform 1.1s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .about-float-left.about-reveal-active {
+          opacity: 1;
+          transform: translateX(0);
+        }
+
+        .about-float-right {
+          opacity: 0;
+          transform: translateX(-80px);
+          will-change: transform, opacity;
+          transition: opacity 0.9s ease-out,
+            transform 1.1s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .about-float-right.about-reveal-active {
+          opacity: 1;
+          transform: translateX(0);
+        }
+
+        @keyframes about-force-visible {
+          to { opacity: 1; transform: none; }
+        }
+        .about-float-left,
+        .about-float-right {
+          animation: about-force-visible 0.01s 2.5s forwards;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+          .about-float-left,
+          .about-float-right {
+            transition: none;
+            transform: none;
+            opacity: 1;
+            animation: none;
+          }
+        }
+      `}</style>
+
+      <HeroSection />
+      <TeamSection />
+      <Footer />
+    </div>
+  );
+}

@@ -1,29 +1,42 @@
+/* eslint-disable @next/next/no-img-element */
+/* eslint-disable react-hooks/set-state-in-effect */
 "use client";
 
-import { useEffect, useState } from "react";
-import { motion, AnimatePresence, type Variants } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { X, ChevronLeft, ChevronRight, Eye, ArrowUpRight } from "lucide-react";
 import { projects, type Project } from "@/data/projectsData";
 
 export default function PortfolioPage() {
   const [activeProject, setActiveProject] = useState<Project | null>(null);
   const [carouselIndex, setCarouselIndex] = useState<number>(0);
+  const [isHeaderVisible, setIsHeaderVisible] = useState(false);
+  const [isGridVisible, setIsGridVisible] = useState(false);
+
+  const headerRef = useRef<HTMLDivElement>(null);
+  const gridRef = useRef<HTMLDivElement>(null);
 
   const easeOutExpo = [0.16, 1, 0.3, 1] as const;
 
-  const cardVariants: Variants = {
-    hidden: { opacity: 0, y: 28, scale: 0.97 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      scale: 1,
-      transition: { duration: 0.8, ease: easeOutExpo },
-    },
-  };
+  useEffect(() => {
+    const headerObserver = new IntersectionObserver(
+      ([entry]) => setIsHeaderVisible(entry.isIntersecting),
+      { threshold: 0.2 },
+    );
+    const gridObserver = new IntersectionObserver(
+      ([entry]) => setIsGridVisible(entry.isIntersecting),
+      { threshold: 0.05, rootMargin: "0px 0px -80px 0px" },
+    );
+    if (headerRef.current) headerObserver.observe(headerRef.current);
+    if (gridRef.current) gridObserver.observe(gridRef.current);
+    return () => {
+      headerObserver.disconnect();
+      gridObserver.disconnect();
+    };
+  }, []);
 
   useEffect(() => {
     if (!activeProject) return;
-    // eslint-disable-next-line react-hooks/set-state-in-effect
     setCarouselIndex(0);
   }, [activeProject]);
 
@@ -55,127 +68,283 @@ export default function PortfolioPage() {
   };
 
   return (
-    <section className="relative min-h-screen overflow-hidden bg-[#050816] pt-28 pb-20">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(59,130,246,0.12),transparent_35%)]" />
+    <section className="relative min-h-screen overflow-hidden bg-white pt-28 pb-24">
+      <style>{`
+        .pf-blob {
+          position: absolute;
+          border-radius: 9999px;
+          filter: blur(80px);
+        }
+        @keyframes pf-blob-move {
+          0%, 100% { transform: translate(0, 0) scale(1); }
+          33% { transform: translate(30px, -20px) scale(1.08); }
+          66% { transform: translate(-20px, 15px) scale(0.94); }
+        }
+        .pf-blob-1 { animation: pf-blob-move 16s ease-in-out infinite; }
+        .pf-blob-2 { animation: pf-blob-move 20s ease-in-out infinite reverse; }
+
+        /* Entrance */
+        .pf-card {
+          opacity: 0;
+          transform: translateY(70px) scale(0.94);
+          filter: blur(6px);
+          transition:
+            opacity 0.9s cubic-bezier(0.16,1,0.3,1),
+            transform 1s cubic-bezier(0.16,1,0.3,1),
+            filter 0.9s cubic-bezier(0.16,1,0.3,1);
+        }
+        .pf-card.pf-active {
+          opacity: 1;
+          transform: translateY(0) scale(1);
+          filter: blur(0px);
+        }
+
+        /* Card lift + glow border */
+        .pf-card-inner {
+          position: relative;
+          transition: transform 0.5s cubic-bezier(0.16,1,0.3,1), box-shadow 0.5s cubic-bezier(0.16,1,0.3,1);
+        }
+        .pf-card-inner:hover {
+          transform: translateY(-10px);
+          box-shadow: 0 30px 60px -12px rgba(0, 98, 214, 0.25);
+        }
+        .pf-glow-border {
+          position: absolute;
+          inset: 0;
+          border-radius: inherit;
+          padding: 1.5px;
+          background: linear-gradient(135deg, #0062D6, #38BDF8, #0062D6);
+          background-size: 200% 200%;
+          -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+          -webkit-mask-composite: xor;
+          mask-composite: exclude;
+          opacity: 0;
+          transition: opacity 0.5s ease;
+          pointer-events: none;
+          z-index: 20;
+        }
+        .pf-card-inner:hover .pf-glow-border {
+          opacity: 1;
+          animation: pf-border-flow 3s linear infinite;
+        }
+        @keyframes pf-border-flow {
+          0% { background-position: 0% 50%; }
+          100% { background-position: 200% 50%; }
+        }
+
+        /* Image zoom + shine sweep */
+        .pf-img {
+          transition: transform 0.9s cubic-bezier(0.16,1,0.3,1);
+        }
+        .pf-card-inner:hover .pf-img {
+          transform: scale(1.1);
+        }
+        .pf-shine {
+          position: absolute;
+          top: 0;
+          left: -75%;
+          width: 50%;
+          height: 100%;
+          background: linear-gradient(115deg, transparent, rgba(255,255,255,0.35), transparent);
+          transform: skewX(-20deg);
+          transition: left 0.9s cubic-bezier(0.16,1,0.3,1);
+          z-index: 10;
+        }
+        .pf-card-inner:hover .pf-shine {
+          left: 130%;
+        }
+
+        /* Overlay + buttons */
+        .pf-overlay {
+          opacity: 0;
+          transition: opacity 0.45s ease;
+        }
+        .pf-card-inner:hover .pf-overlay {
+          opacity: 1;
+        }
+        .pf-btn {
+          transform: translateY(18px) scale(0.9);
+          opacity: 0;
+          transition: transform 0.45s cubic-bezier(0.34,1.56,0.64,1), opacity 0.4s ease;
+        }
+        .pf-card-inner:hover .pf-btn {
+          transform: translateY(0) scale(1);
+          opacity: 1;
+        }
+        .pf-card-inner:hover .pf-btn-1 { transition-delay: 0.08s; }
+        .pf-card-inner:hover .pf-btn-2 { transition-delay: 0.16s; }
+
+        /* Title bar accent line */
+        .pf-title-accent {
+          transform: scaleX(0);
+          transform-origin: left;
+          transition: transform 0.5s cubic-bezier(0.16,1,0.3,1) 0.1s;
+        }
+        .pf-card-inner:hover .pf-title-accent {
+          transform: scaleX(1);
+        }
+      `}</style>
+
+      <div className="pf-blob pf-blob-1 top-0 left-1/4 h-96 w-96" />
+      <div className="pf-blob pf-blob-2 bottom-0 right-1/4 h-96 w-96" />
 
       <div className="relative z-10 mx-auto max-w-7xl px-6 md:px-12">
-        <div className="mx-auto mb-16 flex max-w-3xl flex-col items-center gap-5 text-center">
-          <h2 className="text-4xl font-black tracking-tight text-white md:text-6xl">
-            My <span className="text-brand-orange">Portfolio</span>
-          </h2>
-          <p className="max-w-2xl text-sm leading-relaxed text-slate-400 md:text-base">
+        <div
+          ref={headerRef}
+          className="mx-auto mb-20 flex max-w-3xl flex-col items-center gap-5 text-center"
+        >
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            animate={isHeaderVisible ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.7, delay: 0.1, ease: easeOutExpo }}
+            className="text-4xl font-semibold tracking-tight text-slate-800 md:text-4xl"
+          >
+            My Portfolio
+          </motion.h2>
+
+          <motion.p
+            initial={{ opacity: 0, y: 16 }}
+            animate={isHeaderVisible ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6, delay: 0.2, ease: easeOutExpo }}
+            className="max-w-2xl text-sm  text-slate-500 md:text-base"
+          >
             Selected projects across Google Add-ons, Office Add-ins, and web
-            development — crafted with premium UI, automation, and
+            development - crafted with premium UI, automation, and
             high-performance engineering.
-          </p>
+          </motion.p>
         </div>
 
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 xl:grid-cols-3">
-          {projects.map((project) => (
-            <motion.article
+        <div
+          ref={gridRef}
+          className="grid grid-cols-1 gap-8 md:grid-cols-2 xl:grid-cols-3"
+        >
+          {projects.map((project, idx) => (
+            <div
               key={project._id}
-              variants={cardVariants}
-              exit={{ opacity: 0, scale: 0.92, transition: { duration: 0.35 } }}
-              className="group relative overflow-hidden rounded-[2rem] border border-white/8 bg-white/[0.04] shadow-[0_20px_80px_rgba(0,0,0,0.35)] backdrop-blur-xl transition-transform duration-500 hover:-translate-y-2"
+              style={{
+                transitionDelay: isGridVisible ? `${idx * 120}ms` : "0ms",
+              }}
+              className={`pf-card ${isGridVisible ? "pf-active" : ""}`}
             >
-              <div className="relative aspect-[16/11] overflow-hidden bg-black/30">
-                <img
-                  src={project.images[0]}
-                  alt={project.title}
-                  className="h-full w-full object-cover transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#050816]/95 via-[#050816]/15 to-transparent opacity-90" />
-                <div className="absolute left-4 top-4">
-                  <span className="rounded-full border border-white/10 bg-black/35 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.24em] text-white/80 backdrop-blur-md">
-                    {project.category}
-                  </span>
+              <article className="pf-card-inner overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-[0_8px_30px_rgba(15,23,42,0.06)]">
+                <div className="pf-glow-border" />
+
+                <div className="relative aspect-20/9 overflow-hidden">
+                  <img
+                    src={project.images[0]}
+                    alt={project.title}
+                    className="pf-img h-full w-full object-cover"
+                  />
+                  <div className="pf-shine" />
+
+                  <div className="pf-overlay absolute inset-0 flex items-center justify-center gap-3 bg-[#0B1220]/70 backdrop-blur-sm">
+                    <button
+                      onClick={() => openPreview(project)}
+                      className="pf-btn pf-btn-1 inline-flex items-center gap-2 rounded-full border border-white/25 bg-white/10 px-5 py-2.5 text-xs font-semibold uppercase tracking-widest text-white hover:bg-white/20 transition-colors duration-300"
+                    >
+                      <Eye className="h-4 w-4" />
+                      Preview
+                    </button>
+
+                    <a
+                      href={project.liveUrl || "#"}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="pf-btn pf-btn-2 inline-flex items-center gap-2 rounded-full bg-[#0062D6] px-5 py-2.5 text-xs font-semibold uppercase tracking-widest text-white hover:bg-[#0B3C95] transition-colors duration-300"
+                    >
+                      Open Tab
+                      <ArrowUpRight className="h-4 w-4" />
+                    </a>
+                  </div>
                 </div>
-                <div className="absolute bottom-0 left-0 right-0 p-5">
-                  <h3 className="text-2xl font-black leading-tight text-white">
+
+                <div className="relative bg-slate-700 flex flex-col items-center text-center justify-center  px-5 py-4">
+                  <div className="pf-title-accent absolute left-0 top-0 h-0.5 w-full bg-linear-to-r from-[#0062D6] to-cyan-400" />
+                  <h3 className="text-base font-bold text-white md:text-lg">
                     {project.title}
                   </h3>
+                  <p className="mt-0.5 text-xs font-medium text-slate-400 md:text-sm">
+                    {project.category}
+                  </p>
                 </div>
-                <div className="absolute inset-0 flex items-center justify-center gap-3 bg-[#050816]/70 opacity-0 backdrop-blur-md transition-all duration-500 group-hover:opacity-100">
-                  <button
-                    onClick={() => openPreview(project)}
-                    className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-5 py-3 text-xs font-semibold uppercase tracking-[0.22em] text-white"
-                  >
-                    <Eye className="h-4 w-4" />
-                    Preview
-                  </button>
-                  <a
-                    href={project.liveUrl || "#"}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="inline-flex items-center gap-2 rounded-full bg-brand-orange px-5 py-3 text-xs font-semibold uppercase tracking-[0.22em] text-white"
-                  >
-                    Open Tab
-                    <ArrowUpRight className="h-4 w-4" />
-                  </a>
-                </div>
-              </div>
-            </motion.article>
+              </article>
+            </div>
           ))}
         </div>
       </div>
 
       <AnimatePresence>
         {activeProject && (
-          <div className="fixed inset-0 z-[200] flex items-center justify-center bg-[#02040c]/95 p-4 backdrop-blur-2xl">
+          <div className="fixed inset-0 z-200 flex items-center justify-center bg-slate-900/60 p-4 backdrop-blur-md">
             <motion.div
               initial={{ opacity: 0, scale: 0.96, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.96, y: 20 }}
               transition={{ duration: 0.55, ease: easeOutExpo }}
-              className="flex w-full max-w-7xl flex-col overflow-hidden rounded-[2rem] border border-white/10 bg-[#050816]"
+              className="flex w-full max-w-7xl flex-col overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-2xl"
             >
-              <div className="flex items-center justify-between border-b border-white/5 px-6 py-5">
-                <h3 className="text-2xl font-black text-white md:text-4xl">
+              <div className="flex items-center justify-between border-b border-slate-100 px-6 py-5">
+                <h3 className="text-2xl font-bold text-slate-900 md:text-3xl">
                   {activeProject.title}
                 </h3>
                 <button
                   onClick={() => setActiveProject(null)}
-                  className="rounded-full border border-white/10 bg-white/5 p-3 text-slate-300"
+                  className="rounded-full border border-slate-200 bg-slate-50 p-2.5 text-slate-500 hover:bg-slate-100 hover:text-slate-700 transition-colors duration-300"
                   aria-label="Close modal"
                 >
-                  <X size={22} />
+                  <X size={20} />
                 </button>
               </div>
 
               <div className="grid flex-1 overflow-y-auto lg:grid-cols-[0.95fr_1.05fr]">
-                <div className="order-2 border-t border-white/5 p-6 lg:order-1 lg:border-t-0 lg:border-r">
-                  <p className="max-h-[60vh] overflow-y-auto text-sm leading-relaxed text-slate-400">
+                <div className="order-2 border-t border-slate-100 p-6 lg:order-1 lg:border-t-0 lg:border-r">
+                  <p className="max-h-[60vh] overflow-y-auto text-sm leading-relaxed text-slate-600">
                     {activeProject.description}
                   </p>
                 </div>
 
-                <div className="relative order-1 flex min-h-[420px] items-center justify-center overflow-hidden bg-black/35 p-4 lg:order-2">
+                <div className="relative order-1 flex min-h-105 items-center justify-center overflow-hidden bg-slate-50 p-4 lg:order-2">
                   <AnimatePresence mode="wait">
                     <motion.img
                       key={carouselIndex}
-                      initial={{ opacity: 0, x: 20 }}
+                      initial={{ opacity: 0, x: 24 }}
                       animate={{ opacity: 1, x: 0 }}
-                      exit={{ opacity: 0, x: -20 }}
+                      exit={{ opacity: 0, x: -24 }}
                       transition={{ duration: 0.5, ease: easeOutExpo }}
                       src={activeProject.images[carouselIndex]}
                       alt={`${activeProject.title} slide ${carouselIndex + 1}`}
-                      className="max-h-[72vh] w-full rounded-2xl object-contain"
+                      className="max-h-[72vh] w-full rounded-2xl object-contain shadow-lg"
                     />
                   </AnimatePresence>
 
                   <div className="absolute inset-x-4 top-4 flex items-center justify-between">
                     <button
                       onClick={prevImage}
-                      className="rounded-full border border-white/10 bg-[#050816]/80 p-3 text-white"
+                      className="rounded-full border border-slate-200 bg-white/90 p-2.5 text-slate-700 shadow-md hover:bg-white transition-colors duration-300"
                     >
-                      <ChevronLeft size={22} />
+                      <ChevronLeft size={20} />
                     </button>
                     <button
                       onClick={nextImage}
-                      className="rounded-full border border-white/10 bg-[#050816]/80 p-3 text-white"
+                      className="rounded-full border border-slate-200 bg-white/90 p-2.5 text-slate-700 shadow-md hover:bg-white transition-colors duration-300"
                     >
-                      <ChevronRight size={22} />
+                      <ChevronRight size={20} />
                     </button>
+                  </div>
+
+                  <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-1.5">
+                    {activeProject.images.map((_, i) => (
+                      <button
+                        key={i}
+                        onClick={() => setCarouselIndex(i)}
+                        className={`h-1.5 rounded-full transition-all duration-300 ${
+                          i === carouselIndex
+                            ? "w-6 bg-[#0062D6]"
+                            : "w-1.5 bg-slate-300"
+                        }`}
+                        aria-label={`Go to image ${i + 1}`}
+                      />
+                    ))}
                   </div>
                 </div>
               </div>

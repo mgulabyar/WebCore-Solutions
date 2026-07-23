@@ -95,6 +95,8 @@ export default function PortfolioPage() {
   return (
     <>
     <section className="relative min-h-screen overflow-hidden bg-[#fbfcfe] pt-12 pb-12">
+       <div className="absolute left-1/4 top-0 h-80 w-80 rounded-full bg-blue-100/50 blur-3xl" />
+        <div className="absolute right-1/4 bottom-0 h-80 w-80 rounded-full bg-cyan-100/40 blur-3xl" />
       <style>{`
         .pf-blob {
           position: absolute;
@@ -216,7 +218,7 @@ export default function PortfolioPage() {
 
 
       <div className="relative z-10 mx-auto max-w-7xl px-6 md:px-8">
-        <div
+         <div
           ref={headerRef}
           className="mx-auto mb-12 flex max-w-3xl flex-col items-center gap-5 text-center"
         >
@@ -307,7 +309,7 @@ export default function PortfolioPage() {
                   </div>
                 </div>
 
-                <div className="relative bg-[#0B1220] flex flex-col items-center justify-center px-5 py-4">
+                <div className="relative bg-linear-to-r from-[#0062D6] to-[#0B3C95] flex flex-col items-center justify-center px-5 py-4">
                   <div className="pf-title-accent absolute left-0 top-0 h-0.5 w-full bg-linear-to-r from-[#0062D6] to-cyan-400" />
                   <h3 className="text-base font-semibold text-white md:text-lg">
                     {project.title}

@@ -167,6 +167,12 @@ const whyChooseUs = [
     description:
       "We adapt quickly when priorities change without losing clarity or momentum.",
   },
+  {
+    icon: Target,
+    title: "Outcome Focused",
+    description:
+      "Every decision is tied to measurable business impact and user value.",
+  },
 ];
 
 const extraHighlights = [
@@ -247,9 +253,14 @@ function StepCard({
           whileTap={{ scale: 0.98 }}
           transition={{ duration: 0.3 }}
         >
-          <step.icon className="h-8 w-8 text-white lg:h-10 lg:w-10" strokeWidth={1.6} />
+          <step.icon
+            className="h-8 w-8 text-white lg:h-10 lg:w-10"
+            strokeWidth={1.6}
+          />
           <div className="absolute -right-2 -top-2 flex h-8 w-8 items-center justify-center rounded-full border border-blue-100 bg-white shadow-sm">
-            <span className="text-xs font-semibold text-[#0062D6]">{step.id}</span>
+            <span className="text-xs font-semibold text-[#0062D6]">
+              {step.id}
+            </span>
           </div>
         </motion.div>
 
@@ -259,7 +270,7 @@ function StepCard({
           className="group flex-1 overflow-hidden rounded-3xl border border-slate-200 bg-white p-6 shadow-[0_4px_16px_rgba(15,23,42,0.03)] transition-all duration-500 hover:border-blue-100 hover:shadow-[0_24px_50px_rgba(0,98,214,0.08)] lg:p-7"
         >
           <div className="mb-4 flex flex-col gap-2 sm:flex-row sm:items-center">
-            <h3 className="text-lg font-semibold tracking-tight text-slate-900 transition-colors duration-300 group-hover:text-[#0062D6] lg:text-xl">
+            <h3 className="text-lg font-semibold tracking-tight text-slate-800 transition-colors duration-300 group-hover:text-[#0062D6] lg:text-xl">
               {step.title}
             </h3>
             <span className="hidden h-2 w-2 rounded-full bg-blue-400 sm:block" />
@@ -318,7 +329,11 @@ function WhyChooseUsSection() {
               key={idx}
               initial={{ opacity: 0, x: 60, y: 14 }}
               animate={isInView ? { opacity: 1, x: 0, y: 0 } : {}}
-              transition={{ duration: 0.9, delay: idx * 0.08, ease: [0.16, 1, 0.3, 1] }}
+              transition={{
+                duration: 0.9,
+                delay: idx * 0.08,
+                ease: [0.16, 1, 0.3, 1],
+              }}
               whileHover={{ y: -6 }}
               className="group rounded-2xl border border-slate-200 bg-white p-6 text-center shadow-[0_4px_14px_rgba(15,23,42,0.03)] transition-all duration-500 hover:border-blue-100 hover:shadow-[0_22px_50px_rgba(0,98,214,0.08)] lg:p-7"
             >
@@ -373,7 +388,11 @@ function ExtraHighlightsSection() {
               key={item.title}
               initial={{ opacity: 0, x: -40, y: -30 }}
               animate={isInView ? { opacity: 1, x: 0, y: 0 } : {}}
-              transition={{ duration: 0.9, delay: idx * 0.06, ease: [0.16, 1, 0.3, 1] }}
+              transition={{
+                duration: 0.9,
+                delay: idx * 0.06,
+                ease: [0.16, 1, 0.3, 1],
+              }}
               whileHover={{ y: -6 }}
               className="group rounded-2xl border border-slate-200 bg-white p-6 shadow-[0_4px_12px_rgba(15,23,42,0.03)] transition-all duration-500 hover:border-blue-100 hover:shadow-[0_20px_45px_rgba(0,98,214,0.07)]"
             >
@@ -412,8 +431,8 @@ function CTASection() {
           Ready to Start Your Project?
         </h2>
         <p className="mx-auto mb-10 max-w-2xl text-sm leading-relaxed text-blue-100 lg:text-base">
-          Let&apos;s turn your idea into a polished digital experience with a clear
-          plan, premium execution, and long-term support.
+          Let&apos;s turn your idea into a polished digital experience with a
+          clear plan, premium execution, and long-term support.
         </p>
 
         <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">

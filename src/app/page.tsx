@@ -529,7 +529,7 @@ function TestimonialsSection() {
 
   return (
     <section className="relative w-full overflow-hidden bg-[#f8fafc] py-5">
-      <div className="relative z-10 mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-8">
+      <div className="relative z-10 mx-auto max-w-350 px-4 sm:px-6 lg:px-8">
         <div className="mb-12 text-center">
           <span className="text-xs font-semibold uppercase tracking-widest text-slate-400">
             Client Testimonials
@@ -560,13 +560,13 @@ function TestimonialsSection() {
                 return (
                   <div
                     key={`${t.id}-${idx}`}
-                    className="flex-shrink-0 px-3"
+                    className="shrink-0 px-3"
                     style={{ flex: `0 0 ${cardPercent}%` }}
                   >
                     <div
-                      className={`rounded-2xl p-7 h-[240px] flex flex-col transition-all duration-500 ease-out ${
+                      className={`rounded-2xl p-7 h-60 flex flex-col transition-all duration-500 ease-out ${
                         isCenter
-                          ? "bg-gradient-to-br from-blue-500 to-blue-700 shadow-2xl shadow-blue-500/25 -translate-y-4 scale-[1.06] z-10 relative"
+                          ? "bg-linear-to-br from-blue-500 to-blue-700 shadow-2xl shadow-blue-500/25 -translate-y-4 scale-[1.06] z-10 relative"
                           : "bg-white border border-slate-200/70 opacity-70 scale-[0.94] shadow-sm"
                       }`}
                     >

@@ -3,19 +3,7 @@
 
 import { useRef, useEffect } from "react";
 import {
-  ArrowRight,
-  Code2,
-  Palette,
-  Rocket,
-  ShieldCheck,
-  Clock,
-  MessageSquare,
-  Target,
-  Layers3,
-  Zap,
-  Sparkles,
-  Gauge,
-} from "lucide-react";
+  ArrowRight} from "lucide-react";
 import Link from "next/link";
 import Footer from "@/components/Footer";
 
@@ -143,7 +131,6 @@ function HeroSection() {
       <div className="absolute right-1/4 bottom-0 h-80 w-80 rounded-full bg-cyan-100/40 blur-3xl" />
 
       <div className="relative z-10 mx-auto grid max-w-7xl grid-cols-1 items-center gap-12 px-6 md:px-12 lg:grid-cols-2 lg:gap-16">
-        {/* Left: text content */}
         <div
           ref={textRef}
           className="about-float-left text-center lg:text-left"
@@ -188,240 +175,7 @@ function HeroSection() {
   );
 }
 
-function OurStorySection() {
-  const ref = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          el.classList.add("about-reveal-active");
-        } else {
-          el.classList.remove("about-reveal-active");
-        }
-      },
-      { threshold: 0.18, rootMargin: "0px 0px -80px 0px" },
-    );
-
-    observer.observe(el);
-    return () => observer.disconnect();
-  }, []);
-
-  return (
-    <section className="relative overflow-hidden bg-[#fbfcfe] py-16 lg:py-20">
-      <div className="relative z-10 mx-auto max-w-7xl px-6 md:px-12">
-        <div
-          ref={ref}
-          className="about-float-left grid grid-cols-1 gap-10 lg:grid-cols-2"
-        >
-          <div>
-            <h2 className="text-2xl font-semibold tracking-tight text-slate-800 lg:text-3xl">
-              Our Story
-            </h2>
-            <p className="mt-5 text-sm leading-relaxed text-slate-600 lg:text-base">
-              AddinExpert started with a simple mission: to build digital products
-              that combine premium quality with real business impact. Over the
-              years, we&apos;ve helped startups and established brands launch
-              high-performance web apps, Office add-ins, and custom platforms.
-            </p>
-            <p className="mt-4 text-sm leading-relaxed text-slate-600 lg:text-base">
-              Today, we&apos;re a team of passionate developers, designers, and
-              strategists working together to deliver solutions that scale.
-            </p>
-          </div>
-          <div className="flex items-center justify-center">
-            <div className="h-16 w-16 rounded-2xl bg-linear-to-br from-[#0062D6] to-[#0B3C95] shadow-[0_16px_40px_rgba(0,98,214,0.16)]" />
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-function WhatWeDoSection() {
-  const ref = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          el.classList.add("about-reveal-active");
-        } else {
-          el.classList.remove("about-reveal-active");
-        }
-      },
-      { threshold: 0.18, rootMargin: "0px 0px -80px 0px" },
-    );
-
-    observer.observe(el);
-    return () => observer.disconnect();
-  }, []);
-
-  const services = [
-    {
-      icon: Code2,
-      title: "Web Development",
-      desc: "High-performance web apps built with React, Next.js, and Node.js.",
-    },
-    {
-      icon: Layers3,
-      title: "Office Add-ins",
-      desc: "PowerPoint & Excel add-ins that automate workflows and boost productivity.",
-    },
-    {
-      icon: Rocket,
-      title: "Cloud Solutions",
-      desc: "Scalable cloud infrastructure on AWS, Azure, and Firebase.",
-    },
-    {
-      icon: Palette,
-      title: "UI/UX Design",
-      desc: "Intuitive, polished interfaces that feel great to use.",
-    },
-  ];
-
-  return (
-    <section className="relative overflow-hidden bg-white py-16 lg:py-20">
-      <div className="relative z-10 mx-auto max-w-7xl px-6 md:px-12">
-        <div
-          ref={ref}
-          className="about-float-right mb-14 text-center"
-        >
-          <span className="mb-3 block text-xs font-semibold uppercase tracking-[0.25em] text-slate-400">
-            What We Do
-          </span>
-          <h2 className="text-2xl font-semibold tracking-tight text-slate-800 lg:text-3xl">
-            Core Expertise
-          </h2>
-        </div>
-
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {services.map((item, idx) => (
-            <SectionReveal
-              key={item.title}
-              className={`about-float-${idx % 2 === 0 ? "right" : "left"}`}
-              delay={idx * 60}
-            >
-              <div className="group rounded-2xl border border-slate-200 bg-white p-6 text-center shadow-[0_4px_12px_rgba(15,23,42,0.03)] transition-all duration-500 hover:border-blue-100 hover:shadow-[0_20px_45px_rgba(0,98,214,0.07)]">
-                <div className="mx-auto mb-4 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-blue-50 text-[#0062D6] transition-transform duration-300 group-hover:scale-108">
-                  <item.icon className="h-6 w-6" strokeWidth={1.7} />
-                </div>
-                <h3 className="text-sm font-semibold text-slate-900 transition-colors duration-300 group-hover:text-[#0062D6]">
-                  {item.title}
-                </h3>
-                <p className="mt-2 text-sm leading-relaxed text-slate-600">
-                  {item.desc}
-                </p>
-              </div>
-            </SectionReveal>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
-function WhyChooseUsSection() {
-  const ref = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          el.classList.add("about-reveal-active");
-        } else {
-          el.classList.remove("about-reveal-active");
-        }
-      },
-      { threshold: 0.18, rootMargin: "0px 0px -80px 0px" },
-    );
-
-    observer.observe(el);
-    return () => observer.disconnect();
-  }, []);
-
-  const reasons = [
-    {
-      icon: ShieldCheck,
-      title: "Proven Delivery",
-      desc: "On-time launches with reliable, bug-free code.",
-    },
-    {
-      icon: Clock,
-      title: "Clear Communication",
-      desc: "Regular updates and transparent workflows.",
-    },
-    {
-      icon: MessageSquare,
-      title: "Client Focused",
-      desc: "We prioritize your goals and business impact.",
-    },
-    {
-      icon: Zap,
-      title: "Agile Process",
-      desc: "Flexible, iterative approach for fast results.",
-    },
-    {
-      icon: Target,
-      title: "Outcome Driven",
-      desc: "Every decision tied to measurable results.",
-    },
-    {
-      icon: Layers3,
-      title: "Scalable Systems",
-      desc: "Built to grow with your business needs.",
-    },
-  ];
-
-  return (
-    <section className="relative overflow-hidden bg-linear-to-br from-blue-50 via-white to-slate-50 py-16 lg:py-20">
-      <div className="relative z-10 mx-auto max-w-7xl px-6 md:px-12">
-        <div
-          ref={ref}
-          className="about-float-left mb-14 text-center"
-        >
-          <span className="mb-3 block text-xs font-semibold uppercase tracking-[0.25em] text-slate-400">
-            Why Choose Us
-          </span>
-          <h2 className="text-2xl font-semibold tracking-tight text-slate-800 lg:text-3xl">
-            Built on Trust & Excellence
-          </h2>
-        </div>
-
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {reasons.map((item, idx) => (
-            <SectionReveal
-              key={item.title}
-              className={`about-float-${idx % 2 === 0 ? "right" : "left"}`}
-              delay={idx * 80}
-            >
-              <div className="group rounded-2xl border border-slate-200 bg-white p-6 text-center shadow-[0_4px_14px_rgba(15,23,42,0.03)] transition-all duration-500 hover:border-blue-100 hover:shadow-[0_22px_50px_rgba(0,98,214,0.08)] lg:p-7">
-                <div className="mx-auto mb-6 inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-linear-to-br from-[#0062D6] to-[#0B3C95] shadow-[0_16px_40px_rgba(0,98,214,0.16)] transition-transform duration-300 group-hover:scale-108">
-                  <item.icon className="h-7 w-7 text-white" strokeWidth={1.6} />
-                </div>
-                <h3 className="mb-2 text-base font-semibold text-slate-900 transition-colors duration-300 group-hover:text-[#0062D6]">
-                  {item.title}
-                </h3>
-                <p className="text-sm leading-relaxed text-slate-600">
-                  {item.desc}
-                </p>
-              </div>
-            </SectionReveal>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
 
 function TeamSection() {
   const ref = useRef<HTMLDivElement>(null);
@@ -521,62 +275,7 @@ function TeamSection() {
 }
 
 
-function CTASection() {
-  const ref = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          el.classList.add("about-reveal-active");
-        } else {
-          el.classList.remove("about-reveal-active");
-        }
-      },
-      { threshold: 0.25, rootMargin: "0px 0px -80px 0px" },
-    );
-
-    observer.observe(el);
-    return () => observer.disconnect();
-  }, []);
-
-  return (
-    <section className="relative overflow-hidden bg-linear-to-r from-[#0062D6] to-[#0B3C95] py-20 lg:py-28">
-      <div className="absolute inset-0 bg-[radial-gradient(#ffffff_1px,transparent_1px)] bg-[size:24px_24px] opacity-10" />
-      <div
-        ref={ref}
-        className="about-float-bottom relative z-10 mx-auto max-w-4xl px-6 text-center md:px-12"
-      >
-        <h2 className="mb-6 text-2xl font-semibold tracking-tight text-white lg:text-4xl">
-          Ready to Work Together?
-        </h2>
-        <p className="mx-auto mb-10 max-w-2xl text-sm leading-relaxed text-blue-100 lg:text-base">
-          Let&apos;s discuss your vision and build something extraordinary together.
-        </p>
-
-        <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
-          <Link
-            href="/contact"
-            className="group inline-flex items-center gap-2 rounded-full bg-white px-7 py-3.5 text-sm font-semibold text-[#0062D6] shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-white/20 active:scale-95"
-          >
-            Get in Touch
-            <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
-          </Link>
-
-          <Link
-            href="/contact"
-            className="inline-flex items-center gap-2 rounded-full border-2 border-white/35 bg-white/10 px-7 py-3.5 text-sm font-semibold text-white backdrop-blur-sm transition-all duration-300 hover:scale-105 hover:bg-white/20 active:scale-95"
-          >
-            Join Our Team
-          </Link>
-        </div>
-      </div>
-    </section>
-  );
-}
 
 export default function AboutPage() {
   return (
@@ -641,11 +340,7 @@ export default function AboutPage() {
       `}</style>
 
       <HeroSection />
-      <OurStorySection />
-      <WhatWeDoSection />
-      <WhyChooseUsSection />
       <TeamSection />
-      <CTASection />
       <Footer />
     </div>
   );

@@ -233,7 +233,7 @@ export default function PortfolioPage() {
             initial={{ opacity: 0, y: 16 }}
             animate={isHeaderVisible ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.2, ease: easeOutExpo }}
-            className="max-w-2xl text-sm text-slate-600 md:text-base"
+            className="max-w-2xl leading-relaxed text-sm text-slate-600 md:text-base"
           >
             From custom Office add-ins and Google add-ons to high-performance
             web ecosystems built with Python, Next.js, and the MERN stack.

@@ -294,7 +294,7 @@ function WhyChooseUsSection() {
   const isInView = useInView(ref, { once: true, amount: 0.18 });
 
   return (
-    <section className="relative overflow-hidden bg-linear-to-br from-blue-50 via-white to-slate-50 py-16 lg:py-24">
+    <section className="relative overflow-hidden bg-linear-to-br from-blue-50 via-white to-slate-50 py-16 lg:py-20">
       <div className="absolute inset-0 bg-[radial-gradient(#2563eb_1px,transparent_1px)] bg-size-[32px_32px] opacity-[0.025]" />
       <div className="relative z-10 mx-auto max-w-7xl px-6 md:px-12">
         <motion.div
@@ -307,7 +307,7 @@ function WhyChooseUsSection() {
           <span className="mb-3 block text-xs font-semibold uppercase tracking-[0.25em] text-slate-400">
             Why Our Process Works
           </span>
-          <h2 className="text-2xl font-semibold tracking-tight text-slate-900 lg:text-3xl">
+          <h2 className="text-2xl font-semibold tracking-tight text-slate-800 lg:text-3xl">
             Built on Trust, Clarity, and Quality
           </h2>
         </motion.div>
@@ -320,7 +320,7 @@ function WhyChooseUsSection() {
               animate={isInView ? { opacity: 1, x: 0, y: 0 } : {}}
               transition={{ duration: 0.9, delay: idx * 0.08, ease: [0.16, 1, 0.3, 1] }}
               whileHover={{ y: -6 }}
-              className="group rounded-3xl border border-slate-200 bg-white p-6 text-center shadow-[0_4px_14px_rgba(15,23,42,0.03)] transition-all duration-500 hover:border-blue-100 hover:shadow-[0_22px_50px_rgba(0,98,214,0.08)] lg:p-7"
+              className="group rounded-2xl border border-slate-200 bg-white p-6 text-center shadow-[0_4px_14px_rgba(15,23,42,0.03)] transition-all duration-500 hover:border-blue-100 hover:shadow-[0_22px_50px_rgba(0,98,214,0.08)] lg:p-7"
             >
               <div className="mx-auto mb-6 inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-linear-to-br from-[#0062D6] to-[#0B3C95] shadow-[0_16px_40px_rgba(0,98,214,0.16)] transition-transform duration-300 group-hover:scale-108">
                 <item.icon className="h-7 w-7 text-white" strokeWidth={1.6} />
@@ -344,7 +344,7 @@ function ExtraHighlightsSection() {
   const isInView = useInView(ref, { once: true, amount: 0.16 });
 
   return (
-    <section className="relative overflow-hidden bg-[#fbfcfe] py-16 lg:py-24">
+    <section className="relative overflow-hidden bg-[#fbfcfe] py-16 lg:py-20">
       <div className="absolute left-1/4 top-0 h-72 w-72 rounded-full bg-blue-100/40 blur-3xl" />
       <div className="absolute bottom-0 right-1/4 h-72 w-72 rounded-full bg-cyan-100/30 blur-3xl" />
       <div className="relative z-10 mx-auto max-w-7xl px-6 md:px-12">
@@ -358,7 +358,7 @@ function ExtraHighlightsSection() {
           <span className="mb-3 block text-xs font-semibold uppercase tracking-[0.25em] text-slate-400">
             Added Value
           </span>
-          <h2 className="text-2xl font-semibold tracking-tight text-slate-900 lg:text-3xl">
+          <h2 className="text-2xl font-semibold tracking-tight text-slate-800 lg:text-3xl">
             More Than a Delivery Process
           </h2>
           <p className="mt-4 text-sm leading-relaxed text-slate-600 lg:text-base">
@@ -375,7 +375,7 @@ function ExtraHighlightsSection() {
               animate={isInView ? { opacity: 1, x: 0, y: 0 } : {}}
               transition={{ duration: 0.9, delay: idx * 0.06, ease: [0.16, 1, 0.3, 1] }}
               whileHover={{ y: -6 }}
-              className="group rounded-3xl border border-slate-200 bg-white p-6 shadow-[0_4px_12px_rgba(15,23,42,0.03)] transition-all duration-500 hover:border-blue-100 hover:shadow-[0_20px_45px_rgba(0,98,214,0.07)]"
+              className="group rounded-2xl border border-slate-200 bg-white p-6 shadow-[0_4px_12px_rgba(15,23,42,0.03)] transition-all duration-500 hover:border-blue-100 hover:shadow-[0_20px_45px_rgba(0,98,214,0.07)]"
             >
               <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-blue-50 text-[#0062D6] transition-transform duration-300 group-hover:scale-108">
                 <item.icon className="h-6 w-6" strokeWidth={1.7} />
@@ -443,7 +443,7 @@ export default function ProcessPage() {
 
   return (
     <div className="flex min-h-screen flex-col bg-[#fbfcfe]">
-      <section className="relative overflow-hidden pt-20 pb-12 lg:pt-28 lg:pb-16">
+      <section className="relative overflow-hidden pt-20 pb-12 lg:pt-12 lg:pb-12">
         <div className="absolute left-1/4 top-0 h-80 w-80 rounded-full bg-blue-100/50 blur-3xl" />
         <div className="absolute right-1/4 bottom-0 h-80 w-80 rounded-full bg-cyan-100/40 blur-3xl" />
 
@@ -457,11 +457,11 @@ export default function ProcessPage() {
           <span className="mb-5 inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-[#0062D6]">
             Our Workflow
           </span>
-          <h1 className="text-3xl font-semibold tracking-tight text-slate-900 lg:text-5xl">
+          <h1 className="text-3xl font-semibold tracking-tight text-slate-800 lg:text-4xl">
             Our Process
           </h1>
-          <p className="mx-auto mt-5 max-w-3xl text-base leading-relaxed text-slate-600">
-            From concept to launch — a proven workflow that delivers exceptional
+          <p className="mx-auto mt-5 max-w-3xl leading-relaxed text-md  text-slate-600">
+            From concept to launch - a proven workflow that delivers exceptional
             results, keeps communication transparent, and maintains quality at
             every stage.
           </p>

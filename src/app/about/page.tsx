@@ -214,7 +214,6 @@ function TeamSection() {
           ))}
         </div>
 
-        {/* Medium and up: grid */}
         <div className="hidden md:grid md:grid-cols-2 md:gap-6 lg:grid-cols-4">
           {teamMembers.map((member) => (
             <TeamCard key={member.name} member={member} />

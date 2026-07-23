@@ -159,7 +159,6 @@ function TeamSection() {
         .team-social-item-2 { transition-delay: 0.12s; }
         .team-social-item-3 { transition-delay: 0.19s; }
 
-        /* Mobile / small screen carousel */
         .team-carousel {
           display: flex;
           overflow-x: auto;

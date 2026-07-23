@@ -227,7 +227,7 @@ function StepCard({
   return (
     <div className="relative">
       {!isLast && (
-        <div className="absolute left-8 top-20 bottom-0 hidden w-0.5 bg-gradient-to-b from-blue-200 via-blue-100 to-transparent lg:block" />
+        <div className="absolute left-8 top-20 bottom-0 hidden w-0.5 bg-linear-to-b from-blue-200 via-blue-100 to-transparent lg:block" />
       )}
 
       <motion.div

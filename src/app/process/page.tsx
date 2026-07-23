@@ -322,7 +322,7 @@ function WhyChooseUsSection() {
               whileHover={{ y: -6 }}
               className="group rounded-3xl border border-slate-200 bg-white p-6 text-center shadow-[0_4px_14px_rgba(15,23,42,0.03)] transition-all duration-500 hover:border-blue-100 hover:shadow-[0_22px_50px_rgba(0,98,214,0.08)] lg:p-7"
             >
-              <div className="mx-auto mb-6 inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-[#0062D6] to-[#0B3C95] shadow-[0_16px_40px_rgba(0,98,214,0.16)] transition-transform duration-300 group-hover:scale-108">
+              <div className="mx-auto mb-6 inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-linear-to-br from-[#0062D6] to-[#0B3C95] shadow-[0_16px_40px_rgba(0,98,214,0.16)] transition-transform duration-300 group-hover:scale-108">
                 <item.icon className="h-7 w-7 text-white" strokeWidth={1.6} />
               </div>
               <h3 className="mb-2 text-base font-semibold text-slate-900 transition-colors duration-300 group-hover:text-[#0062D6]">

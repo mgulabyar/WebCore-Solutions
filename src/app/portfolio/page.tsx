@@ -252,9 +252,9 @@ export default function PortfolioPage() {
             <button
               key={filter}
               onClick={() => setSelectedFilter(filter)}
-              className={`pf-filter-btn rounded-full border px-5 py-2 text-[12px] font-black uppercase tracking-wide transition-colors duration-300 cursor-pointer ${
+              className={`pf-filter-btn rounded-full border px-5 py-2 text-[12px] font-bold uppercase tracking-wide transition-colors duration-300 cursor-pointer ${
                 selectedFilter === filter
-                  ? "bg-[#0062D6] border-[#0062D6] text-white shadow-[0_0_15px_rgba(0,98,214,0.35)]"
+                  ? "bg-[#0062D6] border-[#0062D6] text-white"
                   : "bg-transparent border-slate-200 text-slate-500 hover:border-[#0062D6]/40 hover:text-[#0062D6]"
               }`}
             >

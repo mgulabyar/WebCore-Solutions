@@ -12,7 +12,7 @@ const teamMembers = [
     name: "Gulab Yar",
     role: "SEO Specialist & Founder",
     bio: "Visionary leader managing search engine optimization and scalable web architectures. Expert in advanced Office add ins, driving organic traffic growth, and delivering robust digital solutions that guarantee long term market dominance and exceptional client satisfaction across global modern business platforms.",
-    image: "/team/Asfand.png", 
+    image: "/team/Asfand.png",
     linkedin: "https://www.linkedin.com/in/gulab-yar-fullstack-developer/",
     github: "https://github.com/mgulabyar",
     website: "https://stackoverflow.com",
@@ -39,19 +39,17 @@ const teamMembers = [
     name: "Asfand Yar",
     role: "Lead UI/UX Designer",
     bio: "Creative design strategist transforming complex workflows into intuitive, beautiful, and highly engaging user experiences. Expert in user research, wireframing, interactive prototyping, and building scalable component libraries that establish consistent visual branding across all digital enterprise products.",
-    image: "/team/Gulab.png", 
+    image: "/team/Gulab.png",
     linkedin: "#",
     github: "#",
     website: "#",
   },
 ];
 
-
-
 function TeamCard({ member }: { member: (typeof teamMembers)[0] }) {
   return (
-    <div className="group overflow-hidden rounded-xl shadow-[0_8px_30px_rgba(15,23,42,0.08)] transition-shadow duration-500 hover:shadow-[0_30px_60px_rgba(0,98,214,0.15)]">
-      <div className="team-card-photo  relative h-80 w-full sm:h-96">
+    <div className="group flex h-full flex-col overflow-hidden rounded-xl shadow-[0_8px_30px_rgba(15,23,42,0.08)] transition-shadow duration-500 hover:shadow-[0_30px_60px_rgba(0,98,214,0.15)]">
+      <div className="team-card-photo relative h-72 w-full flex-shrink-0 sm:h-80">
         <img
           src={member.image}
           alt={member.name}
@@ -63,7 +61,7 @@ function TeamCard({ member }: { member: (typeof teamMembers)[0] }) {
 
         <div className="team-card-overlay absolute inset-0" />
 
-        <div className="team-social absolute bottom-4 left-4 z-10 flex items-center gap-2">
+        <div className="team-social absolute inset-x-0 bottom-4 z-10 flex items-center justify-center gap-2.5">
           <a
             href={member.github}
             target="_blank"
@@ -96,15 +94,7 @@ function TeamCard({ member }: { member: (typeof teamMembers)[0] }) {
         </div>
       </div>
 
-      <div className="bg-[#0B1220] p-5 text-center">
-        <h3 className="text-lg font-bold text-white">{member.name}</h3>
-        <p className="mt-1 text-xs font-semibold  tracking-[0.15em] text-[#4C9AFF]">
-          {member.role}
-        </p>
-        <p className="mt-3  text-sm  leading-relaxed text-slate-400">
-          {member.bio}
-        </p>
-      </div>
+   
     </div>
   );
 }
@@ -190,12 +180,11 @@ function TeamSection() {
       <div className="absolute left-1/4 top-0 h-72 w-72 rounded-full bg-blue-100/40 blur-3xl" />
       <div className="absolute bottom-0 right-1/4 h-72 w-72 rounded-full bg-cyan-100/30 blur-3xl" />
 
-      <div className="relative z-10 mx-auto  px-6 md:px-12">
+      <div className="relative z-10 mx-auto max-w-7xl px-6 md:px-12">
         <div
           ref={ref}
           className="about-float-right mx-auto mb-14 max-w-2xl text-center"
         >
-    
           <h2 className="text-2xl font-semibold tracking-tight text-slate-800 lg:text-4xl">
             Our Team
           </h2>
@@ -208,9 +197,17 @@ function TeamSection() {
           </p>
         </div>
 
-     
+        {/* Small screens: horizontal carousel */}
+        <div className="team-carousel md:hidden">
+          {teamMembers.map((member) => (
+            <div key={member.name} className="team-carousel-item flex">
+              <TeamCard member={member} />
+            </div>
+          ))}
+        </div>
 
-        <div className="hidden md:grid md:grid-cols-2 md:gap-6 lg:grid-cols-4">
+        {/* Medium and up: grid */}
+        <div className="hidden items-stretch md:grid md:grid-cols-2 md:gap-6 lg:grid-cols-4">
           {teamMembers.map((member) => (
             <TeamCard key={member.name} member={member} />
           ))}

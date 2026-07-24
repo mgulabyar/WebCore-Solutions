@@ -90,7 +90,7 @@ function BlogCard({ post, large = false }: { post: (typeof blogPosts)[0]; large?
           className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
         />
         <div className="absolute inset-0 bg-linear-to-t from-black/35 via-black/10 to-transparent" />
-        <span className="absolute left-2 top-4 rounded-full bg-[#0062D6] px-3 py-1 text-xs font-semibold text-white">
+        <span className="absolute left-4 top-4 rounded-full bg-[#0062D6] px-3 py-1 text-xs font-semibold text-white">
           {post.category}
         </span>
       </div>

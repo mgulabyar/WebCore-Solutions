@@ -51,7 +51,7 @@ const blogPosts = [
     featured: false,
   },
   {
-    title: "Content Planning for Consistent Blogging",
+    title: "Content Plannin for Consistent Blogging",
     slug: "content-planning-for-consistent-blogging",
     category: "Marketing",
     excerpt:

@@ -1,8 +1,9 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
 
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, useState } from "react";
 import { FaGithub, FaLinkedin, FaGlobe } from "react-icons/fa";
+import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import Footer from "@/components/Footer";
@@ -48,8 +49,8 @@ const teamMembers = [
 
 function TeamCard({ member }: { member: (typeof teamMembers)[0] }) {
   return (
-    <div className="group flex h-full flex-col overflow-hidden rounded-xl shadow-[0_8px_30px_rgba(15,23,42,0.08)] transition-shadow duration-500 hover:shadow-[0_30px_60px_rgba(0,98,214,0.15)]">
-      <div className="team-card-photo relative h-72 w-full flex-shrink-0 sm:h-80">
+    <div className="group flex h-full flex-col overflow-hidden rounded-2xl border border-neutral-200 bg-white shadow-[0_8px_30px_rgba(15,23,42,0.08)] transition-all duration-500 hover:border-[#0062D6]/30 hover:shadow-[0_30px_60px_rgba(0,98,214,0.15)]">
+      <div className="team-card-photo relative h-80 w-full flex-shrink-0 sm:h-96">
         <img
           src={member.image}
           alt={member.name}
@@ -61,15 +62,15 @@ function TeamCard({ member }: { member: (typeof teamMembers)[0] }) {
 
         <div className="team-card-overlay absolute inset-0" />
 
-        <div className="team-social absolute inset-x-0 bottom-4 z-10 flex items-center justify-center gap-2.5">
+        <div className="team-social absolute inset-x-0 bottom-4 z-10 flex items-center justify-center gap-3">
           <a
             href={member.github}
             target="_blank"
             rel="noopener noreferrer"
             aria-label={member.name + " GitHub"}
-            className="team-social-item-1 flex h-9 w-9 items-center justify-center rounded-lg bg-[#0B1220]/90 text-white backdrop-blur-sm transition-colors duration-300 hover:bg-[#0062D6]"
+            className="team-social-item-1 flex h-11 w-11 items-center justify-center rounded-full border border-neutral-700 bg-neutral-800/50 text-neutral-400 transition-all duration-300 hover:border-[#0062D6] hover:bg-linear-to-br hover:from-[#0062D6] hover:to-[#0B3C95] hover:text-white hover:shadow-lg hover:shadow-[#0062D6]/20 hover:-translate-y-0.5"
           >
-            <FaGithub className="h-4 w-4" />
+            <FaGithub className="h-5 w-5" />
           </a>
 
           <a
@@ -77,9 +78,9 @@ function TeamCard({ member }: { member: (typeof teamMembers)[0] }) {
             target="_blank"
             rel="noopener noreferrer"
             aria-label={member.name + " LinkedIn"}
-            className="team-social-item-2 flex h-9 w-9 items-center justify-center rounded-lg bg-[#0062D6] text-white transition-colors duration-300 hover:bg-[#0B3C95]"
+            className="team-social-item-2 flex h-11 w-11 items-center justify-center rounded-full border border-neutral-700 bg-neutral-800/50 text-neutral-400 transition-all duration-300 hover:border-[#0062D6] hover:bg-linear-to-br hover:from-[#0062D6] hover:to-[#0B3C95] hover:text-white hover:shadow-lg hover:shadow-[#0062D6]/20 hover:-translate-y-0.5"
           >
-            <FaLinkedin className="h-4 w-4" />
+            <FaLinkedin className="h-5 w-5" />
           </a>
 
           <a
@@ -87,26 +88,33 @@ function TeamCard({ member }: { member: (typeof teamMembers)[0] }) {
             target="_blank"
             rel="noopener noreferrer"
             aria-label={member.name + " Website"}
-            className="team-social-item-3 flex h-9 w-9 items-center justify-center rounded-lg bg-orange-500 text-white transition-colors duration-300 hover:bg-orange-600"
+            className="team-social-item-3 flex h-11 w-11 items-center justify-center rounded-full border border-neutral-700 bg-neutral-800/50 text-neutral-400 transition-all duration-300 hover:border-[#0062D6] hover:bg-linear-to-br hover:from-[#0062D6] hover:to-[#0B3C95] hover:text-white hover:shadow-lg hover:shadow-[#0062D6]/20 hover:-translate-y-0.5"
           >
-            <FaGlobe className="h-4 w-4" />
+            <FaGlobe className="h-5 w-5" />
           </a>
         </div>
       </div>
 
-   
+      <div className="bg-[#0B1220] p-6">
+        <h3 className="text-lg font-bold text-white">{member.name}</h3>
+        <p className="mt-1.5 text-xs font-semibold uppercase tracking-[0.15em] text-[#4C9AFF]">
+          {member.role}
+        </p>
+        <p className="mt-4 text-sm italic leading-relaxed text-slate-400">
+          {member.bio}
+        </p>
+      </div>
     </div>
   );
 }
 
 function TeamSection() {
   const ref = useRef<HTMLDivElement>(null);
+  const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
     const el = ref.current;
-    if (!el) {
-      return;
-    }
+    if (!el) return;
 
     const observer = new IntersectionObserver(
       (entries) => {
@@ -121,14 +129,19 @@ function TeamSection() {
     );
 
     observer.observe(el);
-
-    return () => {
-      observer.disconnect();
-    };
+    return () => observer.disconnect();
   }, []);
 
+  const nextSlide = () => {
+    setCurrentIndex((prev) => (prev + 1) % teamMembers.length);
+  };
+
+  const prevSlide = () => {
+    setCurrentIndex((prev) => (prev - 1 + teamMembers.length) % teamMembers.length);
+  };
+
   return (
-    <section className="relative overflow-hidden bg-[#fbfcfe] py-14 lg:py-20">
+    <section className="relative overflow-hidden bg-[#fbfcfe] py-16 lg:py-20">
       <style>{`
         .team-card-overlay {
           background: rgba(0, 98, 214, 0);
@@ -153,26 +166,23 @@ function TeamSection() {
 
         .team-carousel {
           display: flex;
-          overflow-x: auto;
-          scroll-snap-type: x mandatory;
-          -webkit-overflow-scrolling: touch;
-          gap: 1.25rem;
-          padding-bottom: 0.5rem;
+          overflow: hidden;
+          width: 100%;
+          position: relative;
         }
-        .team-carousel::-webkit-scrollbar {
-          height: 6px;
-        }
-        .team-carousel::-webkit-scrollbar-thumb {
-          background: #cbd5e1;
-          border-radius: 9999px;
+        .team-carousel-track {
+          display: flex;
+          transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+          width: 100%;
         }
         .team-carousel-item {
-          flex: 0 0 82%;
-          scroll-snap-align: center;
+          flex: 0 0 100%;
+          min-width: 100%;
+          padding: 0 1rem;
         }
-        @media (min-width: 480px) {
+        @media (min-width: 640px) {
           .team-carousel-item {
-            flex: 0 0 60%;
+            padding: 0 1.5rem;
           }
         }
       `}</style>
@@ -197,17 +207,35 @@ function TeamSection() {
           </p>
         </div>
 
-        {/* Small screens: horizontal carousel */}
+        {/* Small screens: carousel with 1 card visible + navigation arrows */}
         <div className="team-carousel md:hidden">
-          {teamMembers.map((member) => (
-            <div key={member.name} className="team-carousel-item flex">
-              <TeamCard member={member} />
-            </div>
-          ))}
+          <button
+            onClick={prevSlide}
+            className="absolute left-0 top-1/2 z-20 -translate-y-1/2 flex h-10 w-10 items-center justify-center rounded-full bg-[#0062D6] text-white shadow-lg hover:bg-[#0B3C95] transition-colors duration-300"
+            aria-label="Previous team member"
+          >
+            <FiChevronLeft className="h-5 w-5" />
+          </button>
+
+          <div className="team-carousel-track" style={{ transform: `translateX(-${currentIndex * 100}%)` }}>
+            {teamMembers.map((member) => (
+              <div key={member.name} className="team-carousel-item">
+                <TeamCard member={member} />
+              </div>
+            ))}
+          </div>
+
+          <button
+            onClick={nextSlide}
+            className="absolute right-0 top-1/2 z-20 -translate-y-1/2 flex h-10 w-10 items-center justify-center rounded-full bg-[#0062D6] text-white shadow-lg hover:bg-[#0B3C95] transition-colors duration-300"
+            aria-label="Next team member"
+          >
+            <FiChevronRight className="h-5 w-5" />
+          </button>
         </div>
 
         {/* Medium and up: grid */}
-        <div className="hidden items-stretch md:grid md:grid-cols-2 md:gap-6 lg:grid-cols-4">
+        <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
           {teamMembers.map((member) => (
             <TeamCard key={member.name} member={member} />
           ))}
@@ -241,7 +269,6 @@ function HeroSection() {
 
     observer.observe(textEl);
     observer.observe(mediaEl);
-
     return () => observer.disconnect();
   }, []);
 

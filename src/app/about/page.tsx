@@ -237,7 +237,7 @@ function TeamSection() {
 
         <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-4 gap-4">
           {teamMembers.map((member) => (
-            <div key={member.name} className="w-full max-w-[340px] mx-auto">
+            <div key={member.name} className="w-full max-w-85 mx-auto">
               <TeamCard member={member} />
             </div>
           ))}

@@ -49,7 +49,7 @@ const teamMembers = [
 
 function TeamCard({ member }: { member: (typeof teamMembers)[0] }) {
   return (
-    <div className="group flex h-full flex-col overflow-hidden rounded-2xl border border-neutral-200 bg-white shadow-[0_8px_30px_rgba(15,23,42,0.08)] transition-all duration-500 hover:border-[#0062D6]/30 hover:shadow-[0_30px_60px_rgba(0,98,214,0.15)]">
+    <div className="group flex h-full flex-col overflow-hidden rounded-xl border border-neutral-200 bg-white shadow-[0_8px_30px_rgba(15,23,42,0.08)] transition-all duration-500 hover:border-[#0062D6]/30 hover:shadow-[0_30px_60px_rgba(0,98,214,0.15)]">
       <div className="team-card-photo relative h-80 w-full flex-shrink-0 sm:h-96">
         <img
           src={member.image}

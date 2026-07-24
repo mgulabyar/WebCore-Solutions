@@ -49,7 +49,7 @@ const teamMembers = [
 
 function TeamCard({ member }: { member: (typeof teamMembers)[0] }) {
   return (
-    <div className="group flex h-full flex-col overflow-hidden rounded-lg border border-neutral-200 bg-white shadow-[0_8px_30px_rgba(15,23,42,0.08)] transition-all duration-500 hover:border-[#0062D6]/30 hover:shadow-[0_30px_60px_rgba(0,98,214,0.15)]">
+    <div className="group flex h-full w-full flex-col overflow-hidden rounded-lg border border-neutral-200 bg-white shadow-[0_8px_30px_rgba(15,23,42,0.08)] transition-all duration-500 hover:border-[#0062D6]/30 hover:shadow-[0_30px_60px_rgba(0,98,214,0.15)]">
       <div className="team-card-photo relative h-80 w-full shrink-0 sm:h-96">
         <img
           src={member.image}
@@ -95,7 +95,6 @@ function TeamCard({ member }: { member: (typeof teamMembers)[0] }) {
         </div>
       </div>
 
-      {/* Fixed bio section: always black background */}
       <div className="flex flex-1 flex-col justify-between bg-[#0B1220] p-6">
         <div>
           <h3 className="text-lg font-bold text-white">{member.name}</h3>
@@ -144,7 +143,7 @@ function TeamSection() {
   };
 
   return (
-    <section className="relative overflow-hidden bg-[#fbfcfe] py-16 lg:py-20">
+    <section className="relative w-full overflow-hidden bg-[#fbfcfe] py-16 lg:py-20">
       <style>{`
         .team-card-overlay {
           background: rgba(0, 98, 214, 0);
@@ -167,7 +166,6 @@ function TeamSection() {
         .team-social-item-2 { transition-delay: 0.12s; }
         .team-social-item-3 { transition-delay: 0.19s; }
 
-        /* Mobile carousel styles - ONLY for small screens */
         @media (max-width: 767px) {
           .team-carousel {
             display: flex;
@@ -183,7 +181,7 @@ function TeamSection() {
           .team-carousel-item {
             flex: 0 0 100%;
             min-width: 100%;
-            padding: 0 1rem;
+            padding: 0 0.25rem;
           }
         }
       `}</style>
@@ -211,7 +209,7 @@ function TeamSection() {
         <div className="team-carousel md:hidden">
           <button
             onClick={prevSlide}
-            className="absolute left-2 top-1/2 z-20 -translate-y-1/2 flex h-10 w-10 items-center justify-center rounded-full bg-[#0062D6] text-white shadow-lg hover:bg-[#0B3C95] transition-colors duration-300"
+            className="absolute left-2 top-1/2 z-20 -translate-y-1/2 flex h-10 w-10 items-center justify-center rounded-full bg-[#0062D6] text-white shadow-lg transition-colors duration-300 hover:bg-[#0B3C95]"
             aria-label="Previous team member"
           >
             <FiChevronLeft className="h-5 w-5" />
@@ -230,17 +228,18 @@ function TeamSection() {
 
           <button
             onClick={nextSlide}
-            className="absolute right-2 top-1/2 z-20 -translate-y-1/2 flex h-10 w-10 items-center justify-center rounded-full bg-[#0062D6] text-white shadow-lg hover:bg-[#0B3C95] transition-colors duration-300"
+            className="absolute right-2 top-1/2 z-20 -translate-y-1/2 flex h-10 w-10 items-center justify-center rounded-full bg-[#0062D6] text-white shadow-lg transition-colors duration-300 hover:bg-[#0B3C95]"
             aria-label="Next team member"
           >
             <FiChevronRight className="h-5 w-5" />
           </button>
         </div>
 
-        {/* Medium and up: grid (no carousel) */}
-        <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-4 gap-4">
           {teamMembers.map((member) => (
-            <TeamCard key={member.name} member={member} />
+            <div key={member.name} className="w-full max-w-[340px] mx-auto">
+              <TeamCard member={member} />
+            </div>
           ))}
         </div>
       </div>
@@ -276,15 +275,12 @@ function HeroSection() {
   }, []);
 
   return (
-    <section className="relative overflow-hidden bg-white pt-20 pb-16 lg:pt-24 lg:pb-24">
+    <section className="relative overflow-hidden bg-white pt-20 pb-16 lg:pt-24 lg:pb-20">
       <div className="absolute left-1/4 top-0 h-80 w-80 rounded-full bg-blue-100/50 blur-3xl" />
       <div className="absolute right-1/4 bottom-0 h-80 w-80 rounded-full bg-cyan-100/40 blur-3xl" />
 
       <div className="relative z-10 mx-auto grid max-w-7xl grid-cols-1 items-center gap-12 px-6 md:px-12 lg:grid-cols-2 lg:gap-16">
-        <div
-          ref={textRef}
-          className="about-float-left text-center lg:text-left"
-        >
+        <div ref={textRef} className="about-float-left text-center lg:text-left">
           <span className="mb-3 block text-xs font-semibold uppercase tracking-[0.25em] text-[#0062D6]">
             About Us
           </span>

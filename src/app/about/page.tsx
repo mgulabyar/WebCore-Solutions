@@ -275,18 +275,16 @@ function HeroSection() {
   }, []);
 
   return (
-    <section className="relative overflow-hidden bg-white pt-20 pb-16 lg:pt-24 lg:pb-20">
+    <section className="relative overflow-hidden bg-white pt-16 pb-16 lg:pt-24 lg:pb-20">
       <div className="absolute left-1/4 top-0 h-80 w-80 rounded-full bg-blue-100/50 blur-3xl" />
       <div className="absolute right-1/4 bottom-0 h-80 w-80 rounded-full bg-cyan-100/40 blur-3xl" />
 
       <div className="relative z-10 mx-auto grid max-w-7xl grid-cols-1 items-center gap-12 px-6 md:px-12 lg:grid-cols-2 lg:gap-16">
         <div ref={textRef} className="about-float-left text-center lg:text-left">
-          <span className="mb-3 block text-xs font-semibold uppercase tracking-[0.25em] text-[#0062D6]">
-            About Us
-          </span>
+        
 
           <h1 className="text-3xl font-semibold tracking-tight text-slate-800 lg:text-4xl">
-            About WebCore Solutions
+            About Us
           </h1>
 
           <p className="mx-auto mt-6 max-w-xl text-base leading-relaxed text-slate-600 lg:mx-0 lg:text-lg">
@@ -315,7 +313,7 @@ function HeroSection() {
           <img
             src="/team.png"
             alt="Our team at work"
-            className="relative z-10 w-full max-w-md rounded-2xl shadow-[0_8px_30px_rgba(15,23,42,0.08)]"
+            className="relative z-10 w-full max-w-sm "
           />
         </div>
       </div>

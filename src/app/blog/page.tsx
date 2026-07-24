@@ -1,9 +1,17 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
 
-import { useMemo, useState } from "react";
+import { useMemo, useState, useRef, useEffect } from "react";
 import Link from "next/link";
-import { Search, ArrowRight, CalendarDays, UserRound } from "lucide-react";
+import {
+  Search,
+  ArrowRight,
+  CalendarDays,
+  UserRound,
+  BookOpenCheck,
+  Sparkles,
+  BarChart3,
+} from "lucide-react";
 
 const blogPosts = [
   {
@@ -75,6 +83,103 @@ const blogPosts = [
 ];
 
 const categories = ["All", "Development", "Design", "SEO", "Marketing"];
+
+function BlogHero() {
+  const textRef = useRef<HTMLDivElement>(null);
+  const mediaRef = useRef<HTMLDivElement>(null);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const textEl = textRef.current;
+    if (!textEl) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const entry = entries[0];
+        setIsVisible(entry.isIntersecting);
+      },
+      { threshold: 0.25, rootMargin: "0px 0px -80px 0px" }
+    );
+
+    observer.observe(textEl);
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <section className="relative overflow-hidden bg-[#0B1220] pt-20 pb-16 lg:pt-24 lg:pb-24">
+      <style>{`
+        .blog-hero-left {
+          opacity: 0;
+          transform: translateX(-60px);
+          transition: opacity 0.9s cubic-bezier(0.16,1,0.3,1), transform 1s cubic-bezier(0.16,1,0.3,1);
+        }
+        .blog-hero-left.blog-hero-active {
+          opacity: 1;
+          transform: translateX(0);
+        }
+        .blog-hero-right {
+          opacity: 0;
+          transform: translateX(60px) scale(0.95);
+          transition: opacity 1s cubic-bezier(0.16,1,0.3,1) 0.15s, transform 1.05s cubic-bezier(0.16,1,0.3,1) 0.15s;
+        }
+        .blog-hero-right.blog-hero-active {
+          opacity: 1;
+          transform: translateX(0) scale(1);
+        }
+      `}</style>
+
+      <div className="absolute left-1/4 top-0 h-80 w-80 rounded-full bg-[#0062D6]/10 blur-3xl" />
+      <div className="absolute right-1/4 bottom-0 h-80 w-80 rounded-full bg-cyan-400/10 blur-3xl" />
+
+      <div className="relative z-10 mx-auto grid max-w-7xl grid-cols-1 items-center gap-12 px-6 md:px-12 lg:grid-cols-2 lg:gap-16">
+        <div
+          ref={textRef}
+          className={`blog-hero-left ${isVisible ? "blog-hero-active" : ""}`}
+        >
+    
+
+          <h1 className="text-3xl font-semibold tracking-tight text-white lg:text-4xl">
+            Insights, Tutorials &amp; Updates
+          </h1>
+
+          <p className="mt-6 max-w-xl text-md leading-relaxed text-neutral-400 lg:text-md">
+            Discover expert content on web development, scalable architecture,
+            UI/UX design, and digital growth strategies. From step-by-step
+            tutorials and engineering guides to industry insights and product
+            announcements, our blog helps businesses build smarter, faster,
+            and more reliable digital products.
+          </p>
+
+          <div className="mt-8 flex flex-wrap gap-3">
+            <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-4 py-2 text-xs font-medium text-neutral-300">
+              <BookOpenCheck className="h-3.5 w-3.5 text-[#4C9AFF]" />
+              Expert Guides
+            </span>
+            <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-4 py-2 text-xs font-medium text-neutral-300">
+              <Sparkles className="h-3.5 w-3.5 text-[#4C9AFF]" />
+              Practical Tutorials
+            </span>
+            <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-4 py-2 text-xs font-medium text-neutral-300">
+              <BarChart3 className="h-3.5 w-3.5 text-[#4C9AFF]" />
+              Industry Insights
+            </span>
+          </div>
+        </div>
+
+        <div
+          ref={mediaRef}
+          className={`blog-hero-right ${isVisible ? "blog-hero-active" : ""} relative flex items-center justify-center`}
+        >
+          <img
+            src="/blog.png"
+            alt="WebCore Solutions blog insights"
+            className="relative z-10 w-full max-w-md"
+          />
+        </div>
+      </div>
+    </section>
+  );
+}
 
 function BlogCard({ post, large = false }: { post: (typeof blogPosts)[0]; large?: boolean }) {
   return (
@@ -150,24 +255,13 @@ export default function BlogPage() {
 
   return (
     <div className="min-h-screen bg-[#fbfcfe]">
-      <section className="relative overflow-hidden bg-white pt-20 pb-16 lg:pt-24 lg:pb-20">
+      <BlogHero />
+
+      <section className="relative overflow-hidden bg-white pt-16 pb-16 lg:pt-20 lg:pb-20">
         <div className="absolute left-1/4 top-0 h-80 w-80 rounded-full bg-blue-100/50 blur-3xl" />
         <div className="absolute right-1/4 bottom-0 h-80 w-80 rounded-full bg-cyan-100/40 blur-3xl" />
 
         <div className="relative z-10 mx-auto max-w-7xl px-6 md:px-12">
-          <div className="mx-auto max-w-3xl text-center">
-            <span className="mb-3 block text-xs font-semibold uppercase tracking-[0.25em] text-[#0062D6]">
-              Blog
-            </span>
-            <h1 className="text-3xl font-semibold tracking-tight text-slate-800 lg:text-5xl">
-              Ideas, Guides & Updates
-            </h1>
-            <p className="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-slate-600 lg:text-lg">
-              Explore our latest articles on development, design, SEO, and digital growth.
-              We publish practical content to help you build better products and stronger online presence.
-            </p>
-          </div>
-
           <div className="mt-10 flex justify-center">
             <div className="flex w-full max-w-2xl items-center gap-3 rounded-full border border-neutral-200 bg-white px-4 py-3 shadow-[0_8px_30px_rgba(15,23,42,0.06)]">
               <Search className="h-5 w-5 text-slate-400" />

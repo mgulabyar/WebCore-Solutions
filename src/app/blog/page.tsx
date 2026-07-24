@@ -138,7 +138,7 @@ function BlogHero() {
         >
          
 
-          <h1 className="text-3xl font-semi tracking-tight text-slate-900 lg:text-4xl">
+          <h1 className="text-3xl font-semibold tracking-tight text-slate-900 lg:text-4xl">
             Insights, Tutorials &amp; Updates
           </h1>
 

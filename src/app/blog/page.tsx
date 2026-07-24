@@ -106,7 +106,7 @@ function BlogHero() {
   }, []);
 
   return (
-    <section className="relative overflow-hidden bg-[#0B1220] pt-20 pb-16 lg:pt-24 lg:pb-24">
+    <section className="relative overflow-hidden bg-white pt-20 pb-16 lg:pt-24 lg:pb-24">
       <style>{`
         .blog-hero-left {
           opacity: 0;
@@ -128,21 +128,21 @@ function BlogHero() {
         }
       `}</style>
 
-      <div className="absolute left-1/4 top-0 h-80 w-80 rounded-full bg-[#0062D6]/10 blur-3xl" />
-      <div className="absolute right-1/4 bottom-0 h-80 w-80 rounded-full bg-cyan-400/10 blur-3xl" />
+      <div className="absolute left-1/4 top-0 h-80 w-80 rounded-full bg-blue-100/50 blur-3xl" />
+      <div className="absolute right-1/4 bottom-0 h-80 w-80 rounded-full bg-cyan-100/40 blur-3xl" />
 
       <div className="relative z-10 mx-auto grid max-w-7xl grid-cols-1 items-center gap-12 px-6 md:px-12 lg:grid-cols-2 lg:gap-16">
         <div
           ref={textRef}
           className={`blog-hero-left ${isVisible ? "blog-hero-active" : ""}`}
         >
-    
+         
 
-          <h1 className="text-3xl font-semibold tracking-tight text-white lg:text-4xl">
+          <h1 className="text-3xl font-semibold tracking-tight text-slate-900 lg:text-4xl">
             Insights, Tutorials &amp; Updates
           </h1>
 
-          <p className="mt-6 max-w-xl text-md leading-relaxed text-neutral-400 lg:text-md">
+          <p className="mt-6 max-w-xl text-md leading-relaxed text-slate-600 lg:text-md">
             Discover expert content on web development, scalable architecture,
             UI/UX design, and digital growth strategies. From step-by-step
             tutorials and engineering guides to industry insights and product
@@ -151,16 +151,16 @@ function BlogHero() {
           </p>
 
           <div className="mt-8 flex flex-wrap gap-3">
-            <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-4 py-2 text-xs font-medium text-neutral-300">
-              <BookOpenCheck className="h-3.5 w-3.5 text-[#4C9AFF]" />
+            <span className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-slate-50 px-4 py-2 text-xs font-medium text-slate-600">
+              <BookOpenCheck className="h-3.5 w-3.5 text-[#0062D6]" />
               Expert Guides
             </span>
-            <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-4 py-2 text-xs font-medium text-neutral-300">
-              <Sparkles className="h-3.5 w-3.5 text-[#4C9AFF]" />
+            <span className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-slate-50 px-4 py-2 text-xs font-medium text-slate-600">
+              <Sparkles className="h-3.5 w-3.5 text-[#0062D6]" />
               Practical Tutorials
             </span>
-            <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-4 py-2 text-xs font-medium text-neutral-300">
-              <BarChart3 className="h-3.5 w-3.5 text-[#4C9AFF]" />
+            <span className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-slate-50 px-4 py-2 text-xs font-medium text-slate-600">
+              <BarChart3 className="h-3.5 w-3.5 text-[#0062D6]" />
               Industry Insights
             </span>
           </div>
@@ -170,6 +170,7 @@ function BlogHero() {
           ref={mediaRef}
           className={`blog-hero-right ${isVisible ? "blog-hero-active" : ""} relative flex items-center justify-center`}
         >
+          <div className="absolute " />
           <img
             src="/blog.png"
             alt="WebCore Solutions blog insights"

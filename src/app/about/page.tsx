@@ -95,14 +95,17 @@ function TeamCard({ member }: { member: (typeof teamMembers)[0] }) {
         </div>
       </div>
 
-      <div className="bg-[#0B1220] p-6">
-        <h3 className="text-lg font-bold text-white">{member.name}</h3>
-        <p className="mt-1.5 text-xs font-semibold uppercase tracking-[0.15em] text-[#4C9AFF]">
-          {member.role}
-        </p>
-        <p className="mt-4 text-sm italic leading-relaxed text-slate-400">
-          {member.bio}
-        </p>
+      {/* Fixed bio section: always black background */}
+      <div className="flex flex-1 flex-col justify-between bg-[#0B1220] p-6">
+        <div>
+          <h3 className="text-lg font-bold text-white">{member.name}</h3>
+          <p className="mt-1.5 text-xs font-semibold uppercase tracking-[0.15em] text-[#4C9AFF]">
+            {member.role}
+          </p>
+          <p className="mt-4 text-sm italic leading-relaxed text-slate-400">
+            {member.bio}
+          </p>
+        </div>
       </div>
     </div>
   );
@@ -164,25 +167,23 @@ function TeamSection() {
         .team-social-item-2 { transition-delay: 0.12s; }
         .team-social-item-3 { transition-delay: 0.19s; }
 
-        .team-carousel {
-          display: flex;
-          overflow: hidden;
-          width: 100%;
-          position: relative;
-        }
-        .team-carousel-track {
-          display: flex;
-          transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-          width: 100%;
-        }
-        .team-carousel-item {
-          flex: 0 0 100%;
-          min-width: 100%;
-          padding: 0 1rem;
-        }
-        @media (min-width: 640px) {
+        /* Mobile carousel styles - ONLY for small screens */
+        @media (max-width: 767px) {
+          .team-carousel {
+            display: flex;
+            overflow: hidden;
+            width: 100%;
+            position: relative;
+          }
+          .team-carousel-track {
+            display: flex;
+            transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+            width: 100%;
+          }
           .team-carousel-item {
-            padding: 0 1.5rem;
+            flex: 0 0 100%;
+            min-width: 100%;
+            padding: 0 1rem;
           }
         }
       `}</style>
@@ -207,17 +208,20 @@ function TeamSection() {
           </p>
         </div>
 
-        {/* Small screens: carousel with 1 card visible + navigation arrows */}
+        {/* Small screens ONLY: carousel with 1 card visible + navigation arrows */}
         <div className="team-carousel md:hidden">
           <button
             onClick={prevSlide}
-            className="absolute left-0 top-1/2 z-20 -translate-y-1/2 flex h-10 w-10 items-center justify-center rounded-full bg-[#0062D6] text-white shadow-lg hover:bg-[#0B3C95] transition-colors duration-300"
+            className="absolute left-2 top-1/2 z-20 -translate-y-1/2 flex h-10 w-10 items-center justify-center rounded-full bg-[#0062D6] text-white shadow-lg hover:bg-[#0B3C95] transition-colors duration-300"
             aria-label="Previous team member"
           >
             <FiChevronLeft className="h-5 w-5" />
           </button>
 
-          <div className="team-carousel-track" style={{ transform: `translateX(-${currentIndex * 100}%)` }}>
+          <div
+            className="team-carousel-track"
+            style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+          >
             {teamMembers.map((member) => (
               <div key={member.name} className="team-carousel-item">
                 <TeamCard member={member} />
@@ -227,14 +231,14 @@ function TeamSection() {
 
           <button
             onClick={nextSlide}
-            className="absolute right-0 top-1/2 z-20 -translate-y-1/2 flex h-10 w-10 items-center justify-center rounded-full bg-[#0062D6] text-white shadow-lg hover:bg-[#0B3C95] transition-colors duration-300"
+            className="absolute right-2 top-1/2 z-20 -translate-y-1/2 flex h-10 w-10 items-center justify-center rounded-full bg-[#0062D6] text-white shadow-lg hover:bg-[#0B3C95] transition-colors duration-300"
             aria-label="Next team member"
           >
             <FiChevronRight className="h-5 w-5" />
           </button>
         </div>
 
-        {/* Medium and up: grid */}
+        {/* Medium and up: grid (no carousel) */}
         <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
           {teamMembers.map((member) => (
             <TeamCard key={member.name} member={member} />

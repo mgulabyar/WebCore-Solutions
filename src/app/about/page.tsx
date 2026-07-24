@@ -12,7 +12,7 @@ const teamMembers = [
     name: "Gulab Yar",
     role: "SEO Specialist & Founder",
     bio: "Visionary leader managing search engine optimization and scalable web architectures. Expert in advanced Office add ins, driving organic traffic growth, and delivering robust digital solutions that guarantee long term market dominance and exceptional client satisfaction across global modern business platforms.",
-    image: "/team/Asfand.png", // Image path fixed for Gulab
+    image: "/team/Asfand.png", 
     linkedin: "https://www.linkedin.com/in/gulab-yar-fullstack-developer/",
     github: "https://github.com/mgulabyar",
     website: "https://stackoverflow.com",
@@ -21,7 +21,7 @@ const teamMembers = [
     name: "Zuryab Gill",
     role: "Senior Frontend Developer",
     bio: "Frontend engineering specialist dedicated to creating pixel perfect, highly responsive, and interactive user interfaces. Expert in React, Next js, and modern CSS frameworks, focusing on seamless user journeys, smooth fluid animations, and optimized website speed across all modern devices.",
-    image: "/team/zuryab.png",
+    image: "/team/Asfand.png",
     linkedin: "#",
     github: "#",
     website: "#",
@@ -30,7 +30,7 @@ const teamMembers = [
     name: "Shabana",
     role: "Full-Stack Developer",
     bio: "Versatile systems engineer handling both complex server side application logic and modern client side integrations. Expert in secure API development, relational databases, and cloud infrastructures, ensuring optimal end to end performance, flawless application flow, and rock solid architectural security frameworks.",
-    image: "/team/Shabana.jpeg",
+    image: "/team/Asfand.png",
     linkedin: "#",
     github: "#",
     website: "#",
@@ -39,7 +39,7 @@ const teamMembers = [
     name: "Asfand Yar",
     role: "Lead UI/UX Designer",
     bio: "Creative design strategist transforming complex workflows into intuitive, beautiful, and highly engaging user experiences. Expert in user research, wireframing, interactive prototyping, and building scalable component libraries that establish consistent visual branding across all digital enterprise products.",
-    image: "/team/Gulab.png", // Image path fixed for Asfand
+    image: "/team/Gulab.png", 
     linkedin: "#",
     github: "#",
     website: "#",
@@ -96,12 +96,12 @@ function TeamCard({ member }: { member: (typeof teamMembers)[0] }) {
         </div>
       </div>
 
-      <div className="bg-[#0B1220] p-5">
-        <h3 className="text-base font-bold text-white">{member.name}</h3>
-        <p className="mt-1 text-xs font-semibold uppercase tracking-[0.15em] text-[#4C9AFF]">
+      <div className="bg-[#0B1220] p-5 text-center">
+        <h3 className="text-lg font-bold text-white">{member.name}</h3>
+        <p className="mt-1 text-xs font-semibold  tracking-[0.15em] text-[#4C9AFF]">
           {member.role}
         </p>
-        <p className="mt-3  text-sm italic leading-relaxed text-slate-400">
+        <p className="mt-3  text-sm  leading-relaxed text-slate-400">
           {member.bio}
         </p>
       </div>

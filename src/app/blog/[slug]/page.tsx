@@ -13,6 +13,7 @@ import {
   MessageSquareText,
   Sparkles,
 } from "lucide-react";
+import Footer from "@/components/Footer";
 
 type Post = {
   title: string;
@@ -405,6 +406,8 @@ export default function BlogDetailPage() {
           </div>
         </div>
       </section>
+            <Footer />
+      
     </div>
   );
 }

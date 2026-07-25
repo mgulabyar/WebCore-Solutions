@@ -15,6 +15,7 @@ import {
   ChevronRight,
   Send,
 } from "lucide-react";
+import Footer from "@/components/Footer";
 
 const blogPosts = [
   {
@@ -447,6 +448,8 @@ export default function BlogPage() {
           />
         </div>
       </section>
+      <Footer />
+      
     </div>
   );
 }

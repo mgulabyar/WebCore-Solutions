@@ -300,7 +300,7 @@ export default function BlogDetailPage() {
                   </section>
 
                   <section id="sync">
-                    <h2 className="text-2xl font-bold text-slate-900">What You Can Surface & Sync</h2>
+                    <h2 className="text-2xl font-semibold text-slate-800">What You Can Surface & Sync</h2>
                     <div className="mt-4 grid gap-4 md:grid-cols-2">
                       {[
                         "Contacts and leads matched to the sender email.",
@@ -308,7 +308,7 @@ export default function BlogDetailPage() {
                         "Recent activity and timeline items.",
                         "Cases and custom objects.",
                       ].map((item) => (
-                        <div key={item} className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
+                        <div key={item} className="rounded-lg text-black  text-sm border border-slate-200 bg-white p-4 shadow-sm">
                           {item}
                         </div>
                       ))}

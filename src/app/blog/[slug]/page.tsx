@@ -164,7 +164,7 @@ function Sidebar() {
         </div>
       </div>
 
-      <div className="rounded-2xl border border-slate-200 bg-gradient-to-br from-[#0062D6] to-[#0B3C95] p-6 shadow-[0_10px_30px_rgba(0,98,214,0.2)]">
+      <div className="rounded-2xl border border-slate-200 bg-linear-to-br from-[#0062D6] to-[#0B3C95] p-6 shadow-[0_10px_30px_rgba(0,98,214,0.2)]">
         <div className="mb-2 flex items-center gap-2">
           <h3 className="text-base font-bold text-white">Need Help?</h3>
           <MessageSquareText className="h-4 w-4 text-blue-100" />

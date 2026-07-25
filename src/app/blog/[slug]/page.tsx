@@ -316,7 +316,7 @@ export default function BlogDetailPage() {
                   </section>
 
                   <section id="auth">
-                    <h2 className="text-2xl font-bold text-slate-900">Authenticating with OAuth 2.0</h2>
+                    <h2 className="text-2xl font-semibold text-slate-800">Authenticating with OAuth 2.0</h2>
                     <p className="mt-4 text-slate-700 leading-8">
                       Keep the Connected App secret on the server, exchange codes securely, and only return short-lived session tokens to the task pane.
                     </p>

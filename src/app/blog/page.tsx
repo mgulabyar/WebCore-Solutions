@@ -132,7 +132,7 @@ function BlogHero() {
   }, []);
 
   return (
-    <section className="relative overflow-hidden bg-white pt-20 pb-16 lg:pt-10 lg:pb-20">
+    <section className="relative overflow-hidden bg-white pt-20 pb-16 lg:pt-7 lg:pb-10">
       <style>{`
         .blog-hero-left {
           opacity: 0;

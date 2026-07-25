@@ -381,7 +381,7 @@ export default function BlogDetailPage() {
                         alt={item.title}
                         className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/35 via-black/10 to-transparent" />
+                      <div className="absolute inset-0 bg-linear-to-t from-black/35 via-black/10 to-transparent" />
                     </div>
                     <div className="p-6">
                       <span className="text-xs font-bold uppercase tracking-widest text-[#0062D6]">

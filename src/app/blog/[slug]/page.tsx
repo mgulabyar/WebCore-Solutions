@@ -269,7 +269,7 @@ export default function BlogDetailPage() {
 
                 <div className="mt-10 space-y-10">
                   <section id="introduction">
-                    <h2 className="text-2xl font-bold text-slate-900">Introduction</h2>
+                    <h2 className="text-2xl font-semibold text-slate-800">Introduction</h2>
                     <p className="mt-4 text-slate-700 leading-8">
                       Salesforce and Outlook together can remove manual work from sales workflows and keep CRM data more complete.
                     </p>

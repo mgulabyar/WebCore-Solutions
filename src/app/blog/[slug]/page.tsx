@@ -115,7 +115,7 @@ export async function generateMetadata(): Promise<Metadata> {
 function Sidebar() {
   return (
     <aside className="lg:sticky lg:top-6 h-fit space-y-6">
-      <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-[0_4px_16px_rgba(15,23,42,0.04)]">
+      <div className="rounded-xl border border-slate-200 bg-white p-6 shadow-[0_4px_16px_rgba(15,23,42,0.04)]">
         <h3 className="text-base font-bold text-slate-900">Search</h3>
         <div className="mt-4 flex items-center gap-2.5 rounded-xl border border-slate-200 bg-slate-50 px-3.5 py-2.5">
           <Search className="h-4 w-4 shrink-0 text-slate-400" />

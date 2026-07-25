@@ -286,7 +286,7 @@ function BlogSidebar({
       </div>
 
       <div className="rounded-xl border border-slate-200 bg-white p-6 shadow-[0_4px_16px_rgba(15,23,42,0.04)]">
-        <h3 className="text-base font-bold text-slate-800">Categories</h3>
+        <h3 className="text-base font-semibold text-slate-800">Categories</h3>
         <ul className="mt-4 flex flex-col gap-1">
           {categoryList.map((cat) => {
             const isActive = activeCategory === cat.name;

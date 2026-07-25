@@ -195,7 +195,7 @@ function BlogHero() {
           ref={mediaRef}
           className={`blog-hero-right ${isVisible ? "blog-hero-active" : ""} relative flex items-center justify-center`}
         >
-          <div className="absolute -inset-6 rounded-3xl bg-gradient-to-br from-blue-50 to-cyan-50 lg:-inset-10" />
+          <div className="absolute" />
           <img
             src="/blog.png"
             alt="WebCore Solutions blog insights"

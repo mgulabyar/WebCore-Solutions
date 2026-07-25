@@ -154,8 +154,8 @@ function BlogHero() {
         }
       `}</style>
 
-      <div className="absolute left-1/4 top-0 h-80 w-80 rounded-full bg-blue-100/50 blur-3xl" />
-      <div className="absolute right-1/4 bottom-0 h-80 w-80 rounded-full bg-cyan-100/40 blur-3xl" />
+      <div className="absolute left-1/4 top-0 h-80 w-80 rounded-xl bg-blue-100/50 blur-3xl" />
+      <div className="absolute right-1/4 bottom-0 h-80 w-80 rounded-xl bg-cyan-100/40 blur-3xl" />
 
       <div className="relative z-10 mx-auto grid max-w-7xl grid-cols-1 items-center gap-12 px-6 md:px-12 lg:grid-cols-2 lg:gap-16">
         <div
@@ -209,7 +209,7 @@ function BlogHero() {
 
 function ArticleRowCard({ post }: { post: (typeof blogPosts)[0] }) {
   return (
-    <article className="group flex flex-col gap-6 overflow-hidden rounded-2xl border border-slate-200 bg-white p-5 shadow-[0_4px_16px_rgba(15,23,42,0.05)] transition-all duration-400 hover:-translate-y-1 hover:border-blue-100 hover:shadow-[0_20px_45px_rgba(0,98,214,0.1)] sm:flex-row sm:p-6">
+    <article className="group flex flex-col gap-6 overflow-hidden rounded-xl border border-slate-200 bg-white p-5 shadow-[0_4px_16px_rgba(15,23,42,0.05)] transition-all duration-400 hover:-translate-y-1 hover:border-blue-100 hover:shadow-[0_20px_45px_rgba(0,98,214,0.1)] sm:flex-row sm:p-6">
       <div className="relative h-56 w-full shrink-0 overflow-hidden rounded-xl sm:h-auto sm:w-72">
         <img
           src={post.image}
@@ -223,12 +223,12 @@ function ArticleRowCard({ post }: { post: (typeof blogPosts)[0] }) {
       </div>
 
       <div className="flex flex-1 flex-col justify-center py-1">
-        <span className="text-xs font-bold uppercase tracking-widest text-[#0062D6]">
+        <span className="text-xs font-semibold uppercase tracking-widest text-[#0062D6]">
           {post.category}
         </span>
 
         <Link href={`/blog/${post.slug}`}>
-          <h3 className="mt-2.5 text-xl font-bold leading-snug text-slate-900 transition-colors duration-300 group-hover:text-[#0062D6] lg:text-2xl">
+          <h3 className="mt-2.5 text-xl font-semibold leading-snug text-slate-900 transition-colors duration-300 group-hover:text-[#0062D6] lg:text-2xl">
             {post.title}
           </h3>
         </Link>

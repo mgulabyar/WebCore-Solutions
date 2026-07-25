@@ -293,7 +293,7 @@ export default function BlogDetailPage() {
                   </section>
 
                   <section id="integration">
-                    <h2 className="text-2xl font-bold text-slate-900">How the Integration Works</h2>
+                    <h2 className="text-2xl font-semibold text-slate-800">How the Integration Works</h2>
                     <p className="mt-4 text-slate-700 leading-8">
                       The add-in reads Outlook email context through Office.js, then calls your backend to fetch Salesforce data securely.
                     </p>

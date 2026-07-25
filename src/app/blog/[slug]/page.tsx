@@ -34,7 +34,7 @@ const posts: Post[] = [
     slug: "integrate-salesforce-with-outlook-custom-addin",
     category: "Outlook Add-ins",
     excerpt:
-      "Bring Salesforce into Outlook with a custom Office.js add-in — see account and opportunity context beside every email, log messages to the CRM, and create records without leaving the inbox.",
+      "Bring Salesforce into Outlook with a custom Office.js add-in - see account and opportunity context beside every email, log messages to the CRM, and create records without leaving the inbox.",
     image: "/orange.png",
     date: "July 12, 2026",
     author: "Ali Sher",
@@ -115,7 +115,7 @@ export async function generateMetadata(): Promise<Metadata> {
 function Sidebar() {
   return (
     <aside className="lg:sticky lg:top-4 h-fit space-y-6">
-      <div className="rounded-xl border border-slate-200 bg-white p-6 shadow-[0_4px_16px_rgba(15,23,42,0.04)]">
+      <div className="rounded-lg border border-slate-200 bg-white p-6 shadow-[0_4px_16px_rgba(15,23,42,0.04)]">
         <h3 className="text-base font-semibold text-slate-800">Search</h3>
         <div className="mt-4 flex items-center gap-2.5 rounded-xl border border-slate-200 bg-slate-50 px-3.5 py-2.5">
           <Search className="h-4 w-4 shrink-0 text-slate-400" />
@@ -127,7 +127,7 @@ function Sidebar() {
         </div>
       </div>
 
-      <div className="rounded-xl border border-slate-200 bg-white p-6 shadow-[0_4px_16px_rgba(15,23,42,0.04)]">
+      <div className="rounded-lg border border-slate-200 bg-white p-6 shadow-[0_4px_16px_rgba(15,23,42,0.04)]">
         <h3 className="text-base font-semibold text-slate-800">Categories</h3>
         <div className="mt-4 flex flex-wrap gap-2">
           {["Outlook Add-ins", "Excel Add-ins", "Word Add-ins", "Best Practices"].map((item) => (
@@ -141,7 +141,7 @@ function Sidebar() {
         </div>
       </div>
 
-      <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-[0_4px_16px_rgba(15,23,42,0.04)]">
+      <div className="rounded-lg border border-slate-200 bg-white p-6 shadow-[0_4px_16px_rgba(15,23,42,0.04)]">
         <h3 className="text-base font-semibold text-slate-800">Popular Posts</h3>
         <div className="mt-4 space-y-4">
           {posts.map((post) => (
@@ -164,7 +164,7 @@ function Sidebar() {
         </div>
       </div>
 
-      <div className="rounded-2xl border border-slate-200 bg-linear-to-br from-[#0062D6] to-[#0B3C95] p-6 shadow-[0_10px_30px_rgba(0,98,214,0.2)]">
+      <div className="rounded-lg border border-slate-200 bg-linear-to-br from-[#0062D6] to-[#0B3C95] p-6 shadow-[0_10px_30px_rgba(0,98,214,0.2)]">
         <div className="mb-2 flex items-center gap-2">
           <h3 className="text-base font-semibold text-white">Need Help?</h3>
           <MessageSquareText className="h-4 w-4 text-blue-100" />
@@ -203,7 +203,7 @@ export default function BlogDetailPage() {
               {post.title}
             </h1>
 
-            <p className="mx-auto mt-5 max-w-3xl text-base leading-relaxed text-slate-600 md:text-lg">
+            <p className="mx-auto mt-5 max-w-3xl text-base leading-relaxed text-slate-600 md:text-md">
               {post.excerpt}
             </p>
 
@@ -228,7 +228,7 @@ export default function BlogDetailPage() {
       <section className="mx-auto max-w-7xl px-6 pb-16 md:px-12">
         <div className="grid grid-cols-1 gap-10 lg:grid-cols-[minmax(0,1fr)_340px]">
           <main className="min-w-0">
-            <div className="overflow-hidden rounded-xl border border-slate-200 bg-white shadow-[0_10px_40px_rgba(15,23,42,0.06)]">
+            <div className="overflow-hidden rounded-lg border border-slate-200 bg-white shadow-[0_10px_40px_rgba(15,23,42,0.06)]">
               <img
                 src={post.image}
                 alt={post.title}
@@ -245,7 +245,7 @@ export default function BlogDetailPage() {
                   </span>
                 </div>
 
-                <div className="mt-8 space-y-5 text-[15px] leading-8 text-slate-700">
+                <div className="mt-8 space-y-5 text-[14px] leading-relaxed text-slate-700">
                   {post.content.map((para, index) => (
                     <p key={index}>{para}</p>
                   ))}

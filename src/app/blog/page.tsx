@@ -228,7 +228,7 @@ function ArticleRowCard({ post }: { post: (typeof blogPosts)[0] }) {
         </span>
 
         <Link href={`/blog/${post.slug}`}>
-          <h3 className="mt-2.5 text-xl font-semibold leading-snug text-slate-900 transition-colors duration-300 group-hover:text-[#0062D6] lg:text-2xl">
+          <h3 className="mt-2.5 text-xl font-semibold leading-snug text-slate-800 transition-colors duration-300 group-hover:text-[#0062D6]">
             {post.title}
           </h3>
         </Link>

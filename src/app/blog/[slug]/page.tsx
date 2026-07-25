@@ -228,11 +228,11 @@ export default function BlogDetailPage() {
       <section className="mx-auto max-w-7xl px-6 pb-16 md:px-12">
         <div className="grid grid-cols-1 gap-10 lg:grid-cols-[minmax(0,1fr)_340px]">
           <main className="min-w-0">
-            <div className="overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-[0_10px_40px_rgba(15,23,42,0.06)]">
+            <div className="overflow-hidden rounded-xl border border-slate-200 bg-white shadow-[0_10px_40px_rgba(15,23,42,0.06)]">
               <img
                 src={post.image}
                 alt={post.title}
-                className="h-[280px] w-full object-cover md:h-[420px]"
+                className="h-[280px] w-full object-cover md:h-[350px]"
               />
 
               <div className="p-6 md:p-10">

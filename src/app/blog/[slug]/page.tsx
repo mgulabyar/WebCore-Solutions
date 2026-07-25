@@ -342,13 +342,13 @@ export default function BlogDetailPage() {
 
                 <div className="mt-12 flex flex-wrap items-center gap-3 border-t border-slate-200 pt-8">
                   <span className="text-sm font-semibold text-slate-800">Share:</span>
-                  <button className="rounded-full border border-slate-200 bg-white px-4 py-2 text-sm text-slate-600 hover:border-[#0062D6]/30 hover:text-[#0062D6]">
+                  <button className="rounded-full border border-slate-200 bg-white px-4 py-1.5 text-sm text-slate-600 hover:border-[#0062D6]/30 hover:text-[#0062D6]">
                     LinkedIn
                   </button>
-                  <button className="rounded-full border border-slate-200 bg-white px-4 py-2 text-sm text-slate-600 hover:border-[#0062D6]/30 hover:text-[#0062D6]">
+                  <button className="rounded-full border border-slate-200 bg-white px-4 py-1.5 text-sm text-slate-600 hover:border-[#0062D6]/30 hover:text-[#0062D6]">
                     X
                   </button>
-                  <button className="rounded-full border border-slate-200 bg-white px-4 py-2 text-sm text-slate-600 hover:border-[#0062D6]/30 hover:text-[#0062D6]">
+                  <button className="rounded-full border border-slate-200 bg-white px-4 py-1.5 text-sm text-slate-600 hover:border-[#0062D6]/30 hover:text-[#0062D6]">
                     Copy Link
                   </button>
                 </div>
@@ -358,7 +358,7 @@ export default function BlogDetailPage() {
             <section className="mt-14">
               <div className="mb-6 flex items-end justify-between gap-4">
                 <div>
-                  <h2 className="text-2xl font-bold text-slate-900">Related Articles</h2>
+                  <h2 className="text-2xl font-semibold text-slate-800">Related Articles</h2>
                   <p className="mt-2 text-sm text-slate-600">
                     More posts that match this topic.
                   </p>

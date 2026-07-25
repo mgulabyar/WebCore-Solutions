@@ -162,9 +162,7 @@ function BlogHero() {
           ref={textRef}
           className={`blog-hero-left ${isVisible ? "blog-hero-active" : ""}`}
         >
-          <span className="mb-4 inline-flex items-center gap-2 rounded-full border border-slate-200 bg-slate-50 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-[#0062D6]">
-            WebCore Blog
-          </span>
+     
 
           <h1 className="text-3xl font-semibold tracking-tight text-slate-900 lg:text-4xl">
             Insights, Tutorials &amp; Updates

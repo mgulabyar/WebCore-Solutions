@@ -199,7 +199,7 @@ export default function BlogDetailPage() {
               {post.category}
             </span>
 
-            <h1 className="mt-5 text-3xl font-semibold tracking-tight text-slate-900 md:text-4xl">
+            <h1 className="mt-5 text-3xl font-semibold tracking-tight text-slate-800 md:text-4xl">
               {post.title}
             </h1>
 

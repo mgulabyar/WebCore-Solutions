@@ -23,7 +23,7 @@ const blogPosts = [
     category: "Development",
     excerpt:
       "Learn how to structure scalable, fast, and maintainable applications using the Next.js App Router and modern frontend patterns.",
-    image: "/team/Asfand.png",
+    image: "/orange.png",
     date: "July 24, 2026",
     author: "WebCore Team",
     readTime: "9 min read",
@@ -35,7 +35,7 @@ const blogPosts = [
     category: "SEO",
     excerpt:
       "Improve your search visibility with practical SEO tactics that help your content rank and convert better over time.",
-    image: "/team/Asfand.png",
+    image: "/orange.png",
     date: "July 21, 2026",
     author: "Gulab Yar",
     readTime: "7 min read",
@@ -47,7 +47,7 @@ const blogPosts = [
     category: "Design",
     excerpt:
       "A practical guide to building beautiful, user-friendly interfaces that improve engagement and keep visitors on the page.",
-    image: "/team/Asfand.png",
+    image: "/orange.png",
     date: "July 18, 2026",
     author: "Asfand Yar",
     readTime: "8 min read",
@@ -59,7 +59,7 @@ const blogPosts = [
     category: "Development",
     excerpt:
       "Discover the best responsive layout techniques for building smooth, optimized interfaces across every device size.",
-    image: "/team/Asfand.png",
+    image: "/orange.png",
     date: "July 15, 2026",
     author: "Zuryab Gill",
     readTime: "6 min read",
@@ -71,7 +71,7 @@ const blogPosts = [
     category: "Marketing",
     excerpt:
       "Plan, write, and publish blog content consistently with a simple workflow that helps you stay organized and productive.",
-    image: "/team/Asfand.png",
+    image: "/orange.png",
     date: "July 11, 2026",
     author: "Shabana",
     readTime: "5 min read",
@@ -83,7 +83,7 @@ const blogPosts = [
     category: "Design",
     excerpt:
       "Use advanced UI patterns to make your website feel polished, intuitive, and more professional for your users.",
-    image: "/team/Asfand.png",
+    image: "/orange.png",
     date: "July 08, 2026",
     author: "Asfand Yar",
     readTime: "8 min read",

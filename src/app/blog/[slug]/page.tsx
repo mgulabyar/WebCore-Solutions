@@ -323,7 +323,7 @@ export default function BlogDetailPage() {
                   </section>
 
                   <section id="security">
-                    <h2 className="text-2xl font-bold text-slate-900">Security & Best Practices</h2>
+                    <h2 className="text-2xl font-semibold text-slate-800">Security & Best Practices</h2>
                     <ul className="mt-4 space-y-3 text-slate-700">
                       {[
                         "Keep secrets and refresh tokens server-side only.",

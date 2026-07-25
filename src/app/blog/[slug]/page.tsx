@@ -276,7 +276,7 @@ export default function BlogDetailPage() {
                   </section>
 
                   <section id="why-connect">
-                    <h2 className="text-2xl font-bold text-slate-900">Why Connect Salesforce to Outlook?</h2>
+                    <h2 className="text-2xl font-semibold text-slate-800">Why Connect Salesforce to Outlook?</h2>
                     <ul className="mt-4 space-y-3 text-slate-700">
                       {[
                         "See account, contact, and opportunity context beside every email.",

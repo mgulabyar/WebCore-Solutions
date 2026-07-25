@@ -232,7 +232,7 @@ export default function BlogDetailPage() {
               <img
                 src={post.image}
                 alt={post.title}
-                className="h-[280px] w-full object-cover md:h-[350px]"
+                className="h-[280px] w-full object-cover md:h-87.5"
               />
 
               <div className="p-6 md:p-10">

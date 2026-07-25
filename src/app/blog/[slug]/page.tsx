@@ -12,7 +12,6 @@ import {
   Tag,
   MessageSquareText,
   Share2,
-  BookOpen,
   Sparkles,
   BarChart3,
 } from "lucide-react";

@@ -239,7 +239,7 @@ function ArticleRowCard({ post }: { post: (typeof blogPosts)[0] }) {
 
         <div className="mt-5 flex flex-wrap items-center gap-4 text-xs text-slate-500">
           <span className="inline-flex items-center gap-2">
-            <span className="flex h-7 w-7 items-center justify-center rounded-full bg-gradient-to-br from-[#0062D6] to-[#0B3C95] text-[10px] font-bold text-white">
+            <span className="flex h-7 w-7 items-center justify-center rounded-full bg-linear-to-br from-[#0062D6] to-[#0B3C95] text-[10px] font-bold text-white">
               {getInitials(post.author)}
             </span>
             By {post.author}

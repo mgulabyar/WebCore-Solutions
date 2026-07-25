@@ -11,8 +11,6 @@ import {
   ChevronRight,
   Tag,
   MessageSquareText,
-  Share2,
-
   Sparkles,
   BarChart3,
 } from "lucide-react";

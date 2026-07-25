@@ -199,7 +199,7 @@ function BlogHero() {
           <img
             src="/blog.png"
             alt="WebCore Solutions blog insights"
-            className="relative z-10 w-full max-w-md drop-shadow-[0_20px_45px_rgba(0,98,214,0.15)]"
+            className="relative z-10 w-full max-w-md"
           />
         </div>
       </div>

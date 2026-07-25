@@ -99,7 +99,7 @@ const categoryList = [
   { name: "Best Practices", count: 4 },
 ];
 
-const categories = ["All", "Development", "Design", "SEO", "Marketing"];
+// const categories = ["All", "Development", "Design", "SEO", "Marketing"];
 
 function getInitials(name: string) {
   return name
@@ -274,7 +274,7 @@ function BlogSidebar({
       <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-[0_4px_16px_rgba(15,23,42,0.04)]">
         <h3 className="text-base font-bold text-slate-900">Search</h3>
         <div className="mt-4 flex items-center gap-2.5 rounded-xl border border-slate-200 bg-slate-50 px-3.5 py-2.5">
-          <Search className="h-4 w-4 flex-shrink-0 text-slate-400" />
+          <Search className="h-4 w-4 shrink-0 text-slate-400" />
           <input
             type="text"
             value={search}
@@ -386,7 +386,7 @@ export default function BlogPage() {
         <div className="grid grid-cols-1 gap-10 lg:grid-cols-[1fr_340px]">
           <div>
             <div className="mb-8 flex items-end justify-between gap-4">
-              <h2 className="text-2xl font-bold text-slate-900">Latest Articles</h2>
+              <h2 className="text-2xl font-semibold text-slate-800">Latest Articles</h2>
               <span className="text-sm text-slate-500">
                 {filteredPosts.length} articles
               </span>
@@ -397,7 +397,7 @@ export default function BlogPage() {
                 <ArticleRowCard key={post.slug} post={post} />
               ))}
               {paginatedPosts.length === 0 && (
-                <div className="rounded-2xl border border-slate-200 bg-white p-10 text-center text-sm text-slate-500">
+                <div className="rounded-xl border border-slate-200 bg-white p-10 text-center text-sm text-slate-500">
                   No articles match your search.
                 </div>
               )}

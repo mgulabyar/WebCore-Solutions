@@ -400,7 +400,7 @@ export default function BlogDetailPage() {
             </section>
           </main>
 
-          <div>
+          <div className="">
             <Sidebar />
           </div>
         </div>

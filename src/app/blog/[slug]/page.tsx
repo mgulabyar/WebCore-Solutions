@@ -12,6 +12,7 @@ import {
   Tag,
   MessageSquareText,
   Sparkles,
+  BarChart3,
 } from "lucide-react";
 
 type Post = {

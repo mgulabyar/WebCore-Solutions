@@ -251,7 +251,7 @@ export default function BlogDetailPage() {
                   ))}
                 </div>
 
-                <div className="mt-10 rounded-2xl bg-slate-50 p-6">
+                <div className="mt-10 rounded-lg bg-slate-50 p-6">
                   <h2 className="text-lg font-bold text-slate-900">Table of Contents</h2>
                   <div className="mt-4 space-y-3">
                     {post.toc.map((item) => (

@@ -387,7 +387,7 @@ export default function BlogDetailPage() {
                       <span className="text-xs font-bold uppercase tracking-widest text-[#0062D6]">
                         {item.category}
                       </span>
-                      <h3 className="mt-2 text-xl font-bold text-slate-900 group-hover:text-[#0062D6]">
+                      <h3 className="mt-2 text-xl font-semibold text-slate-800 group-hover:text-[#0062D6]">
                         {item.title}
                       </h3>
                       <p className="mt-3 text-sm leading-relaxed text-slate-600">
@@ -400,7 +400,7 @@ export default function BlogDetailPage() {
             </section>
           </main>
 
-          <div className="lg:pt-2">
+          <div>
             <Sidebar />
           </div>
         </div>

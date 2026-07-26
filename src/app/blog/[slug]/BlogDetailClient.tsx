@@ -166,17 +166,17 @@ export default function BlogDetailClient({
             {post.category}
           </div>
 
-          <h1 className={`mt-4 max-w-4xl text-3xl font-semibold leading-tight tracking-tight text-slate-800 md:text-4xl transition-all duration-700 ${loaded ? "translate-y-0 opacity-100" : "translate-y-3 opacity-0"}`}>
+          <h1 className={`mt-4 flex items-center text-center justify-center mx-auto max-w-4xl text-3xl font-semibold leading-tight tracking-tight text-slate-800 md:text-4xl transition-all duration-700 ${loaded ? "translate-y-0 opacity-100" : "translate-y-3 opacity-0"}`}>
             {post.title}
           </h1>
 
-          <p className={`mt-4 max-w-3xl text-base leading-relaxed text-slate-600 md:text-lg transition-all duration-700 delay-100 ${loaded ? "translate-y-0 opacity-100" : "translate-y-3 opacity-0"}`}>
+          <p className={`mt-4 flex items-center text-center justify-center mx-auto max-w-3xl text-md leading-relaxed text-slate-600 md:text-md transition-all duration-700 delay-100 ${loaded ? "translate-y-0 opacity-100" : "translate-y-3 opacity-0"}`}>
             {post.excerpt}
           </p>
 
-          <div className="mt-7 flex flex-wrap items-center gap-4">
+          <div className="mt-7 text-center justify-center mx-auto flex flex-wrap items-center gap-4">
             <div className="flex items-center gap-2.5">
-              <span className="flex h-9 w-9 items-center justify-center rounded-full bg-linear-to-br from-[#0062D6] to-[#0B3C95] text-xs font-semibold text-white">
+              <span className="flex  h-9 w-9 items-center justify-center rounded-full bg-linear-to-br from-[#0062D6] to-[#0B3C95] text-xs font-semibold text-white">
                 {post.author.split(" ").map((n) => n.charAt(0)).join("")}
               </span>
               <span className="text-sm font-medium text-slate-700">By {post.author}</span>

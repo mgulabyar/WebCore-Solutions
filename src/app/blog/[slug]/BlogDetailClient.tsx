@@ -162,11 +162,11 @@ export default function BlogDetailClient({
             <span className="text-slate-500">{post.category}</span>
           </nav>
 
-          <div className="mt-6 inline-flex items-center gap-2 rounded-full border border-slate-200 bg-slate-50 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.18em] text-[#0062D6]">
+          <div className="mt-6 flex w-fit mx-auto justify-center items-center gap-2 rounded-full border border-slate-200 bg-slate-50 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.18em] text-[#0062D6]">
             {post.category}
           </div>
 
-          <h1 className={`mt-4 max-w-4xl text-3xl font-semibold leading-tight tracking-tight text-slate-950 md:text-5xl transition-all duration-700 ${loaded ? "translate-y-0 opacity-100" : "translate-y-3 opacity-0"}`}>
+          <h1 className={`mt-4 max-w-4xl text-3xl font-semibold leading-tight tracking-tight text-slate-950 md:text-4xl transition-all duration-700 ${loaded ? "translate-y-0 opacity-100" : "translate-y-3 opacity-0"}`}>
             {post.title}
           </h1>
 

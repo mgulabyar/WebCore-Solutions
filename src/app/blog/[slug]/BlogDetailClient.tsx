@@ -176,7 +176,7 @@ export default function BlogDetailClient({
 
           <div className="mt-7 flex flex-wrap items-center gap-4">
             <div className="flex items-center gap-2.5">
-              <span className="flex h-9 w-9 items-center justify-center rounded-full bg-gradient-to-br from-[#0062D6] to-[#0B3C95] text-xs font-semibold text-white">
+              <span className="flex h-9 w-9 items-center justify-center rounded-full bg-linear-to-br from-[#0062D6] to-[#0B3C95] text-xs font-semibold text-white">
                 {post.author.split(" ").map((n) => n.charAt(0)).join("")}
               </span>
               <span className="text-sm font-medium text-slate-700">By {post.author}</span>

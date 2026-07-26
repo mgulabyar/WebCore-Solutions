@@ -166,7 +166,7 @@ export default function BlogDetailClient({
             {post.category}
           </div>
 
-          <h1 className={`mt-4 max-w-4xl text-3xl font-semibold leading-tight tracking-tight text-slate-950 md:text-4xl transition-all duration-700 ${loaded ? "translate-y-0 opacity-100" : "translate-y-3 opacity-0"}`}>
+          <h1 className={`mt-4 max-w-4xl text-3xl font-semibold leading-tight tracking-tight text-slate-800 md:text-4xl transition-all duration-700 ${loaded ? "translate-y-0 opacity-100" : "translate-y-3 opacity-0"}`}>
             {post.title}
           </h1>
 

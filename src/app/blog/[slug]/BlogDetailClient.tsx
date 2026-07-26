@@ -210,6 +210,7 @@ export default function BlogDetailClient({
               {copied && (
                 <span className="inline-flex items-center gap-1 rounded-full bg-emerald-50 px-3 py-1 text-xs font-semibold text-emerald-600">
                   <Check className="h-3.5 w-3.5" />
+                  Copied
                 </span>
               )}
             </div>
@@ -220,7 +221,7 @@ export default function BlogDetailClient({
       <section className="mx-auto max-w-7xl px-6 py-14 md:px-12">
         <div className="grid grid-cols-1 gap-10 lg:grid-cols-[minmax(0,1fr)_340px]">
           <main className="min-w-0">
-            <div className="overflow-hidden rounded-xl border border-slate-200 bg-white shadow-[0_10px_35px_rgba(15,23,42,0.05)]">
+            <div className="overflow-hidden rounded-lg border border-slate-200 bg-white shadow-[0_10px_35px_rgba(15,23,42,0.05)]">
               <img src={post.image} alt={post.title} className="h-72 w-full object-cover md:h-96" />
 
               <div className="p-6 md:p-10">

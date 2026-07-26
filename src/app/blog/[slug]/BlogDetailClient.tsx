@@ -250,7 +250,7 @@ export default function BlogDetailClient({
                         <ul className="mt-4 space-y-3">
                           {section.bullets.map((item) => (
                             <li key={item} className="flex gap-3 text-[15px] leading-relaxed text-slate-600">
-                              <Sparkles className="mt-1 h-4 w-4 flex-shrink-0 text-[#0062D6]" />
+                              <Sparkles className="mt-1 h-4 w-4 shrink-0 text-[#0062D6]" />
                               <span>{item}</span>
                             </li>
                           ))}

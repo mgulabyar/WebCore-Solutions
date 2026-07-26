@@ -340,7 +340,7 @@ export default function BlogDetailClient({
               </div>
             </div>
 
-            <div className="rounded-xl border border-slate-200 bg-gradient-to-br from-[#0062D6] to-[#0B3C95] p-5 shadow-[0_10px_30px_rgba(0,98,214,0.18)]">
+            <div className="rounded-xl border border-slate-200 bg-linear-to-br from-[#0062D6] to-[#0B3C95] p-5 shadow-[0_10px_30px_rgba(0,98,214,0.18)]">
               <h3 className="text-base font-semibold text-white">
                 Need Help Building Custom Office Add-ins?
               </h3>

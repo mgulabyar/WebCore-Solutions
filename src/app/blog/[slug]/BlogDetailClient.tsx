@@ -7,7 +7,6 @@ import {
   CalendarDays,
   Clock3,
   ChevronRight,
-  Tag,
   Sparkles,
   ArrowRight,
   Search,

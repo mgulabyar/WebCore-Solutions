@@ -235,7 +235,7 @@ export default function BlogDetailClient({
                     >
                       <div className="flex items-center gap-2">
                         <CircleDot className="h-4 w-4 text-[#0062D6]" />
-                        <h2 className="text-2xl font-semibold tracking-tight text-slate-900">
+                        <h2 className="text-2xl font-semibold tracking-tight text-slate-800">
                           {section.heading}
                         </h2>
                       </div>

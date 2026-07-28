@@ -638,14 +638,14 @@ export function DatabaseSection() {
 
       <div className="absolute inset-0 db-grid opacity-100" />
       <div className="absolute -top-40 left-1/4 h-125 w-125 rounded-full bg-cyan-300/10 blur-3xl" />
-      <div className="absolute -bottom-25 right-10 h-112.5 w-[450px] rounded-full bg-blue-300/15 blur-3xl" />
+      <div className="absolute -bottom-25 right-10 h-112.5 w-112.5 rounded-full bg-blue-300/15 blur-3xl" />
 
       <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mx-auto mb-16 flex max-w-2xl flex-col items-center justify-center text-center">
           <span className="mb-3 block text-xs font-bold uppercase tracking-[0.3em] text-neutral-500">
             Database & Other Skills
           </span>
-          <h2 className="bg-gradient-to-r from-neutral-900 via-neutral-800 to-neutral-700 bg-clip-text text-3xl font-semibold tracking-tight text-transparent sm:text-4xl">
+          <h2 className="bg-linear-to-r from-neutral-900 via-neutral-800 to-neutral-700 bg-clip-text text-3xl font-semibold tracking-tight text-transparent sm:text-4xl">
             Data, Handled the Right Way
           </h2>
           <p className="mt-4 text-sm font-medium leading-relaxed text-neutral-500">

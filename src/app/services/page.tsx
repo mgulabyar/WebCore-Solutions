@@ -782,7 +782,7 @@ function ProcessSection() {
                 <div className="hidden lg:block absolute top-9.5 left-full w-8 h-0.5 bg-linear-to-r from-blue-300 to-transparent" />
               )}
               <div className="flex items-center gap-3 mb-4">
-                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-blue-500 to-blue-600 text-white text-base font-bold shadow-lg shadow-blue-500/20">
+                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-linear-to-br from-blue-500 to-blue-600 text-white text-base font-bold shadow-lg shadow-blue-500/20">
                   {step.step}
                 </div>
                 <step.icon className="h-5 w-5 text-blue-400" />

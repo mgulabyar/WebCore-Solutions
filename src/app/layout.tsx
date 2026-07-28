@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     icon: "/web.png",
   },
 };
-
+// Add Logo in title
 export default function RootLayout({
   children,
 }: {

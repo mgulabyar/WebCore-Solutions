@@ -274,7 +274,7 @@ function FrontendSection() {
   return (
     <section
       ref={containerRef}
-      className="relative w-full overflow-hidden bg-linear-to-b from-slate-50 to-white py-24"
+      className="relative w-full overflow-hidden bg-linear-to-b from-slate-50 to-white py-16"
     >
       <style>{`
         .fe-card {
@@ -381,7 +381,7 @@ function FrontendSection() {
                 }}
                 className={`fe-card ${fromLeft ? "fe-from-left" : "fe-from-right"} ${
                   isVisible ? "fe-active" : ""
-                } ${offsetClass} group relative rounded-2xl border border-slate-200 bg-white p-5 sm:p-6 shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-[transform,box-shadow] duration-500`}
+                } ${offsetClass} group relative rounded-xl border border-slate-200 bg-white p-5 sm:p-6 shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-[transform,box-shadow] duration-500`}
               >
                 <span
                   className="fe-badge absolute -top-2 -right-2 flex h-6 w-6 items-center justify-center rounded-full text-[10px] font-bold text-white shadow-md z-10"

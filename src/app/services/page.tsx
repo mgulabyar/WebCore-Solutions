@@ -490,7 +490,7 @@ function BackendSection() {
                 }}
                 className={`be-row ${fromLeft ? "be-from-left" : "be-from-right"} ${
                   isVisible ? "be-active" : ""
-                } group relative flex items-center gap-5 rounded-xl bg-white/[0.04] border border-white/10 p-6 overflow-hidden`}
+                } group relative flex items-center gap-5 rounded-xl bg-white/4 border border-white/10 p-6 overflow-hidden`}
               >
                 <div
                   className="be-glow absolute inset-0 pointer-events-none"

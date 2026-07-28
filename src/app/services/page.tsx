@@ -165,7 +165,7 @@ export function ServicesHero() {
   return (
     <section
       ref={containerRef}
-      className="relative w-full overflow-hidden bg-gradient-to-b from-neutral-950 via-neutral-900 to-neutral-950 py-24"
+      className="relative w-full overflow-hidden bg-linear-to-b from-neutral-950 via-neutral-900 to-neutral-950 py-24"
     >
       <style>{`
         @keyframes wc-blob-move {

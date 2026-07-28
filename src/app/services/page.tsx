@@ -217,7 +217,7 @@ export function ServicesHero() {
               }}
               className={
                 word === "Layer." || word === "Systems."
-                  ? "bg-gradient-to-r from-blue-400 via-cyan-300 to-indigo-400 bg-clip-text text-transparent font-medium"
+                  ? "bg-linear-to-r from-blue-400 via-cyan-300 to-indigo-400 bg-clip-text text-transparent font-medium"
                   : ""
               }
             >

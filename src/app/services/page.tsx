@@ -663,10 +663,10 @@ export function DatabaseSection() {
               } as React.CSSProperties}
               className={`db-card ${
                 isVisible ? "db-active" : ""
-              } group relative overflow-hidden rounded-[24px] border border-neutral-200/80 bg-white/70 p-6 shadow-[0_8px_30px_rgb(0,0,0,0.012)] backdrop-blur-md transition-all duration-500 hover:shadow-[0_22px_50px_rgba(0,0,0,0.04)]`}
+              } group relative overflow-hidden rounded-lg border border-neutral-200/80 bg-white/70 p-6 shadow-[0_8px_30px_rgb(0,0,0,0.012)] backdrop-blur-md transition-all duration-500 hover:shadow-[0_22px_50px_rgba(0,0,0,0.04)]`}
             >
               <div
-                className="pointer-events-none absolute inset-0 rounded-[24px] opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+                className="pointer-events-none absolute inset-0 rounded-3xl opacity-0 transition-opacity duration-500 group-hover:opacity-100"
                 style={{
                   background: `radial-gradient(circle at 30% 50%, ${skill.color}05, transparent 70%)`,
                 }}

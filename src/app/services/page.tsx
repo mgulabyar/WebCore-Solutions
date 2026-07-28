@@ -187,7 +187,7 @@ export function ServicesHero() {
         }
       `}</style>
       
-      <div className="absolute inset-0 opacity-[0.03] bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:32px_32px]" />
+      <div className="absolute inset-0 opacity-[0.03] bg-[radial-gradient(#ffffff_1px,transparent_1px)] bg-size-[32px_32px]" />
       <div className="wc-blob-1 absolute top-0 left-1/4 h-80 w-80 rounded-full bg-[#0076FF]/10 blur-3xl" />
       <div className="wc-blob-2 absolute bottom-0 right-1/4 h-80 w-80 rounded-full bg-blue-600/10 blur-3xl" />
 

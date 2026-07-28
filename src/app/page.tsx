@@ -830,7 +830,7 @@ function CTASection() {
         className="relative z-10 mx-auto max-w-4xl px-6 text-center md:px-12"
       >
         <h2 className="mb-6 text-2xl font-semibold tracking-tight text-white lg:text-4xl">
-          Ready to Start Your Project?
+          Ready to Start Your Project
         </h2>
         <p className="mx-auto mb-10 max-w-2xl text-sm leading-relaxed text-blue-100 lg:text-base">
           Let&apos;s turn your idea into a polished digital experience with a clear

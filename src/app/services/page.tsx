@@ -274,7 +274,7 @@ function FrontendSection() {
   return (
     <section
       ref={containerRef}
-      className="relative w-full overflow-hidden bg-gradient-to-b from-slate-50 to-white py-24"
+      className="relative w-full overflow-hidden bg-linear-to-b from-slate-50 to-white py-24"
     >
       <style>{`
         .fe-card {

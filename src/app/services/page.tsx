@@ -75,7 +75,7 @@ const backendSkills = [
   {
     name: "PHP & WordPress",
     icon: SiPhp,
-    color: "#8993BE",
+    color: "#777BB4",
     desc: "Custom plugins and dynamic backend logic for content-driven platforms.",
   },
 ];
@@ -431,6 +431,7 @@ function FrontendSection() {
 }
 
 
+
 function BackendSection() {
   const containerRef = useRef<HTMLDivElement>(null);
   const [isVisible, setIsVisible] = useState(false);
@@ -447,7 +448,7 @@ function BackendSection() {
   return (
     <section
       ref={containerRef}
-      className="relative w-full overflow-hidden bg-[#0b1220] py-16"
+      className="relative w-full overflow-hidden bg-white py-16"
     >
       <style>{`
         .be-row {
@@ -468,13 +469,13 @@ function BackendSection() {
 
       <div className="relative z-10 mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
         <div className="mb-16 max-w-2xl mx-auto text-center">
-          <span className="text-sm font-bold uppercase tracking-widest text-blue-400 block mb-2">
+          <span className="text-sm font-bold uppercase tracking-widest text-[#1d70d4] block mb-2">
             Backend Development
           </span>
-          <h2 className="text-3xl font-semibold text-white tracking-tight sm:text-4xl">
+          <h2 className="text-3xl font-semibold text-slate-800 tracking-tight sm:text-4xl">
             Systems That Never Let You Down
           </h2>
-          <p className="mt-3 text-sm text-neutral-400 leading-relaxed">
+          <p className="mt-3 text-sm text-slate-600 leading-relaxed">
             Robust, secure, and scalable backend architecture powering everything behind the scenes to solve complex logic and performance challenges.
           </p>
         </div>
@@ -490,19 +491,19 @@ function BackendSection() {
                 }}
                 className={`be-row ${fromLeft ? "be-from-left" : "be-from-right"} ${
                   isVisible ? "be-active" : ""
-                } group relative flex items-center gap-5 rounded-xl bg-white/4 border border-white/10 p-6 overflow-hidden`}
+                } group relative flex items-center gap-5 rounded-xl bg-white border border-slate-200 p-6 shadow-[0_4px_16px_rgba(15,23,42,0.04)] overflow-hidden`}
               >
                 <div
                   className="be-glow absolute inset-0 pointer-events-none"
                   style={{
-                    background: `radial-gradient(circle at ${fromLeft ? "0%" : "100%"} 50%, ${skill.color}22, transparent 60%)`,
+                    background: `radial-gradient(circle at ${fromLeft ? "0%" : "100%"} 50%, ${skill.color}12, transparent 60%)`,
                   }}
                 />
                 <div
                   className="be-icon-box relative flex h-14 w-14 shrink-0 items-center justify-center rounded-xl"
                   style={{
-                    backgroundColor: `${skill.color}1a`,
-                    border: `1px solid ${skill.color}40`,
+                    backgroundColor: `${skill.color}0f`,
+                    border: `1px solid ${skill.color}30`,
                   }}
                 >
                   <skill.icon
@@ -511,10 +512,10 @@ function BackendSection() {
                   />
                 </div>
                 <div className="relative">
-                  <h3 className="text-base  text-white">
+                  <h3 className="text-base font-semibold text-slate-900">
                     {skill.name}
                   </h3>
-                  <p className="mt-1.5 text-sm text-neutral-400 leading-relaxed">
+                  <p className="mt-1.5 text-sm text-slate-600 leading-relaxed">
                     {skill.desc}
                   </p>
                 </div>
@@ -526,11 +527,6 @@ function BackendSection() {
     </section>
   );
 }
-
-
-
-
-
 
 export function DatabaseSection() {
   const containerRef = useRef<HTMLDivElement>(null);

@@ -22,29 +22,12 @@ const teamMembers = [
     name: "Zuryab Gill",
     role: "Senior Frontend Developer",
     bio: "Frontend engineering specialist dedicated to creating pixel perfect, highly responsive, and interactive user interfaces. Expert in React, Next js, and modern CSS frameworks, focusing on seamless user journeys, smooth fluid animations, and optimized website speed across all modern devices.",
-    image: "/team/Asfand.png",
+    image: "/team/zuryab.png",
     linkedin: "#",
     github: "#",
     website: "#",
   },
-  {
-    name: "Shabana",
-    role: "Full-Stack Developer",
-    bio: "Versatile systems engineer handling both complex server side application logic and modern client side integrations. Expert in secure API development, relational databases, and cloud infrastructures, ensuring optimal end to end performance, flawless application flow, and rock solid architectural security frameworks.",
-    image: "/team/Asfand.png",
-    linkedin: "#",
-    github: "#",
-    website: "#",
-  },
-  {
-    name: "Asfand Yar",
-    role: "Lead UI/UX Designer",
-    bio: "Creative design strategist transforming complex workflows into intuitive, beautiful, and highly engaging user experiences. Expert in user research, wireframing, interactive prototyping, and building scalable component libraries that establish consistent visual branding across all digital enterprise products.",
-    image: "/team/Gulab.png",
-    linkedin: "#",
-    github: "#",
-    website: "#",
-  },
+
 ];
 
 function TeamCard({ member }: { member: (typeof teamMembers)[0] }) {
@@ -95,13 +78,13 @@ function TeamCard({ member }: { member: (typeof teamMembers)[0] }) {
         </div>
       </div>
 
-      <div className="flex flex-1 flex-col justify-between bg-[#0B1220] p-6">
+      <div className="flex flex-1 items-center text-center flex-col justify-between bg-[#0B1220] p-6">
         <div>
-          <h3 className="text-lg font-bold text-white">{member.name}</h3>
+          <h3 className="text-lg font-semibold text-white">{member.name}</h3>
           <p className="mt-1.5 text-xs font-semibold uppercase tracking-[0.15em] text-[#4C9AFF]">
             {member.role}
           </p>
-          <p className="mt-4 text-sm italic leading-relaxed text-slate-400">
+          <p className="mt-4 text-sm  leading-relaxed text-slate-400">
             {member.bio}
           </p>
         </div>

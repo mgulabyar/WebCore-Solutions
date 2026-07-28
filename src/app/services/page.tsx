@@ -638,7 +638,7 @@ export function DatabaseSection() {
 
       <div className="absolute inset-0 db-grid opacity-100" />
       <div className="absolute -top-40 left-1/4 h-125 w-125 rounded-full bg-cyan-300/10 blur-3xl" />
-      <div className="absolute bottom-[-100px] right-10 h-[450px] w-[450px] rounded-full bg-blue-300/15 blur-3xl" />
+      <div className="absolute -bottom-25 right-10 h-112.5 w-[450px] rounded-full bg-blue-300/15 blur-3xl" />
 
       <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mx-auto mb-16 flex max-w-2xl flex-col items-center justify-center text-center">

@@ -155,8 +155,6 @@ function BlogHero() {
         }
       `}</style>
 
-      <div className="absolute left-1/4 top-0 h-80 w-80 rounded-xl bg-blue-100/50 blur-3xl" />
-      <div className="absolute right-1/4 bottom-0 h-80 w-80 rounded-xl bg-cyan-100/40 blur-3xl" />
 
       <div className="relative z-10 mx-auto grid max-w-7xl grid-cols-1 items-center gap-12 px-6 md:px-12 lg:grid-cols-2 lg:gap-16">
         <div

@@ -148,10 +148,9 @@ export default function BlogDetailClient({
   const encodedTitle = encodeURIComponent(post.title);
 
   return (
-    <div className="min-h-screen bg-[#f8fafc] text-slate-900">
+    <div className="min-h-screen bg-[#f8fafc] text-slate-800">
       <section className="relative overflow-hidden border-b border-slate-200 bg-white pt-8 pb-14">
-        <div className="absolute left-1/4 top-0 h-80 w-80 rounded-full bg-[#0062D6]/5 blur-3xl" />
-        <div className="absolute bottom-0 right-1/4 h-80 w-80 rounded-full bg-sky-400/10 blur-3xl" />
+
 
         <div className="relative z-10 mx-auto max-w-7xl px-6 md:px-12">
           <nav className="flex flex-wrap items-center gap-2 text-sm text-slate-500">

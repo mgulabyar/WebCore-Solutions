@@ -462,8 +462,7 @@ export default function ProcessPage() {
   return (
     <div className="flex min-h-screen flex-col bg-[#fbfcfe]">
       <section className="relative overflow-hidden pt-20 pb-12 lg:pt-12 lg:pb-12">
-        <div className="absolute left-1/4 top-0 h-80 w-80 rounded-full bg-blue-100/50 blur-3xl" />
-        <div className="absolute right-1/4 bottom-0 h-80 w-80 rounded-full bg-cyan-100/40 blur-3xl" />
+      
 
         <motion.div
           ref={heroRef}
@@ -472,9 +471,6 @@ export default function ProcessPage() {
           transition={{ duration: 1.05, ease: [0.16, 1, 0.3, 1] }}
           className="relative z-10 mx-auto max-w-7xl px-6 text-center md:px-12"
         >
-          <span className="mb-5 inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-[#0062D6]">
-            Our Workflow
-          </span>
           <h1 className="text-3xl font-semibold tracking-tight text-slate-800 lg:text-4xl">
             Our Process
           </h1>

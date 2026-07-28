@@ -95,8 +95,7 @@ export default function PortfolioPage() {
   return (
     <>
     <section className="relative min-h-screen overflow-hidden bg-[#fbfcfe] pt-12 pb-12">
-       <div className="absolute left-1/4 top-0 h-80 w-80 rounded-full bg-blue-100/50 blur-3xl" />
-        <div className="absolute right-1/4 bottom-0 h-80 w-80 rounded-full bg-cyan-100/40 blur-3xl" />
+
       <style>{`
         .pf-blob {
           position: absolute;

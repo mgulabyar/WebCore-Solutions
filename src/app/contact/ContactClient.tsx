@@ -34,7 +34,7 @@ function ContactHero() {
   }, []);
 
   return (
-    <section className="relative overflow-hidden bg-white pt-20 pb-16 lg:pt-24 lg:pb-24">
+    <section className="relative overflow-hidden bg-white pt-16 pb-10 sm:pt-18 sm:pb-12 lg:pt-16 lg:pb-16">
       <style>{`
         .contact-hero-left {
           opacity: 0;
@@ -56,39 +56,53 @@ function ContactHero() {
         }
       `}</style>
 
-      <div className="absolute left-1/4 top-0 h-80 w-80 rounded-full bg-blue-100/50 blur-3xl" />
-      <div className="absolute right-1/4 bottom-0 h-80 w-80 rounded-full bg-cyan-100/40 blur-3xl" />
 
-      <div className="relative z-10 mx-auto grid max-w-7xl grid-cols-1 items-center gap-12 px-6 md:px-12 lg:grid-cols-2 lg:gap-16">
+      <div className="relative z-10 mx-auto grid max-w-7xl grid-cols-1 items-center gap-10 px-4 sm:px-6 md:px-12 lg:grid-cols-2 lg:gap-16">
         <div
           ref={textRef}
-          className={`contact-hero-left ${isVisible ? "contact-hero-active" : ""} text-center`}
+          className={`contact-hero-left ${isVisible ? "contact-hero-active" : ""} text-center lg:text-left`}
         >
-          <span className="inline-flex rounded-full border border-slate-200 bg-slate-50 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.18em] text-[#0062D6]">
-            Contact Us
-          </span>
+         
 
-          <h1 className="mt-5 text-4xl font-semibold tracking-tight text-slate-950 md:text-5xl">
+          <h1 className="mt-5 text-4xl font-semibold tracking-tight text-slate-800 sm:text-4xl md:text-4xl">
             Let&apos;s start your next project.
           </h1>
 
-          <p className="mx-auto mt-5 max-w-xl text-base leading-relaxed text-slate-600 md:text-lg">
-            Tell us about your idea, timeline, and goals. Whether it&apos;s a
-            new web application, a custom integration, or a full digital
-            platform, our team is ready to turn your vision into a working
+          <p className="mx-auto mt-5 max-w-xl text-sm leading-relaxed text-slate-600 sm:text-base md:text-md lg:mx-0">
+            Tell us about your idea, timeline, and goals. Whether it&apos;s a new web application, a custom
+            integration, or a full digital platform, our team is ready to turn your vision into a working
             product. Reach out and we&apos;ll get back with a clear next step.
           </p>
+
+          <div className="mt-7 flex flex-col justify-center gap-3 sm:flex-row lg:justify-start">
+            <a
+              href="https://wa.me/923468016921"
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center rounded-full justify-center gap-2 bg-[#0062D6] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#0051b3] sm:px-6"
+            >
+              <MessageCircle className="h-4 w-4 " />
+              Call on WhatsApp
+            </a>
+
+            <a
+              href="mailto:mubeen.dev356@gmail.com?subject=Contact%20Request&body=Hi%20Mubeen,%20I%20want%20to%20discuss%20a%20project."
+              className="inline-flex items-center rounded-full justify-center gap-2 border border-slate-200 bg-white px-5 py-3 text-sm font-semibold text-slate-700 shadow-sm transition hover:border-[#0062D6] hover:text-[#0062D6] sm:px-6"
+            >
+              <Mail className="h-4 w-4" />
+              Send Email
+            </a>
+          </div>
         </div>
 
         <div
           ref={mediaRef}
           className={`contact-hero-right ${isVisible ? "contact-hero-active" : ""} relative flex items-center justify-center`}
         >
-          <div className="absolute -inset-6 rounded-3xl bg-gradient-to-br from-blue-50 to-cyan-50 lg:-inset-10" />
           <img
             src="/contact-us.png"
             alt="Contact WebCore Solutions"
-            className="relative z-10 w-full max-w-md drop-shadow-[0_20px_45px_rgba(0,98,214,0.15)]"
+            className="relative z-10 w-full max-w-sm"
           />
         </div>
       </div>

@@ -697,11 +697,9 @@ function HeroSection() {
           transition={{ duration: 0.6, ease: "easeOut" }}
           className="max-w-xl mt-0 pt-8 text-center lg:text-left"
         >
-          <div className="mb-4 inline-flex rounded-full border border-[#0062D6] bg-white/90 px-4 py-2 text-[11px] font-bold tracking-[0.15em] text-slate-400 uppercase shadow-sm">
-            WEBCORE SOLUTIONS
-          </div>
+        
 
-          <h1 className="text-3xl font-semibold tracking-tight text-slate-700 sm:text-4xl lg:text-[48px] lg:leading-[1.15]">
+          <h1 className="text-3xl font-semibold tracking-tight text-slate-800 sm:text-4xl lg:text-[48px] lg:leading-[1.15]">
             Building high-performance digital infrastructure for modern
             businesses.
           </h1>

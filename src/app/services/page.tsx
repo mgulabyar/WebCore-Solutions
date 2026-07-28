@@ -499,7 +499,7 @@ function BackendSection() {
                   }}
                 />
                 <div
-                  className="be-icon-box relative flex h-14 w-14 flex-shrink-0 items-center justify-center rounded-xl"
+                  className="be-icon-box relative flex h-14 w-14 shrink-0 items-center justify-center rounded-xl"
                   style={{
                     backgroundColor: `${skill.color}1a`,
                     border: `1px solid ${skill.color}40`,

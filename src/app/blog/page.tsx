@@ -100,7 +100,6 @@ const categoryList = [
   { name: "Best Practices", count: 4 },
 ];
 
-// const categories = ["All", "Development", "Design", "SEO", "Marketing"];
 
 function getInitials(name: string) {
   return name
@@ -133,7 +132,7 @@ function BlogHero() {
   }, []);
 
   return (
-    <section className="relative overflow-hidden bg-white pt-20 pb-16 lg:pt-7 lg:pb-10">
+    <section className="relative overflow-hidden bg-white pt-10 pb-16 lg:pt-7 lg:pb-10">
       <style>{`
         .blog-hero-left {
           opacity: 0;
@@ -156,7 +155,7 @@ function BlogHero() {
       `}</style>
 
 
-      <div className="relative z-10 mx-auto grid max-w-7xl grid-cols-1 items-center gap-12 px-6 md:px-12 lg:grid-cols-2 lg:gap-16">
+      <div className="relative z-10 mx-auto grid max-w-7xl grid-cols-1 items-center gap-12 px-4 md:px-12 lg:grid-cols-2 lg:gap-16">
         <div
           ref={textRef}
           className={`blog-hero-left ${isVisible ? "blog-hero-active" : ""}`}
@@ -175,7 +174,7 @@ function BlogHero() {
           </p>
 
           <div className="mt-8 flex flex-wrap gap-3">
-            <span className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-slate-50 px-4 py-2 text-xs font-medium text-slate-600">
+            <span className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-slate-50 px-3 py-2 text-xs font-medium text-slate-600">
               <BookOpenCheck className="h-3.5 w-3.5 text-[#0062D6]" />
               Expert Guides
             </span>
@@ -208,7 +207,7 @@ function BlogHero() {
 
 function ArticleRowCard({ post }: { post: (typeof blogPosts)[0] }) {
   return (
-    <article className="group flex flex-col gap-6 overflow-hidden rounded-xl border border-slate-200 bg-white p-5 shadow-[0_4px_16px_rgba(15,23,42,0.05)] transition-all duration-400 hover:-translate-y-1 hover:border-blue-100 hover:shadow-[0_20px_45px_rgba(0,98,214,0.1)] sm:flex-row sm:p-6">
+    <article className="group flex flex-col gap-6 overflow-hidden rounded-xl border border-slate-200 bg-white p-2 shadow-[0_4px_16px_rgba(15,23,42,0.05)] transition-all duration-400 hover:-translate-y-1 hover:border-blue-100 hover:shadow-[0_20px_45px_rgba(0,98,214,0.1)] sm:flex-row sm:p-6">
       <div className="relative h-56 w-full shrink-0 overflow-hidden rounded-xl sm:h-auto sm:w-72">
         <img
           src={post.image}
@@ -381,7 +380,7 @@ export default function BlogPage() {
     <div className="min-h-screen bg-[#fbfcfe]">
       <BlogHero />
 
-      <section className="relative mx-auto max-w-7xl px-6 py-16 md:px-12">
+      <section className="relative mx-auto max-w-7xl px-3 py-16 md:px-12">
         <div className="grid grid-cols-1 gap-10 lg:grid-cols-[1fr_340px]">
           <div>
             <div className="mb-8 flex items-end justify-between gap-4">

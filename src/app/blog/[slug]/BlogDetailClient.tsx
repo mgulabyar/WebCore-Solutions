@@ -73,7 +73,7 @@ function ShareButton({
 function CodeBlock({ title, code }: { title: string; code: string }) {
   return (
     <div className="mt-5 overflow-hidden rounded-xl border border-slate-200 bg-slate-950 shadow-sm">
-      <div className="flex items-center justify-between border-b border-white/10 bg-slate-900 px-4 py-3">
+      <div className="flex items-center justify-between border-b border-white/10 bg-slate-900 px-3 py-3">
         <span className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-300">
           {title}
         </span>
@@ -152,7 +152,7 @@ export default function BlogDetailClient({
       <section className="relative overflow-hidden border-b border-slate-200 bg-white pt-8 pb-14">
 
 
-        <div className="relative z-10 mx-auto max-w-7xl px-6 md:px-12">
+        <div className="relative z-10 mx-auto max-w-7xl px-3 md:px-12">
           <nav className="flex flex-wrap items-center gap-2 text-sm text-slate-500">
             <Link href="/" className="transition-colors hover:text-[#0062D6]">Home</Link>
             <ChevronRight className="h-3.5 w-3.5" />
@@ -217,13 +217,13 @@ export default function BlogDetailClient({
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-6 py-14 md:px-12">
+      <section className="mx-auto max-w-7xl px-3 py-14 md:px-12">
         <div className="grid grid-cols-1 gap-10 lg:grid-cols-[minmax(0,1fr)_340px]">
           <main className="min-w-0">
             <div className="overflow-hidden rounded-lg border border-slate-200 bg-white shadow-[0_10px_35px_rgba(15,23,42,0.05)]">
               <img src={post.image} alt={post.title} className="h-72 w-full object-cover md:h-96" />
 
-              <div className="p-6 md:p-10">
+              <div className="p-4 md:p-10">
                 <div className="flex flex-col gap-10">
                   {post.sections.map((section) => (
                     <section

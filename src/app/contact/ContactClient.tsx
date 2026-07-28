@@ -13,6 +13,7 @@ import {
   MessageCircle,
   ChevronDown,
 } from "lucide-react";
+import Footer from "@/components/Footer";
 
 type OfficeInfo = { label: string; value: string };
 
@@ -336,6 +337,7 @@ export default function ContactClient({
           </Link>
         </div>
       </div>
+      <Footer/>
     </div>
   );
 }

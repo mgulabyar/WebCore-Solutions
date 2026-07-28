@@ -1,6 +1,6 @@
 @import "tailwindcss";
 @custom-variant dark (&:where(.dark, .dark *));
-
+/* using animation */
 @keyframes fadeInUp {
   from {
     opacity: 0;

@@ -447,7 +447,7 @@ function BackendSection() {
   return (
     <section
       ref={containerRef}
-      className="relative w-full overflow-hidden bg-[#0b1220] py-24"
+      className="relative w-full overflow-hidden bg-[#0b1220] py-16"
     >
       <style>{`
         .be-row {

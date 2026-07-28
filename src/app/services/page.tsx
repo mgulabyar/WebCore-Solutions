@@ -244,7 +244,7 @@ export function ServicesHero() {
           {capabilities.map((item) => (
             <span
               key={item.name}
-              className={`premium-tag-transition inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-4 py-1.5 text-xs font-medium text-neutral-300 cursor-default`}
+              className={`premium-tag-transition inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/4 px-4 py-1.5 text-xs font-medium text-neutral-300 cursor-default`}
             >
               <item.icon className={`h-3.5 w-3.5 ${item.color.split(' ')[0]}`} />
               <span>{item.name}</span>

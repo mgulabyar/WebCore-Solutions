@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     icon: "/web.png",
   },
 };
-// Add 
+
 export default function RootLayout({
   children,
 }: {

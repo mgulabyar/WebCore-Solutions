@@ -764,6 +764,160 @@ function TestimonialsSection() {
 }
 
 
+// function HeroSection() {
+//   return (
+//     <section className="relative w-full min-h-[90vh] flex items-center justify-center overflow-hidden bg-[#fbfcfe] mt-0 pt-0 pb-12 text-slate-800 lg:min-h-[86vh]">
+//       <style
+//         dangerouslySetInnerHTML={{
+//           __html: `
+//             @keyframes orbit-forward {
+//               from { transform: rotate(0deg); }
+//               to { transform: rotate(360deg); }
+//             }
+//             @keyframes orbit-reverse {
+//               from { transform: rotate(360deg); }
+//               to { transform: rotate(0deg); }
+//             }
+//             .orbit-forward {
+//               animation: orbit-forward 35s linear infinite;
+//             }
+//             .orbit-reverse {
+//               animation: orbit-reverse 48s linear infinite;
+//             }
+//           `,
+//         }}
+//       />
+
+//       <div className="pointer-events-none absolute inset-0 opacity-[0.025] bg-[radial-gradient(#2563eb_1px,transparent_1px)] bg-size-[40px_40px]" />
+//       <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_bottom,rgba(255,255,255,0.95),rgba(248,250,252,0.95))]" />
+
+//       <div className="relative z-10 mx-auto grid w-full max-w-7xl items-center gap-4 px-3 mt-0 pt-0 lg:grid-cols-2 lg:gap-12 lg:px-8">
+//         <motion.div
+//           initial={{ opacity: 0, x: -20 }}
+//           animate={{ opacity: 1, x: 0 }}
+//           transition={{ duration: 0.6, ease: "easeOut" }}
+//           className="max-w-xl mt-0 pt-8 text-center lg:text-left"
+//         >
+        
+
+//           <h1 className="text-3xl font-semibold tracking-tight text-slate-800 sm:text-4xl lg:text-[48px] lg:leading-[1.15]">
+//             Building high-performance digital infrastructure for modern
+//             businesses.
+//           </h1>
+
+//           <p className="mt-4 max-w-lg text-sm leading-relaxed text-slate-500 sm:text-base mx-auto lg:mx-0">
+//             We engineer scalable web applications, reliable platforms, and
+//             polished interfaces that help teams move faster and grow with
+//             confidence.
+//           </p>
+
+//           <div className="mt-6 flex flex-wrap items-center justify-center lg:justify-start gap-3">
+//             <Link
+//               href="/contact"
+//               className="group inline-flex items-center gap-2 rounded-full bg-[#0062D6] px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition-all duration-300 hover:bg-[#0B3C95] hover:shadow-lg hover:shadow-blue-500/25"
+//             >
+//               Start a Project
+//               <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+//             </Link>
+//             <Link
+//               href="/portfolio"
+//               className="group inline-flex items-center gap-2 rounded-full border border-[#0062D6] bg-white px-5 py-2.5 text-sm font-semibold text-[#0062D6] shadow-sm transition-all duration-300 hover:bg-[#0062D6] hover:text-white"
+//             >
+//               <Layers className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+//              View Our Work
+//             </Link>
+//           </div>
+//         </motion.div>
+
+//         <div className="relative flex h-77.5 w-full items-center justify-center overflow-visible sm:h-120 lg:h-127.5 max-sm:pt-14 mt-4 lg:mt-0">
+//           <div className="absolute h-57.5 w-57.5 sm:h-70 sm:w-70 lg:h-80 lg:w-[320px] rounded-full border border-[#0062D6] pointer-events-none" />
+//           <div className="absolute h-30 w-30 sm:h-35 sm:w-35 lg:h-40 lg:w-40 rounded-full border border-[#0062D6] pointer-events-none" />
+
+//           <div className="absolute h-57.5 w-57.5 sm:h-70 lg:h-80 flex items-center justify-center">
+//             <div className="block sm:hidden w-full h-full relative">
+//               <motion.div
+//                 className="w-full h-full absolute"
+//                 animate={{ rotate: 360 }}
+//                 transition={{ repeat: Infinity, duration: 48, ease: "linear" }}
+//               >
+//                 <OrbitGroup
+//                   items={outerOrbitItems}
+//                   radius={115}
+//                   duration={48}
+//                   iconSize={42}
+//                   isMobile
+//                 />
+//               </motion.div>
+//             </div>
+//             <div className="hidden sm:block w-full h-full relative">
+//               <motion.div
+//                 className="w-full h-full absolute"
+//                 animate={{ rotate: 360 }}
+//                 transition={{ repeat: Infinity, duration: 48, ease: "linear" }}
+//               >
+//                 <OrbitGroup
+//                   items={outerOrbitItems}
+//                   radius={160}
+//                   duration={48}
+//                   iconSize={54}
+//                 />
+//               </motion.div>
+//             </div>
+//           </div>
+
+//           <div className="absolute h-30 w-30 sm:h-35 lg:h-40 flex items-center justify-center">
+//             <div className="block sm:hidden w-full h-full relative">
+//               <motion.div
+//                 className="w-full h-full absolute"
+//                 animate={{ rotate: -360 }}
+//                 transition={{ repeat: Infinity, duration: 32, ease: "linear" }}
+//               >
+//                 <OrbitGroup
+//                   items={innerOrbitItems}
+//                   radius={60}
+//                   reverse
+//                   duration={32}
+//                   iconSize={36}
+//                   isMobile
+//                 />
+//               </motion.div>
+//             </div>
+//             <div className="hidden sm:block w-full h-full relative">
+//               <motion.div
+//                 className="w-full h-full absolute"
+//                 animate={{ rotate: -360 }}
+//                 transition={{ repeat: Infinity, duration: 32, ease: "linear" }}
+//               >
+//                 <OrbitGroup
+//                   items={innerOrbitItems}
+//                   radius={80}
+//                   reverse
+//                   duration={32}
+//                   iconSize={44}
+//                 />
+//               </motion.div>
+//             </div>
+//           </div>
+
+//           <motion.div
+//             className="relative z-20 flex h-16 w-16 sm:h-20 sm:w-20 items-center justify-center rounded-full border border-[#0062D6] bg-white shadow-[0_8px_30px_rgba(15,23,42,0.06)] ring-4 ring-slate-50"
+//             animate={{ y: [0, -4, 0] }}
+//             transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+//           >
+//             <Image
+//               src="/web.png"
+//               alt="Web Core Centerpiece"
+//               width={52}
+//               height={52}
+//               className="h-8 w-8 sm:h-12 sm:w-12 object-contain pointer-events-none select-none"
+//             />
+//           </motion.div>
+//         </div>
+//       </div>
+//     </section>
+//   );
+// }
+
 function HeroSection() {
   return (
     <section className="relative w-full min-h-[90vh] flex items-center justify-center overflow-hidden bg-[#fbfcfe] mt-0 pt-0 pb-12 text-slate-800 lg:min-h-[86vh]">
@@ -798,8 +952,6 @@ function HeroSection() {
           transition={{ duration: 0.6, ease: "easeOut" }}
           className="max-w-xl mt-0 pt-8 text-center lg:text-left"
         >
-        
-
           <h1 className="text-3xl font-semibold tracking-tight text-slate-800 sm:text-4xl lg:text-[48px] lg:leading-[1.15]">
             Building high-performance digital infrastructure for modern
             businesses.
@@ -829,20 +981,23 @@ function HeroSection() {
           </div>
         </motion.div>
 
-        <div className="relative flex h-77.5 w-full items-center justify-center overflow-visible sm:h-120 lg:h-127.5 max-sm:pt-14 mt-4 lg:mt-0">
-          <div className="absolute h-57.5 w-57.5 sm:h-70 sm:w-70 lg:h-80 lg:w-[320px] rounded-full border border-[#0062D6] pointer-events-none" />
-          <div className="absolute h-30 w-30 sm:h-35 sm:w-35 lg:h-40 lg:w-40 rounded-full border border-[#0062D6] pointer-events-none" />
+        {/* Height container tightened and vertical gap reduced for small screens */}
+        <div className="relative flex h-88 w-full items-center justify-center overflow-visible sm:h-120 lg:h-127.5 max-sm:mt-8 mt-4 lg:mt-0">
+          {/* Background vector rings scaled up to match the wider radius perfectly */}
+          <div className="absolute h-76 w-76 sm:h-70 sm:w-70 lg:h-80 lg:w-[320px] rounded-full border border-[#0062D6]/60 pointer-events-none" />
+          <div className="absolute h-40 w-40 sm:h-35 sm:w-35 lg:h-40 lg:w-40 rounded-full border border-[#0062D6]/60 pointer-events-none" />
 
-          <div className="absolute h-57.5 w-57.5 sm:h-70 lg:h-80 flex items-center justify-center">
+          <div className="absolute h-76 w-76 sm:h-70 lg:h-80 flex items-center justify-center">
             <div className="block sm:hidden w-full h-full relative">
               <motion.div
                 className="w-full h-full absolute"
                 animate={{ rotate: 360 }}
                 transition={{ repeat: Infinity, duration: 48, ease: "linear" }}
               >
+                {/* Maximum premium size for small screens (radius 150) */}
                 <OrbitGroup
                   items={outerOrbitItems}
-                  radius={115}
+                  radius={150}
                   duration={48}
                   iconSize={42}
                   isMobile
@@ -865,16 +1020,17 @@ function HeroSection() {
             </div>
           </div>
 
-          <div className="absolute h-30 w-30 sm:h-35 lg:h-40 flex items-center justify-center">
+          <div className="absolute h-40 w-40 sm:h-35 lg:h-40 flex items-center justify-center">
             <div className="block sm:hidden w-full h-full relative">
               <motion.div
                 className="w-full h-full absolute"
                 animate={{ rotate: -360 }}
                 transition={{ repeat: Infinity, duration: 32, ease: "linear" }}
               >
+                {/* Internal proportional expansion (radius 85) */}
                 <OrbitGroup
                   items={innerOrbitItems}
-                  radius={60}
+                  radius={85}
                   reverse
                   duration={32}
                   iconSize={36}
@@ -917,6 +1073,8 @@ function HeroSection() {
     </section>
   );
 }
+
+
 function CTASection() {
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { once: true, amount: 0.25 });
@@ -929,7 +1087,7 @@ function CTASection() {
         initial={{ opacity: 0, y: 60 }}
         animate={isInView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 1.05, ease: [0.16, 1, 0.3, 1] }}
-        className="relative z-10 mx-auto max-w-4xl px-6 text-center md:px-12"
+        className="relative z-10 mx-auto max-w-4xl px-3 text-center md:px-12"
       >
         <h2 className="mb-6 text-2xl font-semibold tracking-tight text-white lg:text-4xl">
           Ready to Start Your Project?
@@ -939,13 +1097,12 @@ function CTASection() {
           plan, premium execution, and long-term support.
         </p>
 
-        <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
+        <div className="flex  items-center justify-center gap-2 sm:flex-row">
           <Link
             href="/contact"
-            className="group inline-flex items-center gap-2 rounded-full bg-white px-7 py-3.5 text-sm font-semibold text-[#0062D6] shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-white/20 active:scale-95"
+            className="group inline-flex items-center gap-4 rounded-full bg-white px-6 py-3.5 text-sm font-semibold text-[#0062D6] shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-white/20 active:scale-95"
           >
             Get a Free Quote
-            <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
           </Link>
 
           <Link

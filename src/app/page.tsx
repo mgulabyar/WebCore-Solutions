@@ -629,7 +629,7 @@ function TestimonialsSection() {
 
   return (
     <section className="relative w-full overflow-hidden bg-[#f8fafc] py-5">
-      <div className="relative z-10 mx-auto max-w-350 px-4 sm:px-6 lg:px-8">
+      <div className="relative z-10 mx-auto max-w-350 px-3 sm:px-6 lg:px-8">
         <div className="mb-12 text-center">
           <span className="text-xs font-semibold uppercase tracking-widest text-slate-400">
             Client Testimonials

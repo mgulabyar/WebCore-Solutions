@@ -766,7 +766,7 @@ function TestimonialsSection() {
 
 function HeroSection() {
   return (
-    <section className="relative w-full min-h-[90vh] flex items-center justify-center overflow-hidden bg-[#fbfcfe] mt-0 pt-0 pb-12 text-slate-900 lg:min-h-[86vh]">
+    <section className="relative w-full min-h-[90vh] flex items-center justify-center overflow-hidden bg-[#fbfcfe] mt-0 pt-0 pb-12 text-slate-800 lg:min-h-[86vh]">
       <style
         dangerouslySetInnerHTML={{
           __html: `
@@ -791,7 +791,7 @@ function HeroSection() {
       <div className="pointer-events-none absolute inset-0 opacity-[0.025] bg-[radial-gradient(#2563eb_1px,transparent_1px)] bg-size-[40px_40px]" />
       <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_bottom,rgba(255,255,255,0.95),rgba(248,250,252,0.95))]" />
 
-      <div className="relative z-10 mx-auto grid w-full max-w-7xl items-center gap-4 px-5 mt-0 pt-0 lg:grid-cols-2 lg:gap-12 lg:px-8">
+      <div className="relative z-10 mx-auto grid w-full max-w-7xl items-center gap-4 px-3 mt-0 pt-0 lg:grid-cols-2 lg:gap-12 lg:px-8">
         <motion.div
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}

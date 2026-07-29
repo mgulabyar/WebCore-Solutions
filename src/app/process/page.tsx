@@ -267,7 +267,7 @@ function StepCard({
         <motion.div
           whileHover={{ y: -5 }}
           transition={{ duration: 0.3 }}
-          className="group flex-1 overflow-hidden rounded-3xl border border-slate-200 bg-white p-6 shadow-[0_4px_16px_rgba(15,23,42,0.03)] transition-all duration-500 hover:border-blue-100 hover:shadow-[0_24px_50px_rgba(0,98,214,0.08)] lg:p-7"
+          className="group flex-1 overflow-hidden rounded-xl border border-slate-200 bg-white p-4 md:p-6 shadow-[0_4px_16px_rgba(15,23,42,0.03)] transition-all duration-500 hover:border-blue-100 hover:shadow-[0_24px_50px_rgba(0,98,214,0.08)] lg:p-7"
         >
           <div className="mb-4 flex flex-col gap-2 sm:flex-row sm:items-center">
             <h3 className="text-lg font-semibold tracking-tight text-slate-800 transition-colors duration-300 group-hover:text-[#0062D6] lg:text-xl">
@@ -307,7 +307,7 @@ function WhyChooseUsSection() {
   return (
     <section className="relative overflow-hidden bg-linear-to-br from-blue-50 via-white to-slate-50 py-16 lg:py-20">
       <div className="absolute inset-0 bg-[radial-gradient(#2563eb_1px,transparent_1px)] bg-size-[32px_32px] opacity-[0.025]" />
-      <div className="relative z-10 mx-auto max-w-7xl px-6 md:px-12">
+      <div className="relative z-10 mx-auto max-w-7xl px-3 md:px-12">
         <motion.div
           ref={ref}
           initial={{ opacity: 0, x: 70, y: 12 }}
@@ -335,12 +335,12 @@ function WhyChooseUsSection() {
                 ease: [0.16, 1, 0.3, 1],
               }}
               whileHover={{ y: -6 }}
-              className="group rounded-2xl border border-slate-200 bg-white p-6 text-center shadow-[0_4px_14px_rgba(15,23,42,0.03)] transition-all duration-500 hover:border-blue-100 hover:shadow-[0_22px_50px_rgba(0,98,214,0.08)] lg:p-7"
+              className="group rounded-xl border border-slate-200 bg-white p-6 text-center shadow-[0_4px_14px_rgba(15,23,42,0.03)] transition-all duration-500 hover:border-blue-100 hover:shadow-[0_22px_50px_rgba(0,98,214,0.08)] lg:p-7"
             >
               <div className="mx-auto mb-6 inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-linear-to-br from-[#0062D6] to-[#0B3C95] shadow-[0_16px_40px_rgba(0,98,214,0.16)] transition-transform duration-300 group-hover:scale-108">
                 <item.icon className="h-7 w-7 text-white" strokeWidth={1.6} />
               </div>
-              <h3 className="mb-2 text-base font-semibold text-slate-900 transition-colors duration-300 group-hover:text-[#0062D6]">
+              <h3 className="mb-2 text-base font-semibold text-slate-800 transition-colors duration-300 group-hover:text-[#0062D6]">
                 {item.title}
               </h3>
               <p className="text-sm leading-relaxed text-slate-600">
@@ -359,10 +359,10 @@ function ExtraHighlightsSection() {
   const isInView = useInView(ref, { once: true, amount: 0.16 });
 
   return (
-    <section className="relative overflow-hidden bg-[#fbfcfe] py-16 lg:py-20">
+    <section className="relative overflow-hidden bg-[#fbfcfe] py-16 lg:py-16">
       <div className="absolute left-1/4 top-0 h-72 w-72 rounded-full bg-blue-100/40 blur-3xl" />
       <div className="absolute bottom-0 right-1/4 h-72 w-72 rounded-full bg-cyan-100/30 blur-3xl" />
-      <div className="relative z-10 mx-auto max-w-7xl px-6 md:px-12">
+      <div className="relative z-10 mx-auto max-w-7xl px-3 md:px-12">
         <motion.div
           ref={ref}
           initial={{ opacity: 0, x: -45, y: -35 }}
@@ -394,12 +394,12 @@ function ExtraHighlightsSection() {
                 ease: [0.16, 1, 0.3, 1],
               }}
               whileHover={{ y: -6 }}
-              className="group rounded-2xl border border-slate-200 bg-white p-6 shadow-[0_4px_12px_rgba(15,23,42,0.03)] transition-all duration-500 hover:border-blue-100 hover:shadow-[0_20px_45px_rgba(0,98,214,0.07)]"
+              className="group rounded-xl border border-slate-200 bg-white p-6 shadow-[0_4px_12px_rgba(15,23,42,0.03)] transition-all duration-500 hover:border-blue-100 hover:shadow-[0_20px_45px_rgba(0,98,214,0.07)]"
             >
               <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-blue-50 text-[#0062D6] transition-transform duration-300 group-hover:scale-108">
                 <item.icon className="h-6 w-6" strokeWidth={1.7} />
               </div>
-              <h3 className="text-sm font-semibold text-slate-900 transition-colors duration-300 group-hover:text-[#0062D6]">
+              <h3 className="text-sm font-semibold text-slate-800 transition-colors duration-300 group-hover:text-[#0062D6]">
                 {item.title}
               </h3>
               <p className="mt-2 text-sm leading-relaxed text-slate-600">
@@ -438,7 +438,7 @@ function CTASection() {
         <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
           <Link
             href="/contact"
-            className="group inline-flex items-center gap-2 rounded-full bg-white px-7 py-3.5 text-sm font-semibold text-[#0062D6] shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-white/20 active:scale-95"
+            className="group inline-flex items-center gap-2 rounded-full bg-white px-6 py-3.5 text-sm font-semibold text-[#0062D6] shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-white/20 active:scale-95"
           >
             Get a Free Quote
             <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
@@ -446,7 +446,7 @@ function CTASection() {
 
           <Link
             href="/portfolio"
-            className="inline-flex items-center gap-2 rounded-full border-2 border-white/35 bg-white/10 px-7 py-3.5 text-sm font-semibold text-white backdrop-blur-sm transition-all duration-300 hover:scale-105 hover:bg-white/20 active:scale-95"
+            className="inline-flex items-center gap-2 rounded-full border-2 border-white/35 bg-white/10 px-6 py-3 text-sm font-semibold text-white backdrop-blur-sm transition-all duration-300 hover:scale-105 hover:bg-white/20 active:scale-95"
           >
             View Our Work
           </Link>
@@ -461,7 +461,7 @@ export default function ProcessPage() {
 
   return (
     <div className="flex min-h-screen flex-col bg-[#fbfcfe]">
-      <section className="relative overflow-hidden pt-20 pb-12 lg:pt-12 lg:pb-12">
+      <section className="relative overflow-hidden pt-10 pb-12 lg:pt-12 lg:pb-12">
       
 
         <motion.div
@@ -469,7 +469,7 @@ export default function ProcessPage() {
           initial={{ opacity: 0, y: 35, scale: 0.98 }}
           animate={isInView ? { opacity: 1, y: 0, scale: 1 } : {}}
           transition={{ duration: 1.05, ease: [0.16, 1, 0.3, 1] }}
-          className="relative z-10 mx-auto max-w-7xl px-6 text-center md:px-12"
+          className="relative z-10 mx-auto max-w-7xl px-3 text-center md:px-12"
         >
           <h1 className="text-3xl font-semibold tracking-tight text-slate-800 lg:text-4xl">
             Our Process
@@ -482,8 +482,8 @@ export default function ProcessPage() {
         </motion.div>
       </section>
 
-      <section className="relative overflow-hidden py-14 lg:py-20">
-        <div className="mx-auto max-w-7xl px-6 md:px-12">
+      <section className="relative overflow-hidden py-14 lg:py-16">
+        <div className="mx-auto max-w-7xl px-2 md:px-12">
           <div className="flex flex-col gap-10 lg:gap-14">
             {processSteps.map((step, index) => (
               <StepCard

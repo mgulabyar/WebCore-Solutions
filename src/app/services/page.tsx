@@ -649,7 +649,7 @@ export function DatabaseSection() {
               } as React.CSSProperties}
               className={`db-card ${
                 isVisible ? "db-active" : ""
-              } group relative overflow-hidden rounded-2xl border border-neutral-200/80 bg-white/70 p-6 shadow-[0_8px_30px_rgb(0,0,0,0.012)] backdrop-blur-md transition-all duration-500 hover:shadow-[0_22px_50px_rgba(0,0,0,0.04)]`}
+              } group relative overflow-hidden rounded-xl border border-neutral-200/80 bg-white/70 p-6 shadow-[0_8px_30px_rgb(0,0,0,0.012)] backdrop-blur-md transition-all duration-500 hover:shadow-[0_22px_50px_rgba(0,0,0,0.04)]`}
             >
               <div
                 className="pointer-events-none absolute inset-0 rounded-3xl opacity-0 transition-opacity duration-500 group-hover:opacity-100"

@@ -457,7 +457,7 @@ function BackendSection() {
         .be-row:hover .be-icon-box { transform: scale(1.12) rotate(6deg); }
       `}</style>
 
-      <div className="relative z-10 mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+      <div className="relative z-10 mx-auto max-w-5xl px-3 sm:px-6 lg:px-8">
         <div className="mb-16 max-w-2xl mx-auto text-center">
           <span className="text-sm font-bold uppercase tracking-widest text-[#1d70d4] block mb-2">
             Backend Development
@@ -481,7 +481,7 @@ function BackendSection() {
                 }}
                 className={`be-row ${fromLeft ? "be-from-left" : "be-from-right"} ${
                   isVisible ? "be-active" : ""
-                } group relative flex items-center gap-5 rounded-xl bg-white border border-slate-200 p-6 shadow-[0_4px_16px_rgba(15,23,42,0.04)] overflow-hidden`}
+                } group relative flex items-center gap-5 rounded-xl bg-white border border-slate-200 p-3.5 md:p-6 shadow-[0_4px_16px_rgba(15,23,42,0.04)] overflow-hidden`}
               >
                 <div
                   className="be-glow absolute inset-0 pointer-events-none"
@@ -502,7 +502,7 @@ function BackendSection() {
                   />
                 </div>
                 <div className="relative">
-                  <h3 className="text-base font-semibold text-slate-900">
+                  <h3 className="text-base font-semibold text-slate-800">
                     {skill.name}
                   </h3>
                   <p className="mt-1.5 text-sm text-slate-600 leading-relaxed">
@@ -626,7 +626,7 @@ export function DatabaseSection() {
       <div className="absolute -top-40 left-1/4 h-125 w-125 rounded-full bg-cyan-300/10 blur-3xl" />
       <div className="absolute -bottom-25 right-10 h-112.5 w-112.5 rounded-full bg-blue-300/15 blur-3xl" />
 
-      <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div className="relative z-10 mx-auto max-w-7xl px-3 sm:px-6 lg:px-8">
         <div className="mx-auto mb-16 flex max-w-2xl flex-col items-center justify-center text-center">
           <span className="mb-3 block text-xs font-bold uppercase tracking-[0.3em] text-neutral-500">
             Database & Other Skills

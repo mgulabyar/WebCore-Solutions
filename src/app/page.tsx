@@ -251,6 +251,142 @@ function PremiumMetricIcon({ type }: { type: string }) {
   );
 }
 
+// function PerformanceMetricsSection() {
+//   const containerRef = useRef<HTMLDivElement>(null);
+//   const [hasTriggered, setHasTriggered] = useState(false);
+
+//   useEffect(() => {
+//     const observer = new IntersectionObserver(
+//       ([entry]) => {
+//         if (entry.isIntersecting) {
+//           setHasTriggered(true);
+//         }
+//       },
+//       { rootMargin: "0px 0px -100px 0px", threshold: 0.01 },
+//     );
+
+//     if (containerRef.current) {
+//       observer.observe(containerRef.current);
+//     }
+
+//     return () => observer.disconnect();
+//   }, []);
+
+//   return (
+//     <section
+//       ref={containerRef}
+//       className=" w-full bg-[#fbfcfe] pb-20 pt-10 px-3 md:px-14 flex flex-col justify-center items-center overflow-hidden font-sans select-none relative"
+//     >
+//       <style jsx>{`
+//         .hardware-slide-card {
+//           opacity: 0;
+//           will-change: transform, opacity;
+//           transition:
+//             transform 1.6s cubic-bezier(0.16, 1, 0.3, 1),
+//             opacity 1.2s ease-out;
+//         }
+//         .direction-left {
+//           transform: translateX(calc(-50vw - 120%));
+//         }
+//         .direction-right {
+//           transform: translateX(calc(50vw + 120%));
+//         }
+//         .hardware-slide-card.slide-active {
+//           opacity: 1;
+//           transform: translateX(0);
+//         }
+
+//         .border-glow-path {
+//           stroke-dasharray: 400;
+//           stroke-dashoffset: 400;
+//           transition: stroke-dashoffset 1.75s cubic-bezier(0.25, 1, 0.2, 1);
+//         }
+
+//         .group:hover .border-glow-path {
+//           stroke-dashoffset: 0;
+//         }
+//       `}</style>
+
+//       <div className="text-center mb-16 max-w-xl relative z-10">
+//         <span className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-400 block">
+//           Proven Performance
+//         </span>
+//         <h2 className="text-3xl font-semibold text-slate-800 tracking-tight mt-2 sm:text-4xl">
+//           Engineered for Scale & Reliability
+//         </h2>
+//       </div>
+
+//       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl w-full relative z-10">
+//         {metricsDataset.map((card, idx) => (
+//           <div
+//             key={card.id}
+//             style={{
+//               transitionDelay: hasTriggered ? `${idx * 160}ms` : "0ms",
+//             }}
+//             className={`hardware-slide-card ${
+//               card.direction === "left" ? "direction-left" : "direction-right"
+//             } ${
+//               hasTriggered ? "slide-active" : ""
+//             } flex flex-col items-start rounded-xl bg-white p-6 shadow-[0_4px_12px_rgba(0,0,0,0.015)] relative overflow-hidden transition-shadow duration-300 hover:shadow-[0_25px_50px_rgba(15,23,42,0.04)] group cursor-pointer w-full`}
+//           >
+//             <span className="absolute left-0 top-0 bottom-0 w-0.75 bg-blue-500 rounded-l-2xl opacity-100 group-hover:opacity-0 transition-opacity duration-300 z-30" />
+
+//             <svg
+//               className="absolute inset-0 w-full h-full pointer-events-none z-20"
+//               fill="none"
+//               viewBox="0 0 100 100"
+//               preserveAspectRatio="none"
+//               width="100%"
+//               height="100%"
+//             >
+//               <path
+//                 className="border-glow-path"
+//                 d="M 0,0 L 100,0 L 100,100"
+//                 stroke="url(#blue-laser-gradient)"
+//                 strokeWidth="2.5"
+//                 strokeLinecap="round"
+//               />
+//               <defs>
+//                 <linearGradient
+//                   id="blue-laser-gradient"
+//                   x1="0%"
+//                   y1="0%"
+//                   x2="100%"
+//                   y2="100%"
+//                 >
+//                   <stop offset="0%" stopColor="#3b82f6" />
+//                   <stop offset="50%" stopColor="#2563eb" />
+//                   <stop offset="100%" stopColor="#1d4ed8" />
+//                 </linearGradient>
+//               </defs>
+//             </svg>
+
+//             <div className="flex h-10 w-10 items-center justify-center rounded-xl border border-slate-100 bg-slate-50/60 p-2.5 transition-all duration-300 group-hover:bg-slate-50 group-hover:shadow-inner">
+//               <PremiumMetricIcon type={card.iconType} />
+//             </div>
+
+//             <span className="text-3xl font-medium tracking-tight text-slate-800 mt-5 group-hover:text-blue-700 transition-colors duration-200">
+//               <AnimatedCount
+//                 value={card.targetValue}
+//                 suffix={card.suffix}
+//                 decimals={card.decimals}
+//               />
+//             </span>
+
+//             <h3 className="text-sm font-semibold text-slate-700 tracking-tight mt-1.5">
+//               {card.title}
+//             </h3>
+//             <p className="text-xs leading-relaxed text-slate-400 mt-1 max-w-52.5">
+//               {card.desc}
+//             </p>
+//           </div>
+//         ))}
+//       </div>
+//     </section>
+//   );
+// }
+
+
 function PerformanceMetricsSection() {
   const containerRef = useRef<HTMLDivElement>(null);
   const [hasTriggered, setHasTriggered] = useState(false);
@@ -275,7 +411,7 @@ function PerformanceMetricsSection() {
   return (
     <section
       ref={containerRef}
-      className=" w-full bg-[#fbfcfe] pb-20 pt-10 px-6 md:px-16 flex flex-col justify-center items-center overflow-hidden font-sans select-none relative"
+      className=" w-full bg-[#fbfcfe] pb-20 pt-10 px-3 md:px-14 flex flex-col justify-center items-center overflow-hidden font-sans select-none relative"
     >
       <style jsx>{`
         .hardware-slide-card {
@@ -295,23 +431,13 @@ function PerformanceMetricsSection() {
           opacity: 1;
           transform: translateX(0);
         }
-
-        .border-glow-path {
-          stroke-dasharray: 400;
-          stroke-dashoffset: 400;
-          transition: stroke-dashoffset 1.75s cubic-bezier(0.25, 1, 0.2, 1);
-        }
-
-        .group:hover .border-glow-path {
-          stroke-dashoffset: 0;
-        }
       `}</style>
 
       <div className="text-center mb-16 max-w-xl relative z-10">
         <span className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-400 block">
           Proven Performance
         </span>
-        <h2 className="text-3xl font-semibold text-slate-900 tracking-tight mt-2 sm:text-4xl">
+        <h2 className="text-3xl font-semibold text-slate-800 tracking-tight mt-2 sm:text-4xl">
           Engineered for Scale & Reliability
         </h2>
       </div>
@@ -327,45 +453,17 @@ function PerformanceMetricsSection() {
               card.direction === "left" ? "direction-left" : "direction-right"
             } ${
               hasTriggered ? "slide-active" : ""
-            } flex flex-col items-start rounded-2xl bg-white p-6 shadow-[0_4px_12px_rgba(0,0,0,0.015)] relative overflow-hidden transition-shadow duration-300 hover:shadow-[0_25px_50px_rgba(15,23,42,0.04)] group cursor-pointer w-full`}
+            } flex flex-col items-start rounded-xl bg-white p-6 shadow-[0_4px_12px_rgba(0,0,0,0.015)] relative overflow-hidden transition-shadow duration-300 hover:shadow-[0_25px_50px_rgba(15,23,42,0.04)] group cursor-pointer w-full`}
           >
-            <span className="absolute left-0 top-0 bottom-0 w-0.75 bg-blue-500 rounded-l-2xl opacity-100 group-hover:opacity-0 transition-opacity duration-300 z-30" />
-
-            <svg
-              className="absolute inset-0 w-full h-full pointer-events-none z-20"
-              fill="none"
-              viewBox="0 0 100 100"
-              preserveAspectRatio="none"
-              width="100%"
-              height="100%"
-            >
-              <path
-                className="border-glow-path"
-                d="M 0,0 L 100,0 L 100,100"
-                stroke="url(#blue-laser-gradient)"
-                strokeWidth="2.5"
-                strokeLinecap="round"
-              />
-              <defs>
-                <linearGradient
-                  id="blue-laser-gradient"
-                  x1="0%"
-                  y1="0%"
-                  x2="100%"
-                  y2="100%"
-                >
-                  <stop offset="0%" stopColor="#3b82f6" />
-                  <stop offset="50%" stopColor="#2563eb" />
-                  <stop offset="100%" stopColor="#1d4ed8" />
-                </linearGradient>
-              </defs>
-            </svg>
+            {/* Left side blue border - Always visible and persistent */}
+            <span className="absolute left-0 top-0 bottom-0 w-0.75 bg-blue-500 rounded-l-2xl z-30" />
 
             <div className="flex h-10 w-10 items-center justify-center rounded-xl border border-slate-100 bg-slate-50/60 p-2.5 transition-all duration-300 group-hover:bg-slate-50 group-hover:shadow-inner">
               <PremiumMetricIcon type={card.iconType} />
             </div>
 
-            <span className="text-3xl font-medium tracking-tight text-slate-800 mt-5 group-hover:text-blue-700 transition-colors duration-200">
+            {/* Hover color updated to a softer, calmer blue-900 */}
+            <span className="text-3xl font-medium tracking-tight text-slate-800 mt-5 group-hover:text-blue-900 transition-colors duration-200">
               <AnimatedCount
                 value={card.targetValue}
                 suffix={card.suffix}
@@ -385,6 +483,7 @@ function PerformanceMetricsSection() {
     </section>
   );
 }
+
 
 const testimonials = [
   {

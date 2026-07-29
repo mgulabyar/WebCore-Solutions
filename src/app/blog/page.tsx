@@ -471,7 +471,7 @@ import {
 } from "lucide-react";
 import Footer from "@/components/Footer";
 
-// 1. Data Import: Local array ki bajaye aapki central file se data load ho raha hai
+// 1. Data Import: Local array ki bajaye aapki central file se data load
 import { allBlogPosts } from "@/data/allBlogs";
 
 // 2. Dynamic Category List: Categories aur unke counts automatic calculate honge

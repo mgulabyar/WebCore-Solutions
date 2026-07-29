@@ -216,7 +216,7 @@ export default function PortfolioPage() {
 
 
 
-      <div className="relative z-10 mx-auto max-w-7xl px-6 md:px-8">
+      <div className="relative z-10 mx-auto max-w-7xl px-3 md:px-8">
          <div
           ref={headerRef}
           className="mx-auto mb-12 flex max-w-3xl flex-col items-center gap-5 text-center"

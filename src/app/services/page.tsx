@@ -627,7 +627,7 @@ export function DatabaseSection() {
       <div className="absolute -bottom-25 right-10 h-112.5 w-112.5 rounded-full bg-blue-300/15 blur-3xl" />
 
       <div className="relative z-10 mx-auto max-w-7xl px-3 sm:px-6 lg:px-8">
-        <div className="mx-auto mb-16 flex max-w-2xl flex-col items-center justify-center text-center">
+        <div className="mx-auto mb-13 flex max-w-2xl flex-col items-center justify-center text-center">
           <span className="mb-3 block text-xs font-bold uppercase tracking-[0.3em] text-neutral-500">
             Database & Other Skills
           </span>

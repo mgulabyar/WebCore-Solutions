@@ -401,7 +401,7 @@ function FrontendSection() {
                   </div>
                 </div>
 
-                <h3 className="text-base font-semibold text-slate-900">
+                <h3 className="text-base font-semibold text-slate-800">
                   {skill.name}
                 </h3>
                 <div

@@ -1040,7 +1040,7 @@ function HeroSection() {
             </div>
             <div className="hidden sm:block w-full h-full relative">
               <motion.div
-                className="w-full h-full fixed"
+                className="w-full h-full absolute"
                 animate={{ rotate: -360 }}
                 transition={{ repeat: Infinity, duration: 32, ease: "linear" }}
               >

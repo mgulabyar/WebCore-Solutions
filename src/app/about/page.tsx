@@ -126,7 +126,7 @@ function TeamSection() {
   };
 
   return (
-    <section className="relative w-full overflow-hidden bg-[#fbfcfe] py-16 lg:py-20">
+    <section className="relative w-full overflow-hidden bg-[#fbfcfe] py-16 lg:py-16">
       <style>{`
         .team-card-overlay {
           background: rgba(0, 98, 214, 0);
@@ -171,7 +171,7 @@ function TeamSection() {
 
       
 
-      <div className="relative z-10 mx-auto max-w-7xl px-6 md:px-12">
+      <div className="relative z-10 mx-auto max-w-7xl px-3 md:px-12">
         <div
           ref={ref}
           className="about-float-right mx-auto mb-14 max-w-2xl text-center"
@@ -257,10 +257,10 @@ function HeroSection() {
   }, []);
 
   return (
-    <section className="relative overflow-hidden bg-white pt-16 pb-16 lg:pt-24 lg:pb-20">
+    <section className="relative overflow-hidden bg-white pt-16 pb-16 lg:pt-16 lg:pb-20">
     
 
-      <div className="relative z-10 mx-auto grid max-w-7xl grid-cols-1 items-center gap-12 px-6 md:px-12 lg:grid-cols-2 lg:gap-16">
+      <div className="relative z-10 mx-auto grid max-w-7xl grid-cols-1 items-center gap-12 px-3 md:px-12 lg:grid-cols-2 lg:gap-16">
         <div ref={textRef} className="about-float-left text-center lg:text-left">
         
 

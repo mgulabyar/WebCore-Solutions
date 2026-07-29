@@ -166,7 +166,7 @@ export function ServicesHero() {
   return (
     <section
       ref={containerRef}
-      className="relative w-full overflow-hidden bg-white py-24"
+      className="relative w-full overflow-hidden bg-white py-16"
     >
       <style>{`
         @keyframes wc-blob-move {
@@ -190,7 +190,7 @@ export function ServicesHero() {
       
    
 
-      <div className="relative z-10 mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
+      <div className="relative z-10 mx-auto max-w-4xl px-3 text-center sm:px-6 lg:px-8">
         
         <h1 className="mt-6 flex flex-wrap justify-center gap-x-3 text-4xl font-semibold tracking-tight text-slate-800 sm:text-4xl">
           {headline.map((word, i) => (
@@ -346,7 +346,7 @@ function FrontendSection() {
         }
       `}</style>
 
-      <div className="relative flex flex-col items-center justify-center text-center z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div className="relative flex flex-col items-center justify-center text-center z-10 mx-auto max-w-7xl px-3 sm:px-6 lg:px-8">
         <div className="mb-16 max-w-2xl">
           <span className="text-sm font-bold uppercase tracking-widest text-blue-500 block mb-2">
             Frontend Development

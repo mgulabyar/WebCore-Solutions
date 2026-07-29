@@ -664,7 +664,7 @@ function TestimonialsSection() {
                     style={{ flex: `0 0 ${cardPercent}%` }}
                   >
                     <div
-                      className={`rounded-2xl p-7 h-60 flex flex-col transition-all duration-500 ease-out ${
+                      className={`rounded-xl p-4 md:p-6 h-60 flex flex-col transition-all duration-500 ease-out ${
                         isCenter
                           ? "bg-linear-to-br from-blue-500 to-blue-700 shadow-2xl shadow-blue-500/25 -translate-y-4 scale-[1.06] z-10 relative"
                           : "bg-white border border-slate-200/70 opacity-70 scale-[0.94] shadow-sm"

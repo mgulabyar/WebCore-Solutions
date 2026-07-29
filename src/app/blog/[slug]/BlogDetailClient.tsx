@@ -635,7 +635,7 @@ export default function BlogDetailClient({
                         }`}
                       >
                         <span
-                          className={`mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-4xl text-[10px] font-semibold transition-colors duration-300 ${
+                          className={`mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full text-[10px] font-semibold transition-colors duration-300 ${
                             active
                               ? "bg-[#0062D6] text-white"
                               : "bg-slate-100 text-slate-600 group-hover:bg-[#0062D6] group-hover:text-white"

@@ -634,7 +634,7 @@ function TestimonialsSection() {
           <span className="text-xs font-semibold uppercase tracking-widest text-slate-400">
             Client Testimonials
           </span>
-          <h2 className="mt-2 text-3xl md:text-4xl font-semibold text-slate-900 tracking-tight">
+          <h2 className="mt-2 text-3xl md:text-4xl font-semibold text-slate-800 tracking-tight">
             Trusted by Industry Leaders
           </h2>
         </div>

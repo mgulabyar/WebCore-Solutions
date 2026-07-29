@@ -473,7 +473,6 @@ import Footer from "@/components/Footer";
 
 import { allBlogPosts } from "@/data/allBlogs";
 
-// 2. Dynamic Category List: Categories aur unke counts automatic calculate honge
 const categoryList = Array.from(new Set(allBlogPosts.map(post => post.category))).map(cat => ({
   name: cat,
   count: allBlogPosts.filter(post => post.category === cat).length

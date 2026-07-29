@@ -28,6 +28,7 @@ const teamMembers = [
     website: "#",
   },
 
+
 ];
 
 function TeamCard({ member }: { member: (typeof teamMembers)[0] }) {

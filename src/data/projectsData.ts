@@ -70,6 +70,29 @@ export const projects: Project[] = [
   ],
   "liveUrl": "#"
 },
+{
+  "_id": "50",
+  "title": "Excel to PowerPoint Live Data Synchronization Pipeline",
+  "tagline": "Enterprise Microsoft 365 Automation Enabling Real-Time Chart & Form Sync via OneDrive.",
+  "category": "Office Add-ins",
+  "subType": "Microsoft 365 Integration",
+  "images": [
+    "/images/excel-ppt-sync-dashboard.png",
+    "/images/excel-ppt-sync-flow.png"
+  ],
+  "description": "A sophisticated cross-application automation solution that establishes a live, bi-directional data pipeline between Microsoft Excel and PowerPoint using OneDrive storage. The system allows users to select any chart or form within Excel, name it via a dedicated input interface, and instantly generate high-fidelity image representations. On the PowerPoint side, a smart task pane utilizes webhooks to fetch available assets through dynamic dropdowns, inserting them directly at the user's active cursor/click position. Featuring full CRUD operational lifecycles on both platforms, this solution ensures real-time tracking with an automated history list for enterprise-grade presentations.",
+  "technologies": [
+    "Office.js",
+    "Microsoft 365 SDK",
+    "OneDrive Graph API",
+    "Webhooks",
+    "Real-Time Data Sync",
+    "Cross-Application CRUD",
+    "Dynamic Asset Extraction",
+    "Event-Driven Automation"
+  ],
+  "liveUrl": "#"
+},
 
   {
     _id: "4",

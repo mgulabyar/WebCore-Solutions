@@ -47,7 +47,7 @@ export const projects: Project[] = [
 
   {
   "_id": "49",
-  "title": "HubSpot CRM & Microsoft Outlook Add-in Integration",
+  "title": "HubSpot CRM Outlook Add-in",
   "tagline": "A Powerful Microsoft Outlook Add-in Seamlessly Connected with HubSpot CRM.",
   "category": "Office Add-ins",
   "subType": "Microsoft Outlook Add-ins",

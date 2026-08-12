@@ -72,7 +72,7 @@ export const projects: Project[] = [
 },
 {
   "_id": "50",
-  "title": "Excel To PPT Live Linkg",
+  "title": "Excel To PowerPoint Live Link",
   "tagline": "Enterprise Microsoft 365 Automation Enabling Real-Time Chart & Form Sync via OneDrive.",
   "category": "Office Add-ins",
   "subType": "Microsoft 365 Integration",

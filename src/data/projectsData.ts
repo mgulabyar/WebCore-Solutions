@@ -79,7 +79,7 @@ export const projects: Project[] = [
   "images": [
     "/images/Excel To PPT (1).png",
     "/images/Excel To PPT (2).png",
-    ""
+    "/images/"
   ],
   "description": "A sophisticated cross-application automation solution that establishes a live, bi-directional data pipeline between Microsoft Excel and PowerPoint using OneDrive storage. The system allows users to select any chart or form within Excel, name it via a dedicated input interface, and instantly generate high-fidelity image representations. On the PowerPoint side, a smart task pane utilizes webhooks to fetch available assets through dynamic dropdowns, inserting them directly at the user's active cursor/click position. Featuring full CRUD operational lifecycles on both platforms, this solution ensures real-time tracking with an automated history list for enterprise-grade presentations.",
   "technologies": [

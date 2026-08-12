@@ -44,6 +44,30 @@ export const projects: Project[] = [
     technologies: ["Google Apps Script", "React.js", "Material UI", "Google Sheets API", "Business Intelligence", "Predictive Analytics", "Data Visualization", "Automation"],
     liveUrl: "#",
   },
+
+  {
+  "_id": "49",
+  "title": "HubSpot CRM & Microsoft Outlook Add-in Integration",
+  "tagline": "A Powerful Microsoft Outlook Add-in Seamlessly Connected with HubSpot CRM.",
+  "category": "Office Add-ins",
+  "subType": "Microsoft Outlook Add-ins",
+  "images": [
+    "/images/",
+    "/images/outlook-hubspot-sync-details.png"
+  ],
+  "description": "A robust Microsoft Outlook Add-in successfully connected with HubSpot CRM to deliver a unified enterprise experience. Built on the Microsoft 365 framework using Office.js, this production-ready solution executes live CRM operations directly within the email client. It empowers users with full CRUD management across Contacts, Companies, and Deals, utilizing secure API integration and optimized data architecture to eliminate context switching completely.",
+  "technologies": [
+    "Office.js",
+    "Microsoft 365 Framework",
+    "HubSpot APIs",
+    "Secure API Integration",
+    "CRM Data Architecture",
+    "Full CRUD Operations",
+    "Workflow Automation"
+  ],
+  "liveUrl": "#"
+},
+
   {
     _id: "4",
     title: "AI Outlook CRM",

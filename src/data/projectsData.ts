@@ -55,6 +55,7 @@ export const projects: Project[] = [
     "/images/HubSpot CRM (1).png",
     "/images/HubSpot CRM (2).png",
     "/images/HubSpot CRM (3).png",
+    "/images.HubSpot CRM (4).png",
   ],
   "description": "A robust Microsoft Outlook Add-in successfully connected with HubSpot CRM to deliver a unified enterprise experience. Built on the Microsoft 365 framework using Office.js, this production-ready solution executes live CRM operations directly within the email client. It empowers users with full CRUD management across Contacts, Companies, and Deals, utilizing secure API integration and optimized data architecture to eliminate context switching completely.",
   "technologies": [

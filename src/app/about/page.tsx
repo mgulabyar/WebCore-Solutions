@@ -18,16 +18,6 @@ const teamMembers = [
     github: "https://github.com/mgulabyar",
     website: "https://stackoverflow.com",
   },
-  {
-    name: "Zuryab Gill",
-    role: "Senior Frontend Developer",
-    bio: "Frontend engineering specialist dedicated to creating pixel perfect, highly responsive, and interactive user interfaces. Expert in React, Next js, and modern CSS frameworks, focusing on seamless user journeys, smooth fluid animations, and optimized website speed across all modern devices.",
-    image: "/team/zuryab.png",
-    linkedin: "#",
-    github: "#",
-    website: "#",
-  },
-
 
 ];
 

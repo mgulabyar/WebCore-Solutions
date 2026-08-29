@@ -23,14 +23,14 @@ const innerOrbitItems = [
 
 const outerOrbitItems = [
   { src: "/nextjs.png", title: "Next.js", angle: 0 },
-  { src: "/angular.png", title: "Angular", angle: 45 },
-  { src: "/asp.net.png", title: "ASP.NET", angle: 90 },
-  { src: "/c-sharp.png", title: "C#", angle: 135 },
-  { src: "/tailwind.png", title: "Tailwind", angle: 180 },
-  { src: "/c++.png", title: "C++", angle: 225 },
-  { src: "/js.png", title: "JavaScript", angle: 270 },
-  { src: "/ts.png", title: "TypeScript", angle: 315 },
-  { src: "/python.png", title: "Python", angle: 360 },
+  { src: "/angular.png", title: "Angular", angle: 40 },
+  { src: "/asp.net.png", title: "ASP.NET", angle: 80 },
+  { src: "/c-sharp.png", title: "C#", angle: 120 },
+  { src: "/tailwind.png", title: "Tailwind", angle: 160 },
+  { src: "/c++.png", title: "C++", angle: 200 },
+  { src: "/js.png", title: "JavaScript", angle: 240 },
+  { src: "/ts.png", title: "TypeScript", angle: 280 },
+  { src: "/python.png", title: "Python", angle: 320 },
 ];
 
 function OrbitGroup({

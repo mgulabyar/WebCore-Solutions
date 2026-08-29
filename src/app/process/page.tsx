@@ -306,7 +306,6 @@ function WhyChooseUsSection() {
 
   return (
     <section className="relative overflow-hidden bg-linear-to-br from-blue-50 via-white to-slate-50 py-16 lg:py-20">
-      <div className="absolute inset-0 bg-[radial-gradient(#2563eb_1px,transparent_1px)] bg-size-[32px_32px] opacity-[0.025]" />
       <div className="relative z-10 mx-auto max-w-7xl px-3 md:px-12">
         <motion.div
           ref={ref}
@@ -360,8 +359,7 @@ function ExtraHighlightsSection() {
 
   return (
     <section className="relative overflow-hidden bg-[#fbfcfe] py-16 lg:py-16">
-      <div className="absolute left-1/4 top-0 h-72 w-72 rounded-full bg-blue-100/40 blur-3xl" />
-      <div className="absolute bottom-0 right-1/4 h-72 w-72 rounded-full bg-cyan-100/30 blur-3xl" />
+    
       <div className="relative z-10 mx-auto max-w-7xl px-3 md:px-12">
         <motion.div
           ref={ref}

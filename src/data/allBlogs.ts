@@ -16,7 +16,6 @@ export type Post = {
 };
 
 export const allBlogPosts: Post[] = [
-  // 1. Orange Ledger
   {
     title: "Orange Ledger: Building a High-Performance QuickBooks & Google Sheets Sync Engine",
     slug: "automate-quickbooks-google-sheets-sync-orange-ledger",

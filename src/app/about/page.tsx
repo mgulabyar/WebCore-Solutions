@@ -11,8 +11,8 @@ import Footer from "@/components/Footer";
 const teamMembers = [
   {
     name: "Gulab Yar",
-    role: "SEO Specialist & Founder",
-    bio: "Visionary leader managing search engine optimization and scalable web architectures. Expert in advanced Office add ins, driving organic traffic growth, and delivering robust digital solutions that guarantee long term market dominance and exceptional client satisfaction across global modern business platforms.",
+    role: "Full Stack Developer",
+    bio: "Visionary leader managing scalable web architectures, AI integrations, and full-stack development (MERN, .NET, Python, Next.JS). Expert in Google Workspace and Microsoft Office Add-ins, delivering robust workflow automation, Power Platform solutions, and cloud-deployed digital systems that guarantee client satisfaction across global modern business platforms.",
     image: "/team/Asfand.png",
     linkedin: "https://www.linkedin.com/in/gulab-yar-fullstack-developer/",
     github: "https://github.com/mgulabyar",
@@ -24,7 +24,7 @@ const teamMembers = [
 function TeamCard({ member }: { member: (typeof teamMembers)[0] }) {
   return (
     <div className="group flex h-full w-full flex-col overflow-hidden rounded-lg border border-neutral-200 bg-white shadow-[0_8px_30px_rgba(15,23,42,0.08)] transition-all duration-500 hover:border-[#0062D6]/30 hover:shadow-[0_30px_60px_rgba(0,98,214,0.15)]">
-      <div className="team-card-photo relative h-80 w-full shrink-0 sm:h-96">
+      <div className="team-card-photo relative h-80 w-full shrink-0 sm:h-90">
         <img
           src={member.image}
           alt={member.name}

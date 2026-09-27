@@ -12,6 +12,83 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+  _id: "49",
+  title: "Enterprise Business Group Platform",
+  tagline: "Multi-Business Management & Booking Platform",
+  category: "Web Development",
+  subType: "Web Development",
+  images: [
+    "/images/businessGroup1 (1).png",
+    "/images/businessGroup1 (2).png",
+    "/images/businessGroup1 (3).png",
+    "/images/businessGroup1 (4).png",
+    "/images/businessGroup1 (5).png",
+    "/images/businessGroup1 (6).png",
+    "/images/businessGroup1 (7).png",
+
+  ],
+  description:
+    "Developed a scalable, multilingual business platform combining salon services, transportation, Hajj & Umrah packages, catering, apartment rentals, and real estate into one centralized system. Includes role-based dashboards, service and customer management, booking workflows, payment integration, WhatsApp notifications, and analytics. Built with a modular architecture to support future business expansion.",
+  technologies: [
+    "MERN Stack",
+    "REST APIs",
+    "JWT Authentication",
+    "Payment Integration",
+    "WhatsApp Integration",
+    "Arabic & English"
+  ],
+  liveUrl: "#",
+},
+{
+  _id: "50",
+  title: "Hospital Management System",
+  tagline: "Complete Hospital Operations & Patient Management Platform",
+  category: "Web Development",
+  subType: "Web Development",
+  images: [
+    "/images/hospital1 (1).png",
+    "/images/hospital1 (2).png",
+    "/images/hospital1 (3).png",
+    "/images/hospital1 (4).png"
+  ],
+  description:
+    "Developed a complete hospital management platform covering patient registration, doctors, departments, appointments, reception, medical records, prescriptions, laboratory tests, pharmacy, billing, staff management, and reporting. The system connects the complete patient journey through a centralized workflow with role-based access and dedicated dashboards for hospital operations.",
+  technologies: [
+    "MERN Stack",
+    "REST APIs",
+    "JWT Authentication",
+    "Role-Based Access",
+    "Payment Integration"
+  ],
+  liveUrl: "#",
+},
+{
+  _id: "51",
+  title: "School Management System",
+  tagline: "Complete School Administration & Academic Management Platform",
+  category: "Web Development",
+  subType: "Web Development",
+  images: [
+    "/images/school1 (1).png",
+    "/images/school1 (2).png",
+    "/images/school1 (3).png",
+    "/images/school1 (4).png",
+    "/images/school1 (5).png",
+    "/images/school1 (6).png",
+    "/images/school1 (7).png",
+  ],
+  description:
+    "Developed a comprehensive school management platform to streamline student admissions, teacher management, attendance, fee collection, examinations, academic records, library, transport, and financial operations. Includes role-based dashboards, automated reports, notifications, and PDF/Excel exports with a responsive interface and light/dark mode.",
+  technologies: [
+    "MERN Stack",
+    "REST APIs",
+    "JWT Authentication",
+    "Role-Based Access",
+    "PDF & Excel Reports"
+  ],
+  liveUrl: "#",
+},
+  {
     _id: "1",
     title: "Orange Ledger",
     tagline: "Automated QuickBooks & Google Sheets Sync.",
@@ -591,4 +668,5 @@ export const projects: Project[] = [
     technologies: ["Google Apps Script", "Gmail API", "OpenAI GPT-4o", "Sales Automation"],
     liveUrl: "#",
   }
+
 ];

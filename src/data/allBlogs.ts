@@ -155,7 +155,7 @@ export const allBlogPosts: Post[] = [
     ],
   },
 
-  // 3. Strategic BI 
+ 
   {
     title: "Strategic BI Commander: Transforming Spreadsheets into Executive Analytics Dashboards",
     slug: "strategic-bi-commander-raw-data-executive-insights",

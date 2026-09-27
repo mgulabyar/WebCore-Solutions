@@ -91,7 +91,7 @@ export const allBlogPosts: Post[] = [
     ],
   },
 
-  // 2. GhostWriter Professional
+  // 2. GhostWriter 
   {
     title: "GhostWriter Professional: Scaling Content Creation with GPT-4o & React Docs Add-ons",
     slug: "boost-writing-productivity-ghostwriter-professional-ai",
